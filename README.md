@@ -32,7 +32,7 @@ which is installing all dependencies of this project
 
 ## Configuring keystone
 
-During the development you will never have an access to the database of CoasterCentral directly, so you always start with a fresh instance of keystone. If you installed MongoDB on your local machine without any changes in its configuration, there is no need for adjustments in the configuration file (`config/server.js`).
+During the development you will never have an access to the database of keystone directly, so you always start with a fresh instance of keystone. If you installed MongoDB on your local machine without any changes in its configuration, there is no need for adjustments in the configuration file (`config/server.js`).
 
 You can also configure the HTTP port when you want another listening port. Default port is 4000.
 
