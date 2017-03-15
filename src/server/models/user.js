@@ -81,6 +81,41 @@ class UserSchema extends Mongoose.Schema {
             groupID: {
                 type: String,
                 required: true
+            },
+
+            /**
+             * Creation date of the user
+             *
+             * @attribute creationDate
+             * @required
+             * @default Date.now
+             */
+            creationDate: {
+                type: Date,
+                required: true,
+                default: Date.now
+            },
+
+            /**
+             * User active. After registration, user has to be activated
+             *
+             * @attribute active
+             * @default false
+             */
+            active: {
+                type: Boolean,
+                default: false
+            },
+
+            /**
+             * User blocked. This will block users account
+             *
+             * @attribute blocked
+             * @default false
+             */
+            blocked: {
+                type: Boolean,
+                default: false
             }
         });
 
@@ -90,11 +125,11 @@ class UserSchema extends Mongoose.Schema {
         this.methods.comparePassword = this.comparePassword;
         this.methods.cacheGroupAndPermissions = this.cacheGroupAndPermissions;
         this.methods.setAuth = this.setAuth;
-        this.methods.setRequestAndResponse = this.setRequestAndResponse;
         this.methods.isAllowed = this.isAllowed;
         this.methods.isAuth = this.isAuth;
         this.methods.isMe = this.isMe;
         this.methods.getGroup = this.getGroup;
+        this.methods.getPermissions = this.getPermissions;
 
         this.statics.generatePasswordHash = this.generatePasswordHash;
     };
@@ -133,7 +168,7 @@ class UserSchema extends Mongoose.Schema {
      */
     preSave(next) {
         if (this.isModified('password') || this.isNew) {
-            bcrypt.genSalt(10, function (err, salt) {
+            bcrypt.genSalt(10, (err, salt) => {
                 if (err) {
                     return next(err);
                 }
@@ -249,11 +284,6 @@ class UserSchema extends Mongoose.Schema {
      * @return {Boolean}
      */
     isAllowed(permission) {
-       /* let allowed = _.includes(this.permissions, permission);
-        if(!allowed && this.res !== null)
-            this.res.status(403).send(errorResponse(ErrorCodes.operationNotAllowed, permission));
-
-        return allowed;*/
        return _.includes(this.permissions, permission);
     }
 
@@ -278,21 +308,7 @@ class UserSchema extends Mongoose.Schema {
     }
 
     /**
-     * Set express request and response to the user, so when available,
-     * {{#crossLink "server.models.UserSchema/isAllowed:method"}}isAllowed{{/crossLink}} method can
-     * response an error when the user is not permitted to execute the operation
-     *
-     * @method setRequestAndResponse
-     * @param req {Object} request
-     * @param res {Object} response
-     */
-    setRequestAndResponse(req, res) {
-        this.req = req;
-        this.res = res;
-    }
-
-    /**
-     * Get users group. Return only a group when
+     * Get users group. Returns only the group when
      * {{#crossLink "server.models.UserSchema/cacheGroupAndPermissions:method"}}cacheGroupAndPermissions{{/crossLink}}
      * is called before
      *
@@ -301,6 +317,18 @@ class UserSchema extends Mongoose.Schema {
      */
     getGroup() {
         return this.group;
+    }
+
+    /**
+     * Get user permissions. Returns only the permissions when
+     * {{#crossLink "server.models.UserSchema/cacheGroupAndPermissions:method"}}cacheGroupAndPermissions{{/crossLink}}
+     * is called before
+     *
+     * @method getPermissions
+     * @returns [...]
+     */
+    getPermissions() {
+        return this.permissions;
     }
 }
 
@@ -325,26 +353,6 @@ UserSchema.permissions = [];
  * @type {boolean}
  */
 UserSchema.auth = false;
-
-/**
- * Express request
- *
- * @property req
- * @default null
- * @private
- * @type {boolean}
- */
-UserSchema.req = null;
-
-/**
- * Express response
- *
- * @property req
- * @default null
- * @private
- * @type {boolean}
- */
-UserSchema.res = null;
 
 /**
  * User group

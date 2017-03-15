@@ -5,6 +5,7 @@
  *
  *
  * @class setup
+ * @namespace server.helper
  * @license GPL-3.0
  * @version 1.0
  * @author  Ercan "geforcefan" Akyürek, https://github.com/geforcefan/

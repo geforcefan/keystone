@@ -16,12 +16,23 @@
 import NoLimitsUserUploadModel from '../models/noLimitsUserUpload'
 import UserUploadModel from '../models/userUpload'
 
-export default class Test {
-    constructor(router) {
-        router.get('/test', this.getTest.bind(this));
+import { Router, RouteMethods } from '../helper/router';
+
+import UserService from '../services/user'
+
+export default class Test extends Router {
+    constructor() {
+        super();
+
+        this.addRoute('/test', this.getTest.bind(this), RouteMethods.get);
     }
 
     getTest(req, res) {
+        this.getUserService();
+        this.getUserService();
+        this.getUserService();
+
+        /*
         new NoLimitsUserUploadModel({
             name: "heyho",
             mediaID: "sd",
@@ -43,6 +54,6 @@ export default class Test {
             });
 
 
-        });
+        });*/
     }
 }

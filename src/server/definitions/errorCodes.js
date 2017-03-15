@@ -35,6 +35,8 @@
 export default [
     'authenticationUserNotFound',
     'authenticationWrongPassword',
+    'authenticationUserBlocked',
+    'authenticationUserInactive',
     'registrationFillAllFields',
     'registrationUsernameOrEmailExists',
     'userGroupNotFound',

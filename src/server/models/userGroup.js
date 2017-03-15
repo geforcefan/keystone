@@ -65,9 +65,9 @@ class UserGroupSchema extends Mongoose.Schema {
             },
 
             /**
-             * Group level. The higher this value is, the lower is the priority of the group.
+             * Group level. Less level, more "root"ness.
              * A {{#crossLink "server.models.UserSchema"}}user{{/crossLink}} will inherit
-             * all groups above it´s level value
+             * all group permissions above it´s level value
              *
              * @attribute permissions.level
              * @type Number

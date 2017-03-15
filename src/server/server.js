@@ -45,7 +45,13 @@ import i18n from '../shared/helper/i18n';
 import auth from './helper/auth';
 import checkUpdates from './helper/setup'
 
+import BlueBird from 'bluebird'
+
 import { internalErrorResponse } from './helper/errorResponse';
+
+// unfortunately native Promises prevent using node domains, so we are using bluebird promise lib
+// https://github.com/nodejs/node-v0.x-archive/issues/8648
+global.Promise = BlueBird;
 
 /**
  * Entry point of the server application.
@@ -135,10 +141,6 @@ class ServerApplication {
                     console.log(`Request is with authentication: ${user.name} (${user.id})`)
                 }
 
-                // injecting request and response objects from express to the authenticated user or guest
-                // some internal methods of user can profit from this injection
-                user.setRequestAndResponse(req, res);
-
                 (new Promise(resolve => resolve()))
                     .then(result => new Promise((resolve, reject) => user.cacheGroupAndPermissions(resolve, reject)))
                     .then(result => req.login(user, ConfigServer.auth.session, next))
@@ -185,11 +187,7 @@ class ServerApplication {
         let apiRoutes = fs.readdirSync(srcPath)
             .filter(file => fs.statSync(path.join(srcPath, file)).isFile())
             .map(file => file.split('.js')[0])
-            .reduce((acc, apiName) => {
-                let router = Express.Router();
-                new (require(`./routes/${apiName}`).default)(router);
-                return acc.use("/" + apiName, router);
-            }, Express.Router());
+            .reduce((acc, apiName) =>  acc.use("/" + apiName, (new (require(`./routes/${apiName}`).default)).getExpressRouter()), Express.Router());
 
         this.app.use('/api', apiRoutes);
     }

@@ -38,7 +38,9 @@ export default function() {
     passport.use(new Strategy(opts, (jwtPayload, done) => {
         UserModel.findOne({
             id: jwtPayload.id,
-            password: jwtPayload.password
+            password: jwtPayload.password,
+            blocked: false,
+            active: true
         }, (err, user) => {
             if (err) {
                 return done(null, false);
