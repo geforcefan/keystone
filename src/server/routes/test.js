@@ -28,10 +28,6 @@ export default class Test extends Router {
     }
 
     getTest(req, res) {
-        this.getUserService();
-        this.getUserService();
-        this.getUserService();
-
         /*
         new NoLimitsUserUploadModel({
             name: "heyho",

@@ -3,6 +3,8 @@
  *
  * Router helper. Inherit this class in any route.
  *
+ * GitHub issue: https://github.com/geforcefan/keystone/issues/8
+ * GitHub issue: https://github.com/geforcefan/keystone/issues/9
  *
  * @namespace server.helper
  * @license GPL-3.0

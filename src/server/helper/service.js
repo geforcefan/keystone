@@ -3,6 +3,7 @@
  *
  * Service helper. Inherit this class in any service.
  *
+ * GitHub issue: https://github.com/geforcefan/keystone/issues/7
  *
  * @namespace server.helper
  * @license GPL-3.0

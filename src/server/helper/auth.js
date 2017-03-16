@@ -5,6 +5,7 @@
  * provides two helper methods for initialization and authentication
  * which is called during the bootstrap of the server. Nothing special here.
  *
+ * GitHub issue: https://github.com/geforcefan/keystone/issues/10
  *
  * @class auth
  * @namespace server.helper

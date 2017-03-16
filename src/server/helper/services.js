@@ -4,6 +4,7 @@
  * Services autoloader class.
  * Inheriting from this class will make all services available.
  *
+ * GitHub issue: https://github.com/geforcefan/keystone/issues/7
  *
  * @namespace server.helper
  * @license GPL-3.0
