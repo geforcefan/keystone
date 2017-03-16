@@ -91,6 +91,7 @@ class ServerApplication {
      * Initialize database models and establish database connection
      *
      * @method initDatabase
+     * @async
      * @param success {Function} success callback
      * @param error {Function} error callback
      */

@@ -1,7 +1,7 @@
 /**
  * user.js
  *
- * User servive
+ * User business logic
  *
  *
  * @namespace server.services
@@ -24,12 +24,24 @@ import UserModel from '../models/user'
 import UserGroupModel from '../models/userGroup'
 
 /**
- * User service
+ * User business logic
  *
  * @class User
  * @extends server.helper.Service
  */
 export default class User extends Service {
+    /**
+     * Authentication logic
+     *
+     * @method authenticate
+     * @async
+     * @param loginData {Object} login data
+     * @param loginData.name {String} username
+     * @param loginData.password {String} password
+     *
+     * @param callback {Function} (err, success)
+     * @returns {Promise}
+     */
     authenticate(loginData, callback) {
         return new Promise(resolve => resolve())
             .then(result => new Promise((resolve, reject) => UserModel.findOne({
@@ -54,7 +66,20 @@ export default class User extends Service {
             .then(token => callback(null, { token: `JWT ${token}` }))
             .catch(err => callback(err, null));
     }
-    
+
+    /**
+     * Registration logic
+     *
+     * @method register
+     * @async
+     * @param registrationData {Object} registration data
+     * @param registrationData.name {String} username
+     * @param registrationData.email {String} email
+     * @param registrationData.password {String} password
+     *
+     * @param callback {Function} (err, success)
+     * @returns {Promise}
+     */
     register(registrationData, callback) {
         return new Promise(resolve => resolve())
             .then(result => new Promise((resolve, reject) =>
@@ -73,11 +98,27 @@ export default class User extends Service {
             .catch(args => callback(args, null));
     }
 
-    modify(userID, modifyData, callback) {
+    /**
+     * User modification logic
+     *
+     * @method modify
+     * @async
+     * @param userID {String} user id of the user which should modified
+     * @param modificationData {Object} optional, modification data
+     * @param modificationData.name {String} optional, username
+     * @param modificationData.email {String} optional, email
+     * @param modificationData.password {String} optional, password
+     * @param modificationData.groupID {String} optional, groupID
+     * @param modificationData.profile {} optional, profile
+     *
+     * @param callback {Function} (err, success)
+     * @returns {Promise}
+     */
+    modify(userID, modificationData, callback) {
         // check permissions first
         return (['name', 'email', 'password', 'groupID', 'profile']).reduce((promise, field) =>
             promise.then((userChanges) => new Promise((resolve, reject) => {
-                if(modifyData[field]) {
+                if(modificationData[field]) {
                     if(this.getUser().isMe(userID) && !this.getUser().isAllowed(`user.set.own.${field}`))
                         return reject([ErrorCodes.operationNotAllowed, `user.set.own.${field}`]);
 
@@ -85,12 +126,12 @@ export default class User extends Service {
                         return reject([ErrorCodes.operationNotAllowed, `user.set.other.${field}`]);
 
                     if(field === "password") {
-                        return UserModel.generatePasswordHash(modifyData[field], (hash) => {
+                        return UserModel.generatePasswordHash(modificationData[field], (hash) => {
                             userChanges[field] = hash;
                             return resolve(userChanges);
                         }, (err) => resolve(userChanges))
                     } else {
-                        userChanges[field] = modifyData[field];
+                        userChanges[field] = modificationData[field];
                         return resolve(userChanges);
                     }
                 }

@@ -40,6 +40,7 @@ function convertDateToDirectoryFormat(date) {
  * Executing the setup and update files
  *
  * @method execSetup
+ * @async
  * @private
  * @param system {SystemSchema} Needed for the lastUpdateDate information
  * @param success {Function} success callback
@@ -102,6 +103,7 @@ function execSetup(system, success, error) {
  * This setup helper will check for updates and invokes them
  *
  * @method export default
+ * @async
  * @param success {Function} success callback
  * @param error {Function} error callback
  */

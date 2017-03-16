@@ -141,6 +141,7 @@ class UserSchema extends Mongoose.Schema {
      *
      * @method generatePasswordHash
      * @static
+     * @async
      * @param password {String} password
      * @param resolve {Function} resolve callback with the hash
      * @param reject {Function} reject callback
@@ -163,6 +164,7 @@ class UserSchema extends Mongoose.Schema {
      *
      * @method preSave
      * @private
+     * @async
      * @param next {Function} success callback
      * @return {*}
      */
@@ -189,6 +191,7 @@ class UserSchema extends Mongoose.Schema {
      * Compare any password with the users password
      *
      * @method comparePassword
+     * @async
      * @param password {String} password
      * @param next {Function} success callback
      */
@@ -218,6 +221,7 @@ class UserSchema extends Mongoose.Schema {
      * the user group and permissions needs to be cached
      *
      * @method cacheGroupAndPermissions
+     * @async
      * @param next {Function} next callback
      * @param abort {Function} abort callback
      */
