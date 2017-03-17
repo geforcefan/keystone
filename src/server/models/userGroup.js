@@ -20,6 +20,7 @@ import Mongoose from '../helper/mongoose';
  * User group model
  *
  * @class UserGroupSchema
+ * @extends Mongoose.Schema
  */
 export class UserGroupSchema extends Mongoose.Schema {
     constructor() {
@@ -36,6 +37,7 @@ export class UserGroupSchema extends Mongoose.Schema {
                 unique: true,
                 required: true
             },
+
             permissions: {
                 /**
                  * When this options is turned on, this group will include all available
@@ -45,6 +47,7 @@ export class UserGroupSchema extends Mongoose.Schema {
                  * attribute.
                  *
                  * @attribute permissions.hasAllPermissions
+                 * @optional
                  * @type Boolean
                  * @default false
                  */
@@ -58,10 +61,11 @@ export class UserGroupSchema extends Mongoose.Schema {
                  * {{#crossLink "server.definitions.permissions"}}permission{{/crossLink}} definitions.
                  *
                  * @attribute permissions.allowedTo
-                 * @type Array
-                 * @default false
+                 * @optional
+                 * @type [String]
+                 * @default []
                  */
-                allowedTo: []
+                allowedTo: [String]
             },
 
             /**
@@ -70,12 +74,14 @@ export class UserGroupSchema extends Mongoose.Schema {
              * all group permissions above it´s level value
              *
              * @attribute permissions.level
+             * @required
              * @type Number
              * @default 3000
              */
             level: {
                 type: Number,
-                default: 3000
+                default: 3000,
+                required: true
             }
         });
     };

@@ -219,7 +219,7 @@ export default class User extends Service {
      * @param modificationData.email {String} optional, email
      * @param modificationData.password {String} optional, password
      * @param modificationData.groupID {String} optional, groupID
-     * @param modificationData.profile {UserProfileSchema} optional, profile
+     * @param modificationData.profile {server.models.UserProfileSchema} optional, profile
      *
      * @param callback {Function} (err, success)
      * @returns {Promise}

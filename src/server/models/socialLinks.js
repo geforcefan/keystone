@@ -22,6 +22,7 @@ import Mongoose from '../helper/mongoose';
  * GitHub issue: https://github.com/geforcefan/keystone/issues/2
  *
  * @class SocialLinksSchema
+ * @extends Mongoose.Schema
  */
 export default class SocialLinksSchema extends Mongoose.Schema {
     constructor() {

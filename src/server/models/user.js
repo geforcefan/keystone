@@ -29,6 +29,7 @@ import UserProfileSchema from './userProfile'
  * GitHub issue: https://github.com/geforcefan/keystone/issues/2
  *
  * @class UserSchema
+ * @extends Mongoose.Schema
  */
 export class UserSchema extends Mongoose.Schema {
     constructor() {
@@ -125,7 +126,7 @@ export class UserSchema extends Mongoose.Schema {
              * User profile
              *
              * @attribute profile
-             * @type UserProfileSchema
+             * @type server.models.UserProfileSchema
              * @default UserProfileSchema
              */
             profile: {

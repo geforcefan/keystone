@@ -47,8 +47,9 @@ export default class User extends Router {
     /**
      * Get user profile
      *
+     *      /profile/:userID
+     *
      * @method getProfile
-     * @private
      * @param req {Object} Request provided by express
      * @param req.params.userID {String} user id
      * @param res {Object} Response provided by express
@@ -65,8 +66,9 @@ export default class User extends Router {
     /**
      * Follow a user
      *
+     *      /follow/:userID
+     *
      * @method follow
-     * @private
      * @param req {Object} Request provided by express
      * @param req.params.userID {String} user id to follow
      * @param res {Object} Response provided by express
@@ -83,8 +85,9 @@ export default class User extends Router {
     /**
      * Unfollow a user
      *
+     *      /unfollow/:userID
+     *
      * @method unfollow
-     * @private
      * @param req {Object} Request provided by express
      * @param req.params.userID {String} user id to unfollow
      * @param res {Object} Response provided by express
@@ -102,8 +105,9 @@ export default class User extends Router {
     /**
      * Get own user information
      *
+     *      /me
+     *
      * @method getMe
-     * @private
      * @param req {Object} Request provided by express
      * @param res {Object} Response provided by express
      */
@@ -129,8 +133,9 @@ export default class User extends Router {
     /**
      * Modify user route
      *
+     *      /modify/:userID
+     *
      * @method update
-     * @private
      * @param req {Object} Request provided by express
      * @param req.params.userID {String} id of the user which should be modified
      * @param res {Object} Response provided by express
@@ -147,8 +152,9 @@ export default class User extends Router {
     /**
      * Registration route
      *
+     *      /register
+     *
      * @method register
-     * @private
      * @param req {Object} Request provided by express
      * @param req.body.name {String} user name
      * @param req.body.password {String} user password
@@ -163,8 +169,9 @@ export default class User extends Router {
     /**
      * Authentication route (in other words, login attempt)
      *
+     *      /authenticate
+     *
      * @method authenticate
-     * @private
      * @param req {Object} Request provided by express
      * @param req.body.name {String} user name
      * @param req.body.password {String} user password

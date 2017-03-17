@@ -20,6 +20,7 @@ import Mongoose from '../helper/mongoose';
  * System storage model
  *
  * @class SystemSchema
+ * @extends Mongoose.Schema
  */
 export class SystemSchema extends Mongoose.Schema {
     constructor() {

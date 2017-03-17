@@ -27,6 +27,7 @@ import _ from 'lodash'
  * GitHub issue: https://github.com/geforcefan/keystone/issues/2
  *
  * @class UserProfileSchema
+ * @extends Mongoose.Schema
  */
 export default class UserProfileSchema extends Mongoose.Schema {
     constructor() {
@@ -88,7 +89,7 @@ export default class UserProfileSchema extends Mongoose.Schema {
              *
              * @attribute socialLinks
              * @optional
-             * @type [SocialLinksModel]
+             * @type [server.models.SocialLinksSchema]
              * @default []
              */
             socialLinks: {
