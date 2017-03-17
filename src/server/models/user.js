@@ -19,9 +19,9 @@ import bcrypt from 'bcrypt';
 
 import UserGroupModel from './userGroup'
 import allPermissions from './../helper/permissions';
-import { ErrorCodes, errorResponse } from './../helper/errorResponse'
 
 import _ from 'lodash'
+import UserProfileSchema from './userProfile'
 
 /**
  * User model
@@ -30,7 +30,7 @@ import _ from 'lodash'
  *
  * @class UserSchema
  */
-class UserSchema extends Mongoose.Schema {
+export class UserSchema extends Mongoose.Schema {
     constructor() {
         super({
             /**
@@ -87,6 +87,7 @@ class UserSchema extends Mongoose.Schema {
              * Creation date of the user
              *
              * @attribute creationDate
+             * @type Date
              * @required
              * @default Date.now
              */
@@ -100,6 +101,7 @@ class UserSchema extends Mongoose.Schema {
              * User active. After registration, user has to be activated
              *
              * @attribute active
+             * @type Boolean
              * @default false
              */
             active: {
@@ -111,11 +113,24 @@ class UserSchema extends Mongoose.Schema {
              * User blocked. This will block users account
              *
              * @attribute blocked
+             * @type Boolean
              * @default false
              */
             blocked: {
                 type: Boolean,
                 default: false
+            },
+
+            /**
+             * User profile
+             *
+             * @attribute profile
+             * @type UserProfileSchema
+             * @default UserProfileSchema
+             */
+            profile: {
+                type: new UserProfileSchema(),
+                default: new UserProfileSchema()
             }
         });
 
@@ -128,6 +143,7 @@ class UserSchema extends Mongoose.Schema {
         this.methods.isAllowed = this.isAllowed;
         this.methods.isAuth = this.isAuth;
         this.methods.isMe = this.isMe;
+
         this.methods.getGroup = this.getGroup;
         this.methods.getPermissions = this.getPermissions;
 
@@ -148,10 +164,10 @@ class UserSchema extends Mongoose.Schema {
      */
     generatePasswordHash(password, resolve, reject) {
         bcrypt.genSalt(10, (err, salt) => {
-            if(err)
+            if (err)
                 return reject(err);
             bcrypt.hash(password, salt, (err, hash) => {
-                if(err)
+                if (err)
                     return reject(err);
 
                 resolve(hash);
@@ -227,20 +243,20 @@ class UserSchema extends Mongoose.Schema {
      */
     cacheGroupAndPermissions(next, abort) {
         new Promise((resolve) => resolve())
-            // get the group of the user
+        // get the group of the user
             .then(result => new Promise(resolve => UserGroupModel.findById(this.groupID, (err, group) => resolve(group))))
             .then(group => new Promise(resolve => {
-                if(typeof this.groupID === "undefined" || !this.groupID)
-                    // fallback to guest when no groupID was provided
-                    return UserGroupModel.findOne({ name: "guest" }, (err, group) => resolve(group));
-                else if(!group)
-                    // fallback to user when group is just not found but provided
-                    return UserGroupModel.findOne({ name: "user" }, (err, group) => resolve(group));
-                    // group found, just take that
+                if (typeof this.groupID === "undefined" || !this.groupID)
+                // fallback to guest when no groupID was provided
+                    return UserGroupModel.findOne({name: "guest"}, (err, group) => resolve(group));
+                else if (!group)
+                // fallback to user when group is just not found but provided
+                    return UserGroupModel.findOne({name: "user"}, (err, group) => resolve(group));
+                // group found, just take that
                 else resolve(group);
             }))
             .then(group => {
-                if(!group)
+                if (!group)
                     return new Promise((resolve, reject) => reject(true));
 
                 // assign group to the user model (makes life easy)
@@ -248,7 +264,7 @@ class UserSchema extends Mongoose.Schema {
 
                 // if the group has all permissions, we can grab all
                 // permissions from the definitions (definitions/permissions.js)
-                if(group.permissions.hasAllPermissions) {
+                if (group.permissions.hasAllPermissions) {
                     this.permissions = allPermissions;
 
                     return new Promise((resolve, reject) => reject(false));
@@ -271,7 +287,7 @@ class UserSchema extends Mongoose.Schema {
                 return next();
             })
             .catch(hasError => {
-                if(hasError) {
+                if (hasError) {
                     abort("Something is completely wrong. No group is found. " +
                         "Maybe there is an inconsistency in the Database, because none of the " +
                         "fallback groups are found (guest, user).");
@@ -288,7 +304,7 @@ class UserSchema extends Mongoose.Schema {
      * @return {Boolean}
      */
     isAllowed(permission) {
-       return _.includes(this.permissions, permission);
+        return _.includes(this.permissions, permission);
     }
 
     /**

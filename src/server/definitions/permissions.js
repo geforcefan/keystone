@@ -40,6 +40,8 @@ export default {
             own: ['account'],
             other: ['account']
         },
-        create: ['account']
+        create: ['account'],
+        follow: ['account'],
+        profile: ['information']
     }
 };

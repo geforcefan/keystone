@@ -23,6 +23,8 @@ import ConfigServer from './../../../config/server';
 import UserModel from '../models/user'
 import UserGroupModel from '../models/userGroup'
 
+import _ from 'lodash'
+
 /**
  * User business logic
  *
@@ -30,6 +32,114 @@ import UserGroupModel from '../models/userGroup'
  * @extends server.helper.Service
  */
 export default class User extends Service {
+    /**
+     * Get public profile of any user
+     *
+     * @method getProfile
+     * @async
+     * @param userID {String} profile owner
+     * @param callback {Function} (err, result)
+     * @returns {Promise}
+     */
+    getProfile(userID, callback) {
+        return new Promise(resolve => resolve())
+             // check permission
+            .then(() => new Promise((resolve, reject) => {
+                if(!this.getUser().isAllowed("user.profile.information"))
+                    reject([ErrorCodes.operationNotAllowed, "user.profile.information"]);
+
+                return resolve();
+            }))
+
+            // get user
+            .then(() => new Promise((resolve, reject) =>
+                UserModel.findById(userID, (err, user) => err ? reject([err]) : resolve(user))))
+
+            // get number of followers and followings
+            .then((user) => Promise.all([
+                new Promise((resolve, reject) =>
+                    UserModel.count({
+                        _id: { $in: user.profile.followingUsers },
+                        active: true,
+                        blocked: false
+                    }, (err, following) => err ? reject([err]) : resolve({ following }))),
+                new Promise((resolve, reject) =>
+                    UserModel.count({
+                        "profile.followingUsers": userID,
+                        active: true,
+                        blocked: false
+                    }, (err, followed) => err ? reject([err]) : resolve({ user, followed })))
+            ]))
+
+            // prepare profile data
+            .then(result => new Promise(resolve => {
+                result = result.reduce((acc, res) => Object.assign(acc, res), {});
+
+                let profileData = {
+                    name: result.user.name,
+                    displayName: result.user.profile.displayName,
+                    birthday: result.user.profile.birthday,
+                    description: result.user.profile.description,
+                    location: result.user.profile.location,
+                    socialLinks: result.user.profile.socialLinks,
+                    playedGames: result.user.profile.playedGames,
+                    following: result.following,
+                    followed: result.followed
+                };
+
+                resolve(profileData);
+            }))
+
+            // success or failure
+            .then(profileData => callback(null, profileData ))
+            .catch(args => callback(args, null))
+    }
+
+    /**
+     * User following or unfollowing logic
+     *
+     * @method followOrUnfollow
+     * @async
+     * @param userID {String} user id to follow / unfollow
+     * @param unfollow {Boolean} follow or unfollow user
+     * @param callback {Function} (err, success)
+     *
+     * @returns {Promise}
+     */
+    followOrUnfollow(userID, unfollow, callback) {
+        return new Promise(resolve => resolve())
+            // check permission
+            .then(() => new Promise((resolve, reject) => {
+                if(!this.getUser().isAllowed("user.follow.account"))
+                    reject([ErrorCodes.operationNotAllowed, "user.follow.account"]);
+
+                return resolve();
+            }))
+
+            // get requestee user
+            .then(() => new Promise((resolve, reject) =>
+                UserModel.findById(this.getUser().id, (err, user) => err ? reject([err]) : resolve(user))))
+
+            // follow or unfollow userID
+            .then(user => new Promise((resolve, reject) => {
+                if(unfollow)
+                    user.profile.followingUsers = _.filter(user.profile.followingUsers, followingUserID => followingUserID !== userID);
+                else if(!user.profile.followingUsers.includes(userID))
+                    user.profile.followingUsers.push(userID);
+
+                user.set({
+                    profile: {
+                        followingUsers: user.profile.followingUsers
+                    }
+                });
+                user.save((err, user) => err ? reject([err]) : resolve(user));
+            }))
+
+            // success or failure
+            .then(user => callback(null, { followingUsers: user.profile.followingUsers }))
+            .catch(args => callback(args, null))
+    }
+
     /**
      * Authentication logic
      *
@@ -109,7 +219,7 @@ export default class User extends Service {
      * @param modificationData.email {String} optional, email
      * @param modificationData.password {String} optional, password
      * @param modificationData.groupID {String} optional, groupID
-     * @param modificationData.profile {} optional, profile
+     * @param modificationData.profile {UserProfileSchema} optional, profile
      *
      * @param callback {Function} (err, success)
      * @returns {Promise}
@@ -163,18 +273,21 @@ export default class User extends Service {
                 else if(result.userChanges.groupID && result.targetGroup.level <= this.getUser().getGroup().level)
                     reject([ErrorCodes.userModifyCantAssignGroupWithLessEqualLevelThanMe]);
 
-                else resolve(result.userChanges);
+                else resolve(result);
             }))
 
             // update the user record
-            .then(userChanges => new Promise((resolve, reject) => UserModel.findByIdAndUpdate(userID, userChanges, (err, user) => {
-                if(err)
-                    return reject([ErrorCodes.registrationUsernameOrEmailExists]);
-                if(!user)
-                    return reject([ErrorCodes.userNotFound, userID]);
-                else
-                    return resolve(user);
-            })))
+            .then(result => new Promise((resolve, reject) => {
+                result.targetUser.set(result.userChanges);
+                result.targetUser.save((err, user) => {
+                    if (err)
+                        return reject([err, ErrorCodes.registrationUsernameOrEmailExists]);
+                    if (!user)
+                        return reject([ErrorCodes.userNotFound, userID]);
+                    else
+                        return resolve(user);
+                });
+            }))
 
             // success or failure
             .then(user => callback(null, {userID: userID}))

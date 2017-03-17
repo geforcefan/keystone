@@ -37,6 +37,8 @@ export default [
     'authenticationWrongPassword',
     'authenticationUserBlocked',
     'authenticationUserInactive',
+    'mongooseValidationErrorRequired',
+    'mongooseValidationErrorEnum',
     'registrationFillAllFields',
     'registrationUsernameOrEmailExists',
     'userGroupNotFound',

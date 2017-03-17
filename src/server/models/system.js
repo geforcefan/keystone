@@ -21,7 +21,7 @@ import Mongoose from '../helper/mongoose';
  *
  * @class SystemSchema
  */
-class SystemSchema extends Mongoose.Schema {
+export class SystemSchema extends Mongoose.Schema {
     constructor() {
         super({
             /**

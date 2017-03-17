@@ -14,17 +14,10 @@
  *
  */
 
-import jwt from 'jwt-simple';
-import ConfigServer from './../../../config/server';
-
-import UserModel from '../models/user'
-import UserGroupModel from '../models/userGroup'
-
-import { ErrorCodes, errorResponse } from '../helper/errorResponse'
+import { errorResponse } from '../helper/errorResponse'
 import { successResponse } from '../helper/successResponse'
 
 import { Router, RouteMethods } from '../helper/router';
-import UserService from '../services/user'
 
 import _ from 'lodash'
 
@@ -40,35 +33,109 @@ export default class User extends Router {
     constructor() {
         super();
 
-        this.addRoute('/authenticate', this.postAuthenticate.bind(this), RouteMethods.post);
-        this.addRoute('/register', this.postRegister.bind(this), RouteMethods.post);
-        this.addRoute('/modify/:userID', this.postModify.bind(this), RouteMethods.post);
+        this.addRoute('/authenticate', this.authenticate.bind(this), RouteMethods.post);
+        this.addRoute('/register', this.register.bind(this), RouteMethods.post);
+        this.addRoute('/modify/:userID', this.modify.bind(this), RouteMethods.post);
+
         this.addRoute('/me', this.getMe.bind(this), RouteMethods.get);
+        this.addRoute('/profile/:userID', this.getProfile.bind(this), RouteMethods.get);
+
+        this.addRoute('/follow/:userID', this.follow.bind(this), RouteMethods.get);
+        this.addRoute('/unfollow/:userID', this.unfollow.bind(this), RouteMethods.get);
+    }
+
+    /**
+     * Get user profile
+     *
+     * @method getProfile
+     * @private
+     * @param req {Object} Request provided by express
+     * @param req.params.userID {String} user id
+     * @param res {Object} Response provided by express
+     */
+    getProfile(req, res) {
+        this.getUserService().getProfile(req.params.userID, (err, result) => {
+            if(err)
+                res.send(errorResponse.apply(this, err));
+            else
+                res.send(successResponse(result));
+        });
+    }
+
+    /**
+     * Follow a user
+     *
+     * @method follow
+     * @private
+     * @param req {Object} Request provided by express
+     * @param req.params.userID {String} user id to follow
+     * @param res {Object} Response provided by express
+     */
+    follow(req, res) {
+        this.getUserService().followOrUnfollow(req.params.userID, false, (err, result) => {
+            if(err)
+                res.send(errorResponse.apply(this, err));
+            else
+                res.send(successResponse(result));
+        });
+    }
+
+    /**
+     * Unfollow a user
+     *
+     * @method unfollow
+     * @private
+     * @param req {Object} Request provided by express
+     * @param req.params.userID {String} user id to unfollow
+     * @param res {Object} Response provided by express
+     *
+     */
+    unfollow(req, res) {
+        this.getUserService().followOrUnfollow(req.params.userID, true, (err, result) => {
+            if(err)
+                res.send(errorResponse.apply(this, err));
+            else
+                res.send(successResponse(result));
+        });
     }
 
     /**
      * Get own user information
      *
-     * @method isAuthenticated
+     * @method getMe
+     * @private
      * @param req {Object} Request provided by express
      * @param res {Object} Response provided by express
      */
     getMe(req, res) {
-        res.send(successResponse({
-            isAuth: req.user.isAuth(),
-            user: _.pick(req.user.toObject(), ['name', 'email']),
-            permissions: req.user.getPermissions()
-        }));
+        Promise.all([
+            new Promise(resolve => resolve({
+                isAuth: req.user.isAuth()
+            })),
+            new Promise(resolve => resolve({
+                user: _.pick(req.user.toObject(), ['name', 'email'])
+            })),
+            new Promise(resolve => resolve({
+                permissions: req.user.getPermissions()
+            })),
+            new Promise(resolve => this.getUserService().getProfile(req.user.id, (err, profile) => resolve({
+                profile
+            })))
+        ]).then(result =>
+            res.send(successResponse(result.reduce((acc, res) => Object.assign(acc, res))))
+        );
     }
 
     /**
      * Modify user route
      *
-     * @method postUpdate
+     * @method update
+     * @private
      * @param req {Object} Request provided by express
+     * @param req.params.userID {String} id of the user which should be modified
      * @param res {Object} Response provided by express
      */
-    postModify(req, res) {
+    modify(req, res) {
         this.getUserService().modify(req.params.userID, req.body, (err, result) => {
             if(err)
                 res.send(errorResponse.apply(this, err));
@@ -80,11 +147,15 @@ export default class User extends Router {
     /**
      * Registration route
      *
-     * @method postRegister
+     * @method register
+     * @private
      * @param req {Object} Request provided by express
+     * @param req.body.name {String} user name
+     * @param req.body.password {String} user password
+     * @param req.body.email {String} email address
      * @param res {Object} Response provided by express
      */
-    postRegister(req, res) {
+    register(req, res) {
         this.getUserService().register(req.body, (err, result) =>
             err ? res.send(errorResponse.apply(this, err)) : res.send(successResponse(result)));
     }
@@ -92,11 +163,14 @@ export default class User extends Router {
     /**
      * Authentication route (in other words, login attempt)
      *
-     * @method postAuthenticate
+     * @method authenticate
+     * @private
      * @param req {Object} Request provided by express
+     * @param req.body.name {String} user name
+     * @param req.body.password {String} user password
      * @param res {Object} Response provided by express
      */
-    postAuthenticate(req, res) {
+    authenticate(req, res) {
         this.getUserService().authenticate(req.body, (err, result) =>
             err ? res.send(errorResponse.apply(this, err)) : res.send(successResponse(result)));
     }

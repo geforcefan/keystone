@@ -21,7 +21,7 @@ import Mongoose from '../helper/mongoose';
  *
  * @class UserGroupSchema
  */
-class UserGroupSchema extends Mongoose.Schema {
+export class UserGroupSchema extends Mongoose.Schema {
     constructor() {
         super({
             /**

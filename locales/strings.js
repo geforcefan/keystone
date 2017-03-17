@@ -34,7 +34,9 @@ export default {
             userGroupNotFound: "The user group '{0}' not found",
             userModifyCantAssignGroupWithLessEqualLevelThanMe: "You can´t assign a group with a lower or equal level than your",
             userModifyCantModifyUserWithLessEqualLevelThanMe: "You can´t modify a user with a lower or equal group level than your",
-            userNotFound: "The user '{0}' not found"
+            userNotFound: "The user '{0}' not found",
+            mongooseValidationErrorRequired: "Field `{0}` is required",
+            mongooseValidationErrorEnum: "Field `{0}` should only contain [{1}]"
         },
         permissions: {
         }
