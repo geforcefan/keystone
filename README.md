@@ -100,9 +100,6 @@ Please visit the [wiki](https://github.com/geforcefan/keystone/wiki) to get deta
 
 # License information 
 
-keystone
-Copyright (C) 2017, Ercan Akyürek <ercan.akyuerek@gmail.com>
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
