@@ -6,13 +6,13 @@ Project Keystone is an open source portal for roller coaster enthusiasts with fo
 
 ## What you need
 
-- You need `node.js` installed on your development environment. For more information about how to setup up `node.js` on your machine read [this article](https://nodejs.org/en/download/package-manager/).
+- You need `nodejs` installed on your development environment. For more information about how to setup up `nodejs` on your machine read [this article](https://nodejs.org/en/download/package-manager/).
 
-- Functioning MongoDB on your development environment. [This article](https://docs.mongodb.com/manual/installation/) will help you getting MongoDB installed on your machine.
+- Functioning `MongoDB` on your development environment. [This article](https://docs.mongodb.com/manual/installation/) will help you getting `MongoDB` installed on your machine.
 
 - Essentiall knowledge in software patterns, especially when it comes to abstracting components, pages, services and controller. We are working on a wiki to help getting started with the essential software pattern focused on the used patterns in keystone.
 
-- Some basic knowledge in node.js because if you know the software patterns, there is nothing special about node.js. Even if you developed in PHP and used well known frameworks for years and years, you will get used to the coding style in JavaScript. Its important that you know the common patterns.
+- Some basic knowledge in `nodejs` because if you know the software patterns, there is nothing special about `nodejs`. Even if you developed in `PHP` and used well known frameworks for years and years, you will get used to the coding style in JavaScript. Its important that you know the common patterns.
 
 ## Cloning repository and installing dependencies
 
@@ -32,7 +32,7 @@ which is installing all dependencies of this project
 
 ## Configuring keystone
 
-During the development you will never have an access to the database of keystone directly, so you always start with a fresh instance of keystone. If you installed MongoDB on your local machine without any changes in its configuration, there is no need for adjustments in the configuration file (`config/server.js`).
+During the development you will never have an access to the database of keystone directly, so you always start with a fresh instance of keystone. If you installed `MongoDB` on your local machine without any changes in its configuration, there is no need for adjustments in the configuration file (`config/server.js`).
 
 You can also configure the HTTP port when you want another listening port. Default port is 4000.
 
