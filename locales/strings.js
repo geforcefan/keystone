@@ -26,7 +26,6 @@ export default {
             authenticationUserNotFound: "User not found",
             authenticationWrongPassword: "Password is invalid",
             authenticationUserInactive: "User is inactive",
-            authenticationUserBlocked: "User is blocked",
             registrationFillAllFields: 'Please enter values on all fields',
             registrationUsernameOrEmailExists: 'Username or eMail address exists',
             internalError: "Internal Server Error",

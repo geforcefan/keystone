@@ -115,7 +115,6 @@ export default class UserProfile extends Service {
                     let profileData = {
                         id: user.id,
                         name: user.name,
-                        blocked: user.blocked,
                         isMe: user.id == this.getUser().id,
                         displayName: user.profile.displayName,
                         birthday: user.profile.birthday,

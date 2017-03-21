@@ -35,7 +35,6 @@
 export default [
     'authenticationUserNotFound',
     'authenticationWrongPassword',
-    'authenticationUserBlocked',
     'authenticationUserInactive',
     'mongooseValidationErrorRequired',
     'mongooseValidationErrorEnum',

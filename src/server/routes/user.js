@@ -43,9 +43,6 @@ export default class User extends Router {
 
         this.addRoute('/subscribe/:userID', this.subscribe.bind(this), RouteMethods.get);
         this.addRoute('/unsubscribe/:userID', this.unsubscribe.bind(this), RouteMethods.get);
-
-        this.addRoute('/block/:userID', this.block.bind(this), RouteMethods.get);
-        this.addRoute('/unblock/:userID', this.unblock.bind(this), RouteMethods.get);
     }
 
     /**
@@ -141,47 +138,6 @@ export default class User extends Router {
      */
     getSubscriptions(req, res) {
         this.getUserProfileService().getSubscriptions(req.params.userID, (err, result) => {
-            if(err)
-                res.send(errorResponse.apply(this, _.castArray(err)));
-            else
-                res.send(successResponse(result));
-        });
-    }
-
-    /**
-     * Block a user
-     *
-     *      /block/:userID
-     *
-     * @method block
-     *
-     * @param req {Object} Request provided by express
-     * @param req.params.userID {String} user id to block
-     * @param res {Object} Response provided by express
-     */
-    block(req, res) {
-        this.getUserService().setBlockStateOfUser(req.params.userID, true, (err, result) => {
-            if(err)
-                res.send(errorResponse.apply(this, _.castArray(err)));
-            else
-                res.send(successResponse(result));
-        });
-    }
-
-    /**
-     * Unblock a user
-     *
-     *      /unblock/:userID
-     *
-     * @method unblock
-     *
-     * @param req {Object} Request provided by express
-     * @param req.params.userID {String} user id to unblock
-     * @param res {Object} Response provided by express
-     *
-     */
-    unblock(req, res) {
-        this.getUserService().setBlockStateOfUser(req.params.userID, false, (err, result) => {
             if(err)
                 res.send(errorResponse.apply(this, _.castArray(err)));
             else

@@ -111,18 +111,6 @@ export class UserSchema extends Mongoose.Schema {
             },
 
             /**
-             * User blocked. This will block users account
-             *
-             * @attribute blocked
-             * @type Boolean
-             * @default false
-             */
-            blocked: {
-                type: Boolean,
-                default: false
-            },
-
-            /**
              * Users last known remote addresses
              *
              * @attribute lastKnownRemoteAddresses

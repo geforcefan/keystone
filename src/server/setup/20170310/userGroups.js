@@ -28,6 +28,11 @@ export default function(success, error) {
         level: 1000
     });
 
+    let blockedGroup = new UserGroupModel({
+        name: "blocked",
+        level: 950
+    });
+
     let userGroup = new UserGroupModel({
         name: "user",
         level: 700
@@ -48,6 +53,7 @@ export default function(success, error) {
     Promise.all([
         new Promise(resolve => guestGroup.save(resolve)),
         new Promise(resolve => userGroup.save(resolve)),
+        new Promise(resolve => blockedGroup.save(resolve)),
         new Promise(resolve => adminGroup.save(resolve))
     ]).then(result => {
         var errors = result.map(err => { return err ? err.message : null })

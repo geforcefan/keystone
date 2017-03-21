@@ -40,7 +40,6 @@ export default function() {
         UserModel.findOne({
             id: jwtPayload.id,
             password: jwtPayload.password,
-            blocked: false,
             active: true
         }, (err, user) => {
             if (err) {

@@ -63,65 +63,6 @@ export default class User extends Service {
     };
 
     /**
-     * Set block state of a user. Use this to block/unblock a user.
-     *
-     * @method setBlockStateOfUser
-     * @async
-     *
-     * @param userID {String} user id to block
-     * @param block {Boolean} block/unblock
-     * @param callback {Function) (err, success)
-     *
-     * @returns {Promise}
-     */
-    setBlockStateOfUser(userID, block, callback) {
-        return new Promise(resolve => resolve())
-            // check permission
-            .then(() => new Promise((resolve, reject) => {
-                if(!this.getUser().isAllowed("user.block.account"))
-                    reject([ErrorCodes.operationNotAllowed, "user.block.account"]);
-
-                return resolve();
-            }))
-
-            // get user
-            .then(() => new Promise((resolve, reject) =>
-                this.getActiveUserByID(userID, (err, user) => err ? reject(err) : resolve(user))))
-
-            // cache user group
-            .then(user => new Promise((resolve, reject) =>
-                user.cacheGroupAndPermissions(success => resolve(user), err => reject([err]))))
-
-            // additional permission checks
-            .then((user) => new Promise((resolve, reject) => {
-                // user can´t block/unblock it self
-                if(this.getUser().isMe(user.id))
-                    return reject([block ? ErrorCodes.userCantBlockItSelf : ErrorCodes.userCantUnblockItSelf]);
-
-                // user can´t block/unblock other users with less or equal level then it´s own level
-                if(user.getGroup().level <= this.getUser().getGroup().level)
-                    return reject([ErrorCodes.userModifyCantModifyUserWithLessEqualLevelThanMe]);
-
-                return resolve(user);
-            }))
-
-            // update db entry
-            .then(user => new Promise((resolve, reject) => {
-                user.set({
-                    blocked: block
-                });
-                user.save((err, user) => err ? reject([err]) : resolve(user));
-            }))
-
-            // success or failure
-            .then(user => callback(null, {
-                userID: user.id,
-                blocked: user.blocked
-            }))
-            .catch(args => callback(args, null));
-    }
-
-    /**
      * Authentication logic
      *
      * @method authenticate
@@ -138,8 +79,7 @@ export default class User extends Service {
         return new Promise(resolve => resolve())
             .then(result => new Promise((resolve, reject) => UserModel.findOne({
                 name: loginData.name,
-                active: true,
-                blocked: false
+                active: true
 
             }, (err, user) => (err || !user ? reject([ErrorCodes.authenticationUserNotFound]) : resolve(user)))))
             .then(user => new Promise((resolve, reject) => user.comparePassword(loginData.password, (err, isMatch) => {
@@ -149,8 +89,6 @@ export default class User extends Service {
                 return reject([ErrorCodes.authenticationWrongPassword]);
             })))
             .then(user => new Promise((resolve, reject) => {
-                if(user.blocked)
-                    return reject([ErrorCodes.authenticationUserBlocked]);
                 if(!user.active)
                     return reject([ErrorCodes.authenticationUserInactive]);
 
@@ -280,5 +218,19 @@ export default class User extends Service {
             // success or failure
             .then(user => callback(null, {userID: userID}))
             .catch(args => callback(args, null));
+    }
+
+    generateAndSendActivationCode(email, callback) {
+        return new Promise(resolve => resolve())
+            // get user, but don´t return any errors, when the user is not found for security reasons
+            .then(() => new Promise((resolve, reject) =>
+                UserModel.findOne({ email }, (err, user) => resolve(user))))
+
+            // generate activation code
+            .then(user => new Promise((resolve, reject) => {
+
+            }))
+
+            .then(user => callback(null, "OK"))
     }
 }
