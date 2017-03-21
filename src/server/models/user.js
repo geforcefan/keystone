@@ -77,7 +77,7 @@ export class UserSchema extends Mongoose.Schema {
              *
              * @attribute groupID
              * @required
-             * @type String
+             * @type ObjectId
              */
             groupID: {
                 type: String,
@@ -123,6 +123,18 @@ export class UserSchema extends Mongoose.Schema {
             },
 
             /**
+             * Users last known remote addresses
+             *
+             * @attribute lastKnownRemoteAddresses
+             * @type [String]
+             * @default []
+             */
+            lastKnownRemoteAddresses: {
+                type: [String],
+                default: []
+            },
+
+            /**
              * User profile
              *
              * @attribute profile
@@ -147,6 +159,8 @@ export class UserSchema extends Mongoose.Schema {
 
         this.methods.getGroup = this.getGroup;
         this.methods.getPermissions = this.getPermissions;
+
+        this.methods.addLastKnownRemoteAddress = this.addLastKnownRemoteAddress;
 
         this.statics.generatePasswordHash = this.generatePasswordHash;
     };
@@ -174,6 +188,22 @@ export class UserSchema extends Mongoose.Schema {
                 resolve(hash);
             })
         });
+    }
+
+    /**
+     * Adds a last known remote address. Always use this method,
+     * since it normalizes the entries
+     *
+     * @method addLastKnownRemoteAddress
+     * @param remoteAddress {String} remote address
+     * @return {void}
+     */
+    addLastKnownRemoteAddress(remoteAddress) {
+        this.lastKnownRemoteAddresses.unshift(remoteAddress);
+        this.lastKnownRemoteAddresses = _.uniq(this.lastKnownRemoteAddresses);
+
+        this.lastKnownRemoteAddresses =
+            this.lastKnownRemoteAddresses.slice(0, UserSchema.amountOfLastKnownRemoteAddresses);
     }
 
     /**
@@ -384,5 +414,15 @@ UserSchema.auth = false;
  * @type {UserGroupSchema}
  */
 UserSchema.group = null;
+
+/**
+ * Amount of last known remote addresses to be stored
+ *
+ * @property amountOfLastKnownRemoteAddresses
+ * @default 5
+ * @private
+ * @type {Number}
+ */
+UserSchema.amountOfLastKnownRemoteAddresses = 5;
 
 export default Mongoose.model('User', new UserSchema());

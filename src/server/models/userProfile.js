@@ -114,44 +114,17 @@ export default class UserProfileSchema extends Mongoose.Schema {
             },
 
             /**
-             * Users following user
+             * User subscriptions.
              *
-             * @attribute followingUsers
+             * @attribute subscribedUsers
              * @optional
-             * @type [String]
+             * @type [ObjectId]
              * @default []
              */
-            followingUsers: {
+            subscribedUsers: {
                 type: [String],
                 default: []
             }
         });
-
-        this.pre('save', this.preSave);
-    }
-
-    /**
-     * Pre save hook, validation of
-     * {{#crossLink "server.models.UserProfileSchema:followingUsers/attribute"}}followingUsers{{/crossLink}}
-     *
-     * @method preSave
-     * @private
-     * @async
-     * @param next {Function} next callback
-     */
-    preSave(next) {
-        // check the "following" user ids for their existence
-        if(this.isModified("followingUsers") || this.isNew) {
-            this.followingUsers = _.filter(this.followingUsers, v => Mongoose.Types.ObjectId.isValid(v));
-
-            UserModel.find({
-                _id: { $in: this.followingUsers }
-            }, (err, users) => {
-                this.followingUsers = _.map(users, user => user._id);
-
-                next();
-            });
-        } else
-            next();
     }
 }

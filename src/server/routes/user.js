@@ -35,13 +35,17 @@ export default class User extends Router {
 
         this.addRoute('/authenticate', this.authenticate.bind(this), RouteMethods.post);
         this.addRoute('/register', this.register.bind(this), RouteMethods.post);
+
         this.addRoute('/modify/:userID', this.modify.bind(this), RouteMethods.post);
 
-        this.addRoute('/me', this.getMe.bind(this), RouteMethods.get);
         this.addRoute('/profile/:userID', this.getProfile.bind(this), RouteMethods.get);
+        this.addRoute('/subscriptions/:userID', this.getSubscriptions.bind(this), RouteMethods.get);
 
-        this.addRoute('/follow/:userID', this.follow.bind(this), RouteMethods.get);
-        this.addRoute('/unfollow/:userID', this.unfollow.bind(this), RouteMethods.get);
+        this.addRoute('/subscribe/:userID', this.subscribe.bind(this), RouteMethods.get);
+        this.addRoute('/unsubscribe/:userID', this.unsubscribe.bind(this), RouteMethods.get);
+
+        this.addRoute('/block/:userID', this.block.bind(this), RouteMethods.get);
+        this.addRoute('/unblock/:userID', this.unblock.bind(this), RouteMethods.get);
     }
 
     /**
@@ -50,84 +54,139 @@ export default class User extends Router {
      *      /profile/:userID
      *
      * @method getProfile
+     *
      * @param req {Object} Request provided by express
      * @param req.params.userID {String} user id
      * @param res {Object} Response provided by express
      */
     getProfile(req, res) {
-        this.getUserService().getProfile(req.params.userID, (err, result) => {
+        this.getUserProfileService().getProfile(req.params.userID, (err, result) => {
             if(err)
-                res.send(errorResponse.apply(this, err));
+                res.send(errorResponse.apply(this, _.castArray(err)));
+            else {
+                let profileData = _.first(result);
+                res.send(successResponse(profileData ? profileData : null));
+            }
+        });
+    }
+
+    /**
+     * Get subscriptions of a user
+     *
+     * @method getSubscriptions
+     *
+     * @param req {Object} Request provided by express
+     * @param req.params.userID {String} user id
+     * @param res {Object} Response provided by express
+     */
+    getSubscriptions(req, res) {
+        this.getUserProfileService().getSubscriptions(req.params.userID, (err, result) => {
+            if(err)
+                res.send(errorResponse.apply(this, _.castArray(err)));
             else
                 res.send(successResponse(result));
         });
     }
 
     /**
-     * Follow a user
+     * Subscribe a user
      *
-     *      /follow/:userID
+     *      /subscribe/:userID
      *
-     * @method follow
+     * @method subscribe
+     *
      * @param req {Object} Request provided by express
-     * @param req.params.userID {String} user id to follow
+     * @param req.params.userID {String} user id to subscribe
      * @param res {Object} Response provided by express
      */
-    follow(req, res) {
-        this.getUserService().followOrUnfollow(req.params.userID, false, (err, result) => {
+    subscribe(req, res) {
+        this.getUserProfileService().subscribeOrUnsubscribe(req.params.userID, false, (err, result) => {
             if(err)
-                res.send(errorResponse.apply(this, err));
+                res.send(errorResponse.apply(this, _.castArray(err)));
             else
                 res.send(successResponse(result));
         });
     }
 
     /**
-     * Unfollow a user
+     * Unsubscribe a user
      *
-     *      /unfollow/:userID
+     *      /unsubscribe/:userID
      *
-     * @method unfollow
+     * @method unsubscribe
+     *
      * @param req {Object} Request provided by express
-     * @param req.params.userID {String} user id to unfollow
+     * @param req.params.userID {String} user id to unsubscribe
      * @param res {Object} Response provided by express
      *
      */
-    unfollow(req, res) {
-        this.getUserService().followOrUnfollow(req.params.userID, true, (err, result) => {
+    unsubscribe(req, res) {
+        this.getUserProfileService().subscribeOrUnsubscribe(req.params.userID, true, (err, result) => {
             if(err)
-                res.send(errorResponse.apply(this, err));
+                res.send(errorResponse.apply(this, _.castArray(err)));
+            else
+                res.send(successResponse(result));
+        });
+    }
+
+
+    /**
+     * Get subscriptions of a user
+     *
+     * @method getSubscriptions
+     *
+     * @param req {Object} Request provided by express
+     * @param req.params.userID {String} user id
+     * @param res {Object} Response provided by express
+     */
+    getSubscriptions(req, res) {
+        this.getUserProfileService().getSubscriptions(req.params.userID, (err, result) => {
+            if(err)
+                res.send(errorResponse.apply(this, _.castArray(err)));
             else
                 res.send(successResponse(result));
         });
     }
 
     /**
-     * Get own user information
+     * Block a user
      *
-     *      /me
+     *      /block/:userID
      *
-     * @method getMe
+     * @method block
+     *
      * @param req {Object} Request provided by express
+     * @param req.params.userID {String} user id to block
      * @param res {Object} Response provided by express
      */
-    getMe(req, res) {
-        Promise.all([
-            new Promise(resolve => resolve({
-                isAuth: req.user.isAuth()
-            })),
-            new Promise(resolve => resolve({
-                user: _.pick(req.user.toObject(), ['name', 'email'])
-            })),
-            new Promise(resolve => resolve({
-                permissions: req.user.getPermissions()
-            })),
-            new Promise(resolve => this.getUserService().getProfile(req.user.id, (err, profile) => resolve({
-                profile
-            })))
-        ]).then(result =>
-            res.send(successResponse(result.reduce((acc, res) => Object.assign(acc, res))))
-        );
+    block(req, res) {
+        this.getUserService().setBlockStateOfUser(req.params.userID, true, (err, result) => {
+            if(err)
+                res.send(errorResponse.apply(this, _.castArray(err)));
+            else
+                res.send(successResponse(result));
+        });
+    }
+
+    /**
+     * Unblock a user
+     *
+     *      /unblock/:userID
+     *
+     * @method unblock
+     *
+     * @param req {Object} Request provided by express
+     * @param req.params.userID {String} user id to unblock
+     * @param res {Object} Response provided by express
+     *
+     */
+    unblock(req, res) {
+        this.getUserService().setBlockStateOfUser(req.params.userID, false, (err, result) => {
+            if(err)
+                res.send(errorResponse.apply(this, _.castArray(err)));
+            else
+                res.send(successResponse(result));
+        });
     }
 
     /**
@@ -136,6 +195,7 @@ export default class User extends Router {
      *      /modify/:userID
      *
      * @method update
+     *
      * @param req {Object} Request provided by express
      * @param req.params.userID {String} id of the user which should be modified
      * @param res {Object} Response provided by express
@@ -143,7 +203,7 @@ export default class User extends Router {
     modify(req, res) {
         this.getUserService().modify(req.params.userID, req.body, (err, result) => {
             if(err)
-                res.send(errorResponse.apply(this, err));
+                res.send(errorResponse.apply(this, _.castArray(err)));
             else
                 res.send(successResponse(result));
         });
@@ -155,6 +215,7 @@ export default class User extends Router {
      *      /register
      *
      * @method register
+     *
      * @param req {Object} Request provided by express
      * @param req.body.name {String} user name
      * @param req.body.password {String} user password
@@ -163,7 +224,7 @@ export default class User extends Router {
      */
     register(req, res) {
         this.getUserService().register(req.body, (err, result) =>
-            err ? res.send(errorResponse.apply(this, err)) : res.send(successResponse(result)));
+            err ? res.send(errorResponse.apply(this, _.castArray(err))) : res.send(successResponse(result)));
     }
 
     /**
@@ -172,6 +233,7 @@ export default class User extends Router {
      *      /authenticate
      *
      * @method authenticate
+     *
      * @param req {Object} Request provided by express
      * @param req.body.name {String} user name
      * @param req.body.password {String} user password
@@ -179,6 +241,6 @@ export default class User extends Router {
      */
     authenticate(req, res) {
         this.getUserService().authenticate(req.body, (err, result) =>
-            err ? res.send(errorResponse.apply(this, err)) : res.send(successResponse(result)));
+            err ? res.send(errorResponse.apply(this, _.castArray(err))) : res.send(successResponse(result)));
     }
 }

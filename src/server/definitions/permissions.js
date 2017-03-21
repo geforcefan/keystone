@@ -32,6 +32,7 @@
  */
 export default {
     user: {
+        block: ['account'],
         set: {
             own: ['name', 'password', 'email', 'profile'],
             other: ['name', 'password', 'email', 'groupID', 'profile']
@@ -40,8 +41,10 @@ export default {
             own: ['account'],
             other: ['account']
         },
-        create: ['account'],
-        follow: ['account'],
-        profile: ['information']
+        subscribe: ['account'],
+        profile: ['information', 'extendedInformation'],
+        subscriptions: {
+            own: ['information']
+        }
     }
 };

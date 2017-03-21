@@ -72,6 +72,8 @@ export class Router extends Services {
             requestDomain.req = req;
             requestDomain.res = res;
 
+            console.log(`Requested route: ${req.baseUrl}`);
+            console.log(`Found route instance: ${this.constructor.name}`);
             requestDomain.run(next);
         });
     }

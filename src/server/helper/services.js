@@ -39,11 +39,11 @@ export default class Services {
             Services.servicesCache = fs.readdirSync(servicesPath)
                 .filter(file => fs.statSync(path.join(servicesPath, file)).isFile())
                 .reduce((acc, file) => {
-                    console.log(`Found service: ${file}`);
-
                     let serviceName = file.split(".js")[0];
-                    let methodName = `get${_.capitalize(serviceName)}Service`;
+                    let methodName = `get${_.upperFirst(serviceName)}Service`;
                     let service = require(path.join(servicesPath, file)).default;
+
+                    console.log(`Found service: ${file}, getter: ${methodName}`);
 
                     acc[`${service.name}Services`] = {
                         methodName: methodName,

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/nodemon --watch ./ --delay 250ms --exec 'node_modules/.bin/babel-node --presets react,es2015 --harmony_proxies src/server/server.js'",
     "bundle": "webpack",
-    "docs": "yuidoc src -o docs"
+    "docs": "yuidoc"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,8 @@
     "react-router": "^3.0.2",
     "react-tap-event-plugin": "^2.0.1",
     "validator": "^7.0.0",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+    "yuidoc-lucid-theme": "^0.1.2"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

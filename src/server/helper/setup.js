@@ -42,7 +42,7 @@ function convertDateToDirectoryFormat(date) {
  * @method execSetup
  * @async
  * @private
- * @param system {SystemSchema} Needed for the lastUpdateDate information
+ * @param system {server.models.SystemSchema} Needed for the lastUpdateDate information
  * @param success {Function} success callback
  * @param error {Function} error callback
  */
@@ -85,15 +85,20 @@ function execSetup(system, success, error) {
         .filter(fn => fn)
         .reduce((acc, fn) => {
             return acc.then((result) => new Promise((resolve, reject) => fn(resolve, reject)))
-        }, new Promise(resolve => resolve()))
-        .then(() => {
-            // update the last update date entry in the database
-            SystemModel.findOne({}, (err, system) => {
-                system.lastUpdateDate = new Date();
-                return system.save();
-            });
+        }, new Promise(resolve => resolve(true)))
+        .then(noUpdateFound => {
+            if(noUpdateFound) {
+                console.log(`No updates found`);
+            } else {
+                // update the last update date entry in the database
+                SystemModel.findOne({}, (err, system) => {
+                    system.lastUpdateDate = new Date();
+                    return system.save();
+                });
 
-            console.log(`Installation success at ${new Date()}`);
+                console.log(`Installation success at ${new Date()}`);
+            }
+
             success();
         })
         .catch(err => error("Installation failed"));
@@ -108,7 +113,7 @@ function execSetup(system, success, error) {
  * @param error {Function} error callback
  */
 export default function (success, error) {
-    console.log("checking when the last update accomplished");
+    console.log("Checking when the last update accomplished");
 
     // Load system information, create if no entry exists
     SystemModel.findOne({})

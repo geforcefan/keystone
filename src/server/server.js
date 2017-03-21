@@ -116,7 +116,9 @@ class ServerApplication {
      */
     initRequests() {
         this.app.use("*", (req, res, next) => {
+            console.log("-------------------------------");
             console.log(`Request started`);
+            console.log("Request body: ", req.body);
 
             // Initialize i18n stuff. We need to init this server side because of
             // the server side rendering. We need to keep client and server both synchronous
@@ -139,7 +141,12 @@ class ServerApplication {
                     console.log("Request is with no authentication.")
                 } else {
                     user.setAuth(true);
-                    console.log(`Request is with authentication: ${user.name} (${user.id})`)
+                    console.log(`Request remote address: ${req.connection.remoteAddress}`);
+                    console.log(`Request is with authentication: ${user.name} (${user.id})`);
+
+                    // add the remote address to the requestee user and save it without waiting for it
+                    user.addLastKnownRemoteAddress(req.connection.remoteAddress);
+                    user.save();
                 }
 
                 (new Promise(resolve => resolve()))

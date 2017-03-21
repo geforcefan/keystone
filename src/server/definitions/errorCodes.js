@@ -44,7 +44,12 @@ export default [
     'userGroupNotFound',
     'userModifyCantModifyUserWithLessEqualLevelThanMe',
     'userModifyCantAssignGroupWithLessEqualLevelThanMe',
+    'userCantBlockItSelf',
+    'userCantUnblockItSelf',
+    'userCantSubscribeItSelf',
+    'userCantUnsubscribeItSelf',
     'userNotFound',
     'internalError',
+    'invalidObjectID',
     'operationNotAllowed'
 ];

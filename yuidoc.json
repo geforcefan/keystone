@@ -1,0 +1,15 @@
+{
+  "name": "Keystone Documentation",
+  "description": "Project Keystone is an open source portal for roller coaster enthusiasts with focus on the simulation software NoLimits 2 - Roller Coaster Simulation created by Olé Lange.",
+  "version": "1.0.0",
+  "url": "https://github.com/geforcefan/keystone",
+  "options": {
+    "linkNatives": "true",
+    "paths": [
+      "./src"
+    ],
+    "outdir": "./docs",
+    "themedir" : "node_modules/yuidoc-lucid-theme",
+    "helpers" : ["node_modules/yuidoc-lucid-theme/helpers/helpers.js"]
+  }
+}
