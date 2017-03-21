@@ -97,6 +97,7 @@ Please visit the [wiki](https://github.com/geforcefan/keystone/wiki) to get deta
 # Core team
 
 - Ercan "geforcefan" Akyürek, [GitHub](https://github.com/geforcefan/) | [eMail](mailto:ercan.akyuerek@gmail.com)
+- Andrew "aw555000" Wakeley, [GitHub](https://github.com/aw555000/)
 
 # License information 
 
