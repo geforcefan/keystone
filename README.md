@@ -1,6 +1,6 @@
 # Project Keystone
 
-Project Keystone is an open source portal for roller coaster ententhusiasts with focus on the simulation software [NoLimits 2 - Roller Coaster Simulation](http://www.nolimitscoaster.com/) created by Olé Lange.
+Project Keystone is an open source portal for roller coaster enthusiasts with focus on the simulation software [NoLimits 2 - Roller Coaster Simulation](http://www.nolimitscoaster.com/) created by Olé Lange.
 
 # Getting started (development)
 
