@@ -120,15 +120,6 @@ class ServerApplication {
             console.log(`Request started`);
             console.log("Request body: ", req.body);
 
-            // Initialize i18n stuff. We need to init this server side because of
-            // the server side rendering. We need to keep client and server both synchronous
-            // passing the locale to the index.ejs view (html lang attribute), which is gonna picked from the
-            // client side
-            i18n.detectAndSetLocaleFromAcceptLanguage(req.headers['accept-language']);
-
-            // move on with the request, we injected our stuff an we can move on now
-            next();
-        }, (req, res, next) => {
             auth().authenticate((err, user) => {
                 // we will login, no matter there is an error or not
                 // when the auth is failed, we will login a dummy guest user
@@ -148,6 +139,8 @@ class ServerApplication {
                     user.addLastKnownRemoteAddress(req.connection.remoteAddress);
                     user.save();
                 }
+
+                user.setLocale(i18n.detectLocaleFromRequest(req));
 
                 (new Promise(resolve => resolve()))
                     .then(result => new Promise((resolve, reject) => user.cacheGroupAndPermissions(resolve, reject)))

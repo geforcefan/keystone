@@ -148,9 +148,14 @@ export class UserSchema extends Mongoose.Schema {
         this.methods.getGroup = this.getGroup;
         this.methods.getPermissions = this.getPermissions;
 
+        this.methods.setLocale = this.setLocale;
+        this.methods.getLocale = this.getLocale;
+
         this.methods.addLastKnownRemoteAddress = this.addLastKnownRemoteAddress;
 
         this.statics.generatePasswordHash = this.generatePasswordHash;
+
+        this.locale = UserSchema.locale;
     };
 
     /**
@@ -369,6 +374,14 @@ export class UserSchema extends Mongoose.Schema {
     getPermissions() {
         return this.permissions;
     }
+
+    setLocale(locale) {
+        this.locale = locale;
+    }
+
+    getLocale() {
+        return this.locale;
+    }
 }
 
 /**
@@ -412,5 +425,16 @@ UserSchema.group = null;
  * @type {Number}
  */
 UserSchema.amountOfLastKnownRemoteAddresses = 5;
+
+
+/**
+ * Users current locale
+ *
+ * @property locale
+ * @default en
+ * @private
+ * @type {String}
+ */
+UserSchema.locale = "en";
 
 export default Mongoose.model('User', new UserSchema());

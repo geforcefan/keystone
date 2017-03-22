@@ -1,8 +1,7 @@
 /**
  * i18n.js
  *
- * Helper class for i18n detection. Simultaneously it also holds the locale
- * globally.
+ * Helper class for i18n detection and translation.
  *
  *
  * @namespace shared.helper
@@ -15,11 +14,8 @@
  *
  */
 
-import LocalesData from '../../../locales/strings';
-
+import languages from '../definitions/languages'
 import LanguageParser from 'accept-language-parser';
-
-import _ from 'lodash';
 
 /**
  * i18n helper for translations and locale detection
@@ -27,31 +23,6 @@ import _ from 'lodash';
  * @class i18n
  */
 class i18n {
-    /**
-     * Get the current locale
-     *
-     * @method getActiveLocale
-     * @static
-     * @return {String} active locale
-     */
-    static getActiveLocale() {
-        return i18n.currentLocale;
-    }
-
-    /**
-     * Return locale strings of the active locale
-     *
-     * @getMessagesOfActiveLocale
-     * @static
-     * @return {Object} of locale strings
-     */
-    static getMessagesOfActiveLocale() {
-        if(i18n.cachedActiveMessages === null)
-            i18n.cacheActiveMessages();
-
-        return i18n.cachedActiveMessages;
-    }
-
     /**
      * Flattens messages.
      *
@@ -98,6 +69,36 @@ class i18n {
     }
 
     /**
+     * Import all locale strings and cache them after flatting the strings
+     *
+     * @method readAndCacheLocaleStrings
+     * @static
+     *
+     */
+    static readAndCacheLocaleStrings() {
+        languages.forEach(language => {
+            i18n.cachedLocaleStrings[language] = i18n.flattenMessages(require(`../../../locales/${language}/strings`).default);
+        });
+    }
+
+    /**
+     * Detect locale from server request
+     *
+     * @method detectLocaleFromRequest
+     * @static
+     * @param req {Object} Express request
+     * @return {String} locale
+     */
+    static detectLocaleFromRequest(req) {
+        let pickedLocale = LanguageParser.pick(languages, req.headers['accept-language']);
+
+        if(typeof pickedLocale === "undefined" || pickedLocale === null)
+            pickedLocale = i18n.defaultLocale;
+
+        return pickedLocale;
+    }
+
+    /**
      * Basically just picking the lang attribute from the HTML element and make
      * this global accessible via languageDetector.currentLocale.
      * The business logic of which language should picked SHOULD exclusively
@@ -105,61 +106,30 @@ class i18n {
      * with the right lang attribute, so the client just have to pick the locale which is
      * passed from the server
      *
-     * @method detectAndSetLocaleFromDocument
+     * @method detectAndSetGlobalLocaleFromDocument
      * @static
      * @return {String} detected locale
      */
-    static detectAndSetLocaleFromDocument() {
-        i18n.cachedActiveMessages = null;
-
+    static detectAndSetClientGlobaleFromDocument() {
         let pickedLocale = document.querySelector("html").getAttribute("lang");
 
         if(typeof pickedLocale === "undefined" || pickedLocale === null)
             pickedLocale = i18n.defaultLocale;
 
-        i18n.currentLocale = pickedLocale;
+        i18n.clientLocale = pickedLocale;
 
-        i18n.cacheActiveMessages();
-
-        return i18n.currentLocale;
+        return i18n.clientLocale;
     }
 
     /**
-     * Parsing acceptLanguageString and setting the currentLocale according to the right order
-     * and availability of a language defined in "locales/data.js"
+     * Get active locale depending on client or server request
      *
-     * @method detectAndSetLocaleFromAcceptLanguage
+     * @method getActiveLocale
      * @static
-     * @param acceptLanguageString {string} string of accepted languages according to the w3 specs,
-     * see at: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4
-     *
-     * @return {String} detected locale
+     * @returns {string} locale
      */
-    static detectAndSetLocaleFromAcceptLanguage(acceptLanguageString) {
-        i18n.cachedActiveMessages = null;
-
-        var pickedLocale = LanguageParser.pick(_.map(LocalesData, (val, key) => {
-            return key;
-        }), acceptLanguageString);
-
-        if(pickedLocale === null)
-            pickedLocale = i18n.defaultLocale;
-
-        i18n.currentLocale = pickedLocale;
-
-        i18n.cacheActiveMessages();
-
-        return i18n.currentLocale;
-    }
-
-    /**
-     * Cache active messages. Don´t need to flatten the messages over and over again.
-     *
-     * @static
-     * @method cacheActiveMessages
-     */
-    static cacheActiveMessages() {
-        i18n.cachedActiveMessages = i18n.flattenMessages(LocalesData[i18n.currentLocale]);
+    static getActiveLocale() {
+        return process.domain ? process.domain.req.user.getLocale() : i18n.clientLocale;
     }
 }
 
@@ -173,22 +143,24 @@ class i18n {
 i18n.defaultLocale = "en";
 
 /**
- * Current locale
+ * Client locale
  *
- * @attribute currentLocale
+ * @attribute clientLocale
  * @type String
  * @default en
  */
-i18n.currentLocale = i18n.defaultLocale;
+i18n.clientLocale = "en";
 
 /**
- * All cached translation strings
+ * Cached locale strings
  *
- * @attribute cachedActiveMessages
+ * @attribute cachedLocaleStrings
  * @type Object
- * @default null
+ * @default en
  */
-i18n.cachedActiveMessages = null;
+i18n.cachedLocaleStrings = {};
+
+i18n.readAndCacheLocaleStrings();
 
 export default i18n;
 
@@ -203,14 +175,15 @@ export default i18n;
  * @return {String} Translated string
  */
 export function tr(key) {
+    let locale = i18n.getActiveLocale();
+    var string = i18n.cachedLocaleStrings[locale][key];
 
-    console.log(process.domain);
-
-    var string = i18n.cachedActiveMessages[key];
     if(typeof string !== "undefined") {
         if (arguments.length > 1) for (var i = 1; i < arguments.length; i++) string = string.replace('{' + (i - 1) + '}', arguments[i]);
         return string;
     } else {
         return key;
     }
+
+    return key;
 }

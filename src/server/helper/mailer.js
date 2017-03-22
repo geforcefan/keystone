@@ -21,7 +21,9 @@ import ejs from 'ejs'
 import fs from 'fs'
 import path from 'path'
 
-import { i18n, tr } from '../../shared/helper/i18n'
+//import { i18n, tr } from '../../shared/helper/i18n'
+
+import i18n from '../../shared/helper/i18n'
 
 import { Enum } from 'enumify';
 
@@ -41,15 +43,13 @@ export function sendMail(mailType, variables, recipients) {
     if(!(mailType instanceof MailType))
         throw Error("Argument 'mailType' must be an instance of MailType");
 
-   /* let mailsPath = path.join(ConfigServer.fs.rootDirectory, "locales", "mails", i18n.getActiveLocale());
+    let mailsPath = path.join(ConfigServer.fs.rootDirectory, "locales", i18n.getActiveLocale(), "mails");
 
     let layoutTemplate = fs.readFileSync(path.join(mailsPath, "layout.ejs"), "utf8");
     let contentTemplate = fs.readFileSync(path.join(mailsPath, `${mailType.name}.ejs`), "utf8");
 
     let content = ejs.render(contentTemplate, variables);
     let emailHTML = ejs.render(layoutTemplate, { content });
-*/
-    console.log(emailHTML);
 
-    //html = ejs.render('<%= people.join(", "); %>', {people: people});
+    console.log(emailHTML);
 }

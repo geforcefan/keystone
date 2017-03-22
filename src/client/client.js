@@ -31,7 +31,7 @@ import i18n from '../shared/helper/i18n';
 injectTapEventPlugin();
 
 // Set the locale provided in the HTML attribute "lang"
-i18n.detectAndSetLocaleFromDocument();
+i18n.detectAndSetClientGlobaleFromDocument();
 
 ReactDom.render((
         <MaterialThemeProvider muiTheme={MaterialTheme(ConfigClient.material.theme)}>
