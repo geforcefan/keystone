@@ -25,6 +25,9 @@ import UserGroupModel from '../models/userGroup'
 
 import Mongoose from '../helper/mongoose'
 
+import randomValueBase64 from '../helper/randomValueBase64'
+import { MailType, sendMail } from  '../helper/mailer'
+
 /**
  * User business logic
  *
@@ -40,7 +43,7 @@ export default class User extends Service {
      * @async
      *
      * @param userID {String} user id
-     * @param callback {Function} (err, result)
+     * @param callback {Function} (err, user)
      *
      * @returns {Function}
      */
@@ -71,7 +74,7 @@ export default class User extends Service {
      * @param loginData {Object} login data
      * @param loginData.name {String} username
      * @param loginData.password {String} password
-     * @param callback {Function} (err, success)
+     * @param callback {Function} (err, token)
      *
      * @returns {Promise}
      */
@@ -129,7 +132,7 @@ export default class User extends Service {
                 email: registrationData.email,
                 groupID: group.id
             }).save((err, user) => err ? reject([ErrorCodes.registrationUsernameOrEmailExists]) : resolve(user))))
-            .then(user => callback(null, { id: user.id }))
+            .then(user => callback(null, { registered: true }))
             .catch(args => callback(args, null));
     }
 
@@ -216,21 +219,104 @@ export default class User extends Service {
             }))
 
             // success or failure
-            .then(user => callback(null, {userID: userID}))
+            .then(user => callback(null, { modified: true }))
             .catch(args => callback(args, null));
     }
 
+    /**
+     * Activate user account
+     *
+     * @method activateAccount
+     * @async
+     *
+     * @param code {String} activation code
+     * @param token {String} activation token
+     * @param callback {Function} (err, success)
+     *
+     * @returns {*}
+     */
+    activateAccount(code, token, callback) {
+        try {
+            // decode token
+            token = new Buffer(token, "base64").toString("ascii");
+            let payload = jwt.decode(token, (ConfigServer.user.activation.secret + code));
+
+            let currentDate = new Date();
+            let expireDate = new Date(payload.expires);
+
+            // is the token expired?
+            if(currentDate > expireDate)
+                callback([ErrorCodes.userActivateTokenExpired], null);
+
+            UserModel.findById(payload.id, (err, user) => {
+                if(err || !user)
+                    return callback([ErrorCodes.userActivateFailed], null);
+                if(user.active)
+                    return callback([ErrorCodes.userActivateUserAlreadyActive], null);
+
+                user.set({
+                    active: true
+                });
+                user.save((err, user) => {
+                    if(err || !user)
+                        return callback([ErrorCodes.userActivateFailed], null);
+
+                    resolve({
+                        userActivated: true
+                    });
+                });
+            });
+        } catch(e) {
+            console.log(e);
+            return callback([ErrorCodes.userActivateFailed], null);
+        }
+    }
+
+    /**
+     * Generate and send activation code. If user is not found, this won´t provide any error information.
+     * This method will always return "ok".
+     *
+     * @method generateAndSendActivationCode
+     * @async
+     *
+     * @param email {String} user email address
+     * @param callback {Function} (err, success)
+     *
+     * @returns {Promise}
+     */
     generateAndSendActivationCode(email, callback) {
         return new Promise(resolve => resolve())
             // get user, but don´t return any errors, when the user is not found for security reasons
             .then(() => new Promise((resolve, reject) =>
                 UserModel.findOne({ email }, (err, user) => resolve(user))))
 
-            // generate activation code
-            .then(user => new Promise((resolve, reject) => {
+            // generate activation code and token
+            .then(user => new Promise(resolve => {
+                if(!user)
+                    return resolve();
 
+                let payload = {
+                    id: user.id,
+                    expires: new Date((new Date().getTime()) + ConfigServer.user.activation.expireTime * 1000),
+                    code: randomValueBase64(8)
+                };
+
+                let activationToken = jwt.encode(payload, ConfigServer.user.activation.secret + payload.code);
+                activationToken = new Buffer(activationToken).toString('base64');
+
+                console.log(`Requested activation code for account ${email}: ${payload.code}`);
+                console.log(`Activation token: [${activationToken}]`);
+                console.log(`Token will be expired on ${payload.expires}`);
+
+                sendMail(MailType.userActivation, {
+                    test: "test"
+                }, ['ercan.akyuerek@gmail.com']);
+
+                return resolve(activationToken);
             }))
 
-            .then(user => callback(null, "OK"))
+            .then(user => callback(null, {
+                emailSent: true
+            }))
     }
 }

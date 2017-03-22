@@ -82,6 +82,9 @@ export class Router extends Services {
      * Add a route
      *
      * @method addRoute
+     *
+     * @protected
+     * 
      * @param route {String} route
      * @param callback {Function} express callback
      * @param method {RouteMethods} route method
@@ -111,6 +114,7 @@ export class Router extends Services {
      * Get express router, which is used by the routes autoloader in server.js
      *
      * @method getExpressRouter
+     *
      * @returns {Express.Router}
      */
     getExpressRouter() {

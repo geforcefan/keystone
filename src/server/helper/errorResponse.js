@@ -22,7 +22,6 @@ import { tr } from '../../shared/helper/i18n'
 import _ from 'lodash'
 
 export class ErrorCodes extends Enum {}
-
 ErrorCodes.initEnum(require('./../definitions/errorCodes').default);
 
 /**

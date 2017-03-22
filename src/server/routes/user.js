@@ -35,6 +35,8 @@ export default class User extends Router {
 
         this.addRoute('/authenticate', this.authenticate.bind(this), RouteMethods.post);
         this.addRoute('/register', this.register.bind(this), RouteMethods.post);
+        this.addRoute('/requestActivation', this.requestActivation.bind(this), RouteMethods.post);
+        this.addRoute('/activate', this.activate.bind(this), RouteMethods.post);
 
         this.addRoute('/modify/:userID', this.modify.bind(this), RouteMethods.post);
 
@@ -43,6 +45,7 @@ export default class User extends Router {
 
         this.addRoute('/subscribe/:userID', this.subscribe.bind(this), RouteMethods.get);
         this.addRoute('/unsubscribe/:userID', this.unsubscribe.bind(this), RouteMethods.get);
+
     }
 
     /**
@@ -64,24 +67,6 @@ export default class User extends Router {
                 let profileData = _.first(result);
                 res.send(successResponse(profileData ? profileData : null));
             }
-        });
-    }
-
-    /**
-     * Get subscriptions of a user
-     *
-     * @method getSubscriptions
-     *
-     * @param req {Object} Request provided by express
-     * @param req.params.userID {String} user id
-     * @param res {Object} Response provided by express
-     */
-    getSubscriptions(req, res) {
-        this.getUserProfileService().getSubscriptions(req.params.userID, (err, result) => {
-            if(err)
-                res.send(errorResponse.apply(this, _.castArray(err)));
-            else
-                res.send(successResponse(result));
         });
     }
 
@@ -163,6 +148,39 @@ export default class User extends Router {
             else
                 res.send(successResponse(result));
         });
+    }
+
+    /**
+     * Request activation route
+     *
+     *      /requestActivation
+     *
+     * @method requestActivation
+     *
+     * @param req {Object} Request provided by express
+     * @param req.body.email {String} email address
+     * @param res {Object} Response provided by express
+     */
+    requestActivation(req, res) {
+        this.getUserService().generateAndSendActivationCode(req.body.email, (err, result) =>
+            err ? res.send(errorResponse.apply(this, _.castArray(err))) : res.send(successResponse(result)));
+    }
+
+    /**
+     * Activate account route
+     *
+     *      /activate
+     *
+     * @method activate
+     *
+     * @param req {Object} Request provided by express
+     * @param req.body.code {String} code provided via email
+     * @param req.body.token {String} activation token provided via email
+     * @param res {Object} Response provided by express
+     */
+    activate(req, res) {
+        this.getUserService().activateAccount(req.body.code, req.body.token, (err, result) =>
+            err ? res.send(errorResponse.apply(this, _.castArray(err))) : res.send(successResponse(result)));
     }
 
     /**

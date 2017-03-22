@@ -57,8 +57,10 @@ export default class UserProfile extends Service {
                 return resolve();
             }))
 
+            // get all subscriptions
             .then(() => new Promise((resolve, reject) => this.getUserService().getActiveUserByID(userID, (err, user) => (err || !user) ? reject(err) : resolve(user.profile.subscribedUsers) )))
 
+            // fetch the profiles of the subscriptions
             .then(subscribedUsers => new Promise((resolve, reject) => this.getProfile(subscribedUsers, (err, profiles) => {
                 if(err)
                     return reject(err);
@@ -161,13 +163,10 @@ export default class UserProfile extends Service {
                 return resolve();
             }))
 
-            // validate user id
-            .then(() => new Promise((resolve, reject) => Mongoose.Types.ObjectId.isValid(userID) ? resolve() : reject([ErrorCodes.invalidObjectID, userID])))
-
             .then(() => Promise.all([
                 // get requestee user
                 new Promise((resolve, reject) =>
-                    UserModel.findById(this.getUser().id, (err, requesteeUser) => err ? reject([err]) : resolve({ requesteeUser }))),
+                    this.getUserService().getActiveUserByID(userID, (err, requesteeUser) => err ? reject(err) : resolve({ requesteeUser }))),
 
                 // get target user
                 new Promise((resolve, reject) =>

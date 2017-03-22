@@ -203,6 +203,9 @@ export default i18n;
  * @return {String} Translated string
  */
 export function tr(key) {
+
+    console.log(process.domain);
+
     var string = i18n.cachedActiveMessages[key];
     if(typeof string !== "undefined") {
         if (arguments.length > 1) for (var i = 1; i < arguments.length; i++) string = string.replace('{' + (i - 1) + '}', arguments[i]);
