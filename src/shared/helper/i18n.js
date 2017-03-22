@@ -106,11 +106,11 @@ class i18n {
      * with the right lang attribute, so the client just have to pick the locale which is
      * passed from the server
      *
-     * @method detectAndSetGlobalLocaleFromDocument
+     * @method detectAndSetClientLocaleFromDocument
      * @static
      * @return {String} detected locale
      */
-    static detectAndSetClientGlobaleFromDocument() {
+    static detectAndSetClientLocaleFromDocument() {
         let pickedLocale = document.querySelector("html").getAttribute("lang");
 
         if(typeof pickedLocale === "undefined" || pickedLocale === null)
