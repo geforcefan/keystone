@@ -14,11 +14,11 @@
  *
  */
 
-import Mongoose from '../helper/mongoose';
+import Mongoose from '../helper/misc/mongoose';
 import bcrypt from 'bcrypt';
 
 import UserGroupModel from './userGroup'
-import allPermissions from './../helper/permissions';
+import allPermissions from '../helper/user/permissions';
 
 import _ from 'lodash'
 import UserProfileSchema from './userProfile'

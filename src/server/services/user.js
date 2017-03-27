@@ -14,8 +14,8 @@
  *
  */
 
-import Service from '../helper/service'
-import { ErrorCodes } from '../helper/errorResponse'
+import Service from '../helper/services/service'
+import { ErrorCodes } from '../helper/response/errorResponse'
 
 import jwt from 'jwt-simple';
 import ConfigServer from './../../../config/server';
@@ -23,10 +23,10 @@ import ConfigServer from './../../../config/server';
 import UserModel from '../models/user'
 import UserGroupModel from '../models/userGroup'
 
-import Mongoose from '../helper/mongoose'
+import Mongoose from '../helper/misc/mongoose'
 
-import randomValueBase64 from '../helper/randomValueBase64'
-import { MailType, sendMail } from  '../helper/mailer'
+import randomValueBase64 from '../helper/misc/randomValueBase64'
+import { MailType, Mailer } from  '../helper/misc/mailer'
 
 /**
  * User business logic
@@ -308,9 +308,11 @@ export default class User extends Service {
                 console.log(`Activation token: [${activationToken}]`);
                 console.log(`Token will be expired on ${payload.expires}`);
 
-                sendMail(MailType.userActivation, {
-                    test: "test"
-                }, ['ercan.akyuerek@gmail.com']);
+                Mailer.sendMail(MailType.userActivation, {
+                    code: payload.code,
+                    token: activationToken,
+                    url: null
+                }, [email]);
 
                 return resolve(activationToken);
             }))

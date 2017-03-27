@@ -14,7 +14,7 @@
  *
  */
 
-import Mongoose from '../helper/mongoose';
+import Mongoose from '../helper/misc/mongoose';
 
 /**
  * Social links model

@@ -8,9 +8,9 @@
  *
  * As well as the templates will be grabbed from
  *
- *      /locales/mails/{locale}/{mailType}.ejs
+ *      locales/mails/{locale}/{mailType}.ejs
  *
- * @class mails
+ * @class mailTypes
  * @namespace server.definitions
  * @license GPL-3.0
  * @version 1.0

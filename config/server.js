@@ -1,9 +1,4 @@
-import path from 'path'
-
 const config = {
-  fs: {
-    rootDirectory: path.join(__dirname, "..")
-  },
   http: {
     port: 4000
   },
@@ -12,7 +7,7 @@ const config = {
   },
   user: {
     activation: {
-      expireTime: 24 * (60 * 60),
+      expireTime: 24 * (60 * 60), // 24 hours
       secret: "0-0-1-0-3-0-0-0-2-0-3-ThisIsAGoodRiff"
     }
   },
@@ -23,11 +18,14 @@ const config = {
     }
   },
   email: {
+    from: "Project Keystone <info@project-keystone.de>",
+    retryInterval: 5 * 60, // 5 minutes,
+    maxRetries: 10,
     server: {
-      user:    "username",
-      password:"password",
-      host:    "smtp.your-email.com",
-      ssl:     true
+      user: "info@project-keystone.de",
+      password: "rstMJlfhok",
+      host: "smtp.project-keystone.de",
+      ssl: false
     }
   }
 };

@@ -1,10 +1,10 @@
 {
   "name": "keystone",
   "version": "1.0.0",
-  "description": "Test readme",
+  "description": "Project Keystone is an open source portal for roller coaster enthusiasts with focus on the simulation software NoLimits 2 - Roller Coaster Simulation created by Olé Lange.",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon --watch ./ --delay 250ms --exec 'node_modules/.bin/babel-node --presets react,es2015 --harmony_proxies src/server/server.js'",
+    "start": "./node_modules/.bin/nodemon --watch ./ --delay 50ms --exec 'node_modules/.bin/babel-node --presets react,es2015 src/server/server.js'",
     "bundle": "webpack",
     "docs": "yuidoc"
   },
@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/geforcefan/keystone.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Ercan \"geforcefan\" Akyürek",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/geforcefan/keystone/issues"
   },
@@ -33,6 +33,7 @@
     "emailjs": "^1.0.8",
     "enumify": "^1.0.4",
     "express": "^4.14.1",
+    "html-to-text": "^3.2.0",
     "http-server": "^0.9.0",
     "jwt-simple": "^0.5.1",
     "lodash": "^4.17.4",

@@ -21,8 +21,8 @@
 import passport from 'passport';
 import { Strategy, ExtractJwt } from 'passport-jwt';
 
-import UserModel from './../models/user';
-import ServerConfig from './../../../config/server'
+import UserModel from '../../models/user';
+import ServerConfig from '../../../../config/server'
 
 /**
  * initializes the auth strategy and provides helper functions

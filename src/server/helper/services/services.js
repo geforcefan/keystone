@@ -18,6 +18,7 @@
 
 import path from 'path'
 import fs from 'fs'
+import paths from '../paths'
 
 import _ from 'lodash'
 
@@ -33,7 +34,7 @@ import _ from 'lodash'
 export default class Services {
     constructor() {
         // looking for all files inside "services/"
-        let servicesPath = path.join(__dirname, "..", "services");
+        let servicesPath = paths.server.services;
 
         if(!Services.servicesCache)
             Services.servicesCache = fs.readdirSync(servicesPath)
@@ -47,7 +48,7 @@ export default class Services {
 
                     acc[`${service.name}Services`] = {
                         methodName: methodName,
-                        init: service
+                        object: service
                     };
                     return acc;
                 }, {});
@@ -57,7 +58,7 @@ export default class Services {
             if(Services.serviceInstances[service.methodName])
                 return Services.serviceInstances[service.methodName];
             else
-                return Services.serviceInstances[service.methodName] = new service.init();
+                return Services.serviceInstances[service.methodName] = new service.object();
         });
     }
 }

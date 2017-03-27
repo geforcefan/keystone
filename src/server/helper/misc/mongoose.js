@@ -1,9 +1,9 @@
 /**
  * mongoose.js
  *
- * Mongoose helper. This is only a wrapper which is ONLY needed because of this
+ * Mongoose helper. This is a mongoose wrapper which is needed because of this
  * Promise deprecation stuff (https://github.com/Automattic/mongoose/issues/4291).
- * Mongooses default Promises "mpromise" is deprecated, so we have to plugin
+ * Mongooses default Promise lib "mpromise" is deprecated, so we have to plugin
  * the ES6 Promises (mongoose.Promise = global.Promise). But: we need to do this every time
  * we import 'mongoose'. I don´t want to write this every single time when I am a using mongoose.
  * So when you want to use mongoose, import THIS module.

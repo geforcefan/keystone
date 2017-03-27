@@ -32,7 +32,7 @@
  *
  */
 
-import permissionDefinitions from '../definitions/permissions'
+import permissionDefinitions from '../../definitions/permissions'
 import _ from 'lodash'
 
 /**

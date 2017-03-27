@@ -14,10 +14,10 @@
  *
  */
 
-import { errorResponse } from '../helper/errorResponse'
-import { successResponse } from '../helper/successResponse'
+import { errorResponse } from '../helper/response/errorResponse'
+import { successResponse } from '../helper/response/successResponse'
 
-import { Router, RouteMethods } from '../helper/router';
+import { Router, RouteMethods } from '../helper/misc/router';
 
 import _ from 'lodash'
 

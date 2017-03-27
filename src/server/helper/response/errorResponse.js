@@ -18,11 +18,11 @@
  */
 
 import { Enum } from 'enumify';
-import { tr } from '../../shared/helper/i18n'
+import { tr } from '../../../shared/helper/i18n'
 import _ from 'lodash'
 
 export class ErrorCodes extends Enum {}
-ErrorCodes.initEnum(require('./../definitions/errorCodes').default);
+ErrorCodes.initEnum(require('./../../definitions/errorCodes').default);
 
 /**
  * Returns an error object which can be passed to the response

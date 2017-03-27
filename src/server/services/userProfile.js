@@ -14,12 +14,12 @@
  *
  */
 
-import Service from '../helper/service'
-import { ErrorCodes } from '../helper/errorResponse'
+import Service from '../helper/services/service'
+import { ErrorCodes } from '../helper/response/errorResponse'
 
 import UserModel from '../models/user'
 
-import Mongoose from '../helper/mongoose'
+import Mongoose from '../helper/misc/mongoose'
 
 import _ from 'lodash'
 

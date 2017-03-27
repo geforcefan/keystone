@@ -14,7 +14,7 @@
  */
 
 
-import { Router, RouteMethods } from '../helper/router';
+import { Router, RouteMethods } from '../helper/misc/router';
 
 export default class Test extends Router {
     constructor() {

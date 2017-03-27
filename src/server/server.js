@@ -14,14 +14,17 @@
  *
  */
 
-import path from 'path';
-import fs from 'fs';
+import BlueBird from 'bluebird'
+
+// unfortunately native Promises prevent using node domains, so we are using bluebird promise lib
+// https://github.com/nodejs/node-v0.x-archive/issues/8648
+global.Promise = BlueBird;
 
 import { Server } from 'http';
 import Express from 'express';
 import BodyParser from 'body-parser';
 import Morgan from 'morgan';
-import Mongoose from './helper/mongoose';
+import Mongoose from './helper/misc/mongoose';
 
 import React from 'react';
 
@@ -42,16 +45,15 @@ import MaterialThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import i18n from '../shared/helper/i18n';
 
-import auth from './helper/auth';
-import checkUpdates from './helper/setup'
+import auth from './helper/user/auth';
+import Setup from './helper/misc/setup'
 
-import BlueBird from 'bluebird'
+import { internalErrorResponse } from './helper/response/errorResponse';
 
-import { internalErrorResponse } from './helper/errorResponse';
+import paths from './helper/paths'
 
-// unfortunately native Promises prevent using node domains, so we are using bluebird promise lib
-// https://github.com/nodejs/node-v0.x-archive/issues/8648
-global.Promise = BlueBird;
+import Scheduler from './helper/scheduler/scheduler'
+import { Router } from './helper/misc/router';
 
 /**
  * Entry point of the server application.
@@ -72,14 +74,15 @@ class ServerApplication {
          */
         new Promise(resolve => resolve())
             .then(result => new Promise((resolve, reject) => this.initDatabase(resolve, reject)))
-            .then(result => new Promise((resolve, reject) => checkUpdates(resolve, reject)))
+            .then(result => new Promise((resolve, reject) => Setup.detectAndRunUpdates(resolve, reject)))
             .then(() => {
-                this.initServer();
+                this.startServer();
+
                 this.initAppConfig();
                 this.initRequests();
                 this.initApiRoutes();
                 this.initUniversalRoutes();
-                this.startServer();
+                Scheduler.detectAndStartSchedules();
             })
             .catch(err => {
                 console.log(`Error occurred: ${err}, terminating application`);
@@ -92,6 +95,7 @@ class ServerApplication {
      *
      * @method initDatabase
      * @async
+     *
      * @param success {Function} success callback
      * @param error {Function} error callback
      */
@@ -161,9 +165,9 @@ class ServerApplication {
      */
     initAppConfig() {
         this.app.set('view engine', 'ejs');
-        this.app.set('views', path.join(__dirname, '../', 'views'));
+        this.app.set('views', paths.views);
 
-        this.app.use(Express.static(path.join(__dirname, '../', 'static')));
+        this.app.use(Express.static(paths.static));
         this.app.use(BodyParser.urlencoded({ extended: false }));
         this.app.use(BodyParser.json());
 
@@ -181,16 +185,7 @@ class ServerApplication {
      * @method initApiRoutes
      */
     initApiRoutes() {
-        let srcPath = path.join(__dirname, 'routes');
-
-        // include all .js files from the "routes/" directory.
-        // The file name is used as URL identifier (e.g. http://localhost:4000/api/{filenameWithoutExtension})
-        let apiRoutes = fs.readdirSync(srcPath)
-            .filter(file => fs.statSync(path.join(srcPath, file)).isFile())
-            .map(file => file.split('.js')[0])
-            .reduce((acc, apiName) =>  acc.use("/" + apiName, (new (require(`./routes/${apiName}`).default)).getExpressRouter()), Express.Router());
-
-        this.app.use('/api', apiRoutes);
+        this.app.use('/api', Router.detectRoutes());
     }
 
     /**
@@ -242,21 +237,14 @@ class ServerApplication {
     }
 
     /**
-     * Initialize the express server
-     *
-     * @method initServer
-     */
-    initServer() {
-        this.app = new Express();
-        this.server = new Server(this.app);
-    }
-
-    /**
      * Start server (start listening)
      *
      * @method startServer
      */
     startServer() {
+        this.app = new Express();
+        this.server = new Server(this.app);
+
         this.server.listen(this.port, err => {
             if (err) {
                 return console.error(err);

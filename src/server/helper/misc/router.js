@@ -20,7 +20,11 @@ import Express from 'express';
 import Domain from 'domain';
 import { Enum } from 'enumify';
 
-import Services from './services'
+import paths from '../paths'
+import path from 'path';
+import fs from 'fs';
+
+import Services from '../services/services'
 
 /**
  * Available router methods.
@@ -119,6 +123,43 @@ export class Router extends Services {
      */
     getExpressRouter() {
         return this.router;
+    }
+
+    /**
+     * Detect all routes from the routes/ directory.
+     * Each route must inherit from server.helper.Router
+     *
+     * @method detectRoutes
+     * @static
+     * @returns {Express.Router}
+     */
+    static detectRoutes() {
+        let srcPath = paths.server.routes;
+
+        // detect all .js files from the "routes/" directory.
+        // The file name is used as URL identifier (e.g. http://localhost:4000/api/{filenameWithoutExtension})
+        return fs.readdirSync(srcPath)
+            .filter(file => fs.statSync(path.join(srcPath, file)).isFile())
+            .map(file => {
+                let apiName = file.split('.js')[0];
+                console.log(`Found route: ${file}, route: /api/${apiName}/*`);
+
+                return apiName;
+            })
+            .reduce((acc, apiName) =>  {
+                try {
+                    let route = require(path.join(paths.server.routes, apiName)).default;
+
+                    if (!(route.prototype instanceof Router))
+                        throw Error(`Router ${apiName} must inherit from Router`);
+
+                    acc.use("/" + apiName, (new (route)).getExpressRouter())
+                } catch(e) {
+                    console.log(`Couldn't register router '${apiName}': ${e.message}`);
+                }
+
+                return acc;
+            }, Express.Router());
     }
 }
 

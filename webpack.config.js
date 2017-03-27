@@ -31,9 +31,19 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
             compress: {warnings: false},
             mangle: true,
-            sourcemap: false,
             beautify: false,
-            dead_code: true
+            dead_code: true,
+
+            beautify: true,
+            mangle: {
+                screw_ie8: true,
+                keep_fnames: true
+            },
+            compress: {
+                screw_ie8: true,
+                warnings: false
+            },
+            comments: false
         })
     ],
     watch: true
