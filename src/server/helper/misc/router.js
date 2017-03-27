@@ -54,7 +54,18 @@ export class RouteMethods extends Enum {}
 RouteMethods.initEnum(['post', 'get', 'delete']);
 
 /**
- * Router helper. Inherit this class in any route.
+ * Place your routes inside routes/ to register them. Your route must inherit from this class.
+ * The file name is used as URL identifier (e.g. http://localhost:4000/api/{filenameWithoutExtension})
+ *
+ * Example directory structure
+ *
+ *      routes/user.js -> user
+ *      routes/testyTest.js -> testyTest
+ *
+ * Example URLs
+ *
+ *      http://localhost:4000/api/user/*
+ *      http://localhost:4000/api/testyTest/*
  *
  * @class Router
  * @extends server.helper.Services

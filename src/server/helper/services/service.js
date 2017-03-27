@@ -20,6 +20,9 @@ import Services from './services'
 /**
  * Service helper class. Inherit this class in any service.
  *
+ * Place your services inside service/ to getting detected by the
+ * {{#crossLink "server.helper.Services"}}services autoloader class{{/crossLink}}.
+ *
  * @class Service
  * @extends server.helper.Services
  */

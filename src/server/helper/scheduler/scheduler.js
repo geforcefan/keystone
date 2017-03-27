@@ -1,7 +1,7 @@
 /**
  * scheduler.js
  *
- * A Scheduler helper. Detects, registers and starts schedules which are located in schedules/.
+ * Detects, registers and starts schedules which are located in schedules/.
  * The filename of the schedule is used for the global registration. All schedules must inherit
  * from {{#crossLink "server.helper.AbstractSchedule"}}AbstractSchedule{{/crossLink}}.
  *
@@ -39,7 +39,7 @@ import paths from '../paths'
 import AbstractSchedule from './abstractSchedule'
 
 /**
- * A Scheduler helper. Detects, registers and starts schedules which are located in schedules/.
+ * Detects, registers and starts schedules which are located in schedules/.
  * The filename of the schedule is used for the global registration. All schedules must inherit
  * from {{#crossLink "server.helper.AbstractSchedule"}}AbstractSchedule{{/crossLink}}.
  * 

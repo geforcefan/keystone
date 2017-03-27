@@ -2,7 +2,7 @@
  * services.js
  *
  * Services autoloader class.
- * Inheriting from this class will make all services available.
+ * Inheriting from this class will make all services available in your class.
  *
  * GitHub issue: https://github.com/geforcefan/keystone/issues/7
  *
@@ -24,10 +24,21 @@ import _ from 'lodash'
 
 /**
  * Services autoloader class.
- * Inheriting from this class will make all services available.
+ * Inheriting from this class will make all services available in your class.
  *
- *      services/user.js -> this.getUserService()
- *      services/userGroup.js -> this.getUserGroupService()
+ * Place your services inside services/ to register them. Your service must inherit from
+ * {{#crossLink "server.helper.Service"}}Service{{/crossLink}}.
+ * The file name is used for the getter method names.
+ *
+ * Example directory structure
+ *
+ *      service/user.js -> getUserService
+ *      service/testyTest.js -> getTestyTestService
+ *
+ * Example Usage
+ *
+ *      this.getUserService().fetchUser();
+ *      this.getTestyTestService().doNothing();
  *
  * @class Services
  */

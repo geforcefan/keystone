@@ -45,7 +45,6 @@ export default class User extends Router {
 
         this.addRoute('/subscribe/:userID', this.subscribe.bind(this), RouteMethods.get);
         this.addRoute('/unsubscribe/:userID', this.unsubscribe.bind(this), RouteMethods.get);
-
     }
 
     /**

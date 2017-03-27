@@ -17,7 +17,7 @@
 import Mongoose from '../helper/misc/mongoose';
 
 /**
- * Failed mails model
+ * Failed mail model
  *
  * @class FailedMailSchema
  * @extends Mongoose.Schema
