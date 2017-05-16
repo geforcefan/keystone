@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>server.services.User - Keystone Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            Keystone Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/server.definitions.errorCodes", "classes/server.definitions.mailTypes", "classes/server.definitions.permissions", "classes/server.helper.AbstractSchedule", "classes/server.helper.auth", "classes/server.helper.errorResponse", "classes/server.helper.Mailer", "classes/server.helper.mongoose", "classes/server.helper.permissions", "classes/server.helper.Router", "classes/server.helper.RouterMethods", "classes/server.helper.Scheduler", "classes/server.helper.Service", "classes/server.helper.Services", "classes/server.helper.Setup", "classes/server.helper.successResponse", "classes/server.models.FailedMailSchema", "classes/server.models.SocialLinksSchema", "classes/server.models.SystemSchema", "classes/server.models.UserGroupSchema", "classes/server.models.UserProfileSchema", "classes/server.models.UserSchema", "classes/server.routes.User", "classes/server.schedules.FailedMails", "classes/server.ServerApplication", "classes/server.services.User", "classes/server.services.UserProfile", "classes/shared.definitions.languages", "classes/shared.helper.i18n"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/server.definitions.errorCodes.html">server.definitions.errorCodes</a></li>
+                <li><a href="../classes/server.definitions.mailTypes.html">server.definitions.mailTypes</a></li>
+                <li><a href="../classes/server.definitions.permissions.html">server.definitions.permissions</a></li>
+                <li><a href="../classes/server.helper.AbstractSchedule.html">server.helper.AbstractSchedule</a></li>
+                <li><a href="../classes/server.helper.auth.html">server.helper.auth</a></li>
+                <li><a href="../classes/server.helper.errorResponse.html">server.helper.errorResponse</a></li>
+                <li><a href="../classes/server.helper.Mailer.html">server.helper.Mailer</a></li>
+                <li><a href="../classes/server.helper.mongoose.html">server.helper.mongoose</a></li>
+                <li><a href="../classes/server.helper.permissions.html">server.helper.permissions</a></li>
+                <li><a href="../classes/server.helper.Router.html">server.helper.Router</a></li>
+                <li><a href="../classes/server.helper.RouterMethods.html">server.helper.RouterMethods</a></li>
+                <li><a href="../classes/server.helper.Scheduler.html">server.helper.Scheduler</a></li>
+                <li><a href="../classes/server.helper.Service.html">server.helper.Service</a></li>
+                <li><a href="../classes/server.helper.Services.html">server.helper.Services</a></li>
+                <li><a href="../classes/server.helper.Setup.html">server.helper.Setup</a></li>
+                <li><a href="../classes/server.helper.successResponse.html">server.helper.successResponse</a></li>
+                <li><a href="../classes/server.models.FailedMailSchema.html">server.models.FailedMailSchema</a></li>
+                <li><a href="../classes/server.models.SocialLinksSchema.html">server.models.SocialLinksSchema</a></li>
+                <li><a href="../classes/server.models.SystemSchema.html">server.models.SystemSchema</a></li>
+                <li><a href="../classes/server.models.UserGroupSchema.html">server.models.UserGroupSchema</a></li>
+                <li><a href="../classes/server.models.UserProfileSchema.html">server.models.UserProfileSchema</a></li>
+                <li><a href="../classes/server.models.UserSchema.html">server.models.UserSchema</a></li>
+                <li><a href="../classes/server.routes.User.html">server.routes.User</a></li>
+                <li><a href="../classes/server.schedules.FailedMails.html">server.schedules.FailedMails</a></li>
+                <li><a href="../classes/server.ServerApplication.html">server.ServerApplication</a></li>
+                <li><a href="../classes/server.services.User.html">server.services.User</a></li>
+                <li><a href="../classes/server.services.UserProfile.html">server.services.UserProfile</a></li>
+                <li><a href="../classes/shared.definitions.languages.html">shared.definitions.languages</a></li>
+                <li><a href="../classes/shared.helper.i18n.html">shared.helper.i18n</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>server.services.User</h1>
+</div>
+
+
+	<div class="well well-small">
+        <div class="extends">
+            Extends <a href="../classes/server.helper.Service.html" class="crosslink">server.helper.Service</a>
+        </div>
+    </div>
+
+
+
+
+<div class="yuidoc-class-description">
+<p>User business logic</p>
+
+</div>
+
+<!-- table of contents -->
+
+<div id="class-toc" class="page-section">
+	<h2>Table of Contents</h2>
+    <ul>
+		<li>
+			<strong>Methods</strong>
+			<ul>
+				<li><a href="#method-activateAccount"><span class="im">activateAccount</span>(<span class="ia">code</span><span class="ia">token</span><span class="ia">callback</span>)</a></li>
+				<li><a href="#method-authenticate"><span class="im">authenticate</span>(<span class="ia">loginData</span><span class="ia">callback</span>)</a></li>
+				<li><a href="#method-generateAndSendActivationCode"><span class="im">generateAndSendActivationCode</span>(<span class="ia">email</span><span class="ia">callback</span>)</a></li>
+				<li><a href="#method-getActiveUserByID"><span class="im">getActiveUserByID</span>(<span class="ia">userID</span><span class="ia">callback</span>)</a></li>
+				<li><a href="#method-getUser"><span class="im">getUser</span>()</a></li>
+				<li><a href="#method-isUserAuth"><span class="im">isUserAuth</span>()</a></li>
+				<li><a href="#method-modify"><span class="im">modify</span>(<span class="ia">userID</span><span class="ia">modificationData</span><span class="ia">callback</span>)</a></li>
+				<li><a href="#method-register"><span class="im">register</span>(<span class="ia">registrationData</span><span class="ia">callback</span>)</a></li>
+			</ul>
+		</li>
+
+
+
+	</ul>
+</div>
+
+<!-- details -->
+
+
+    <div id="methods" class="page-section">
+        <h2 class="off-left">Methods</h2>
+        <div class="item-list">
+<div id="method-activateAccount" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>activateAccount</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>code</code>
+				</li>
+				<li class="arg">
+						<code>token</code>
+				</li>
+				<li class="arg">
+						<code>callback</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"></span>
+		</span>
+	</div>
+
+
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_services_user.js.html#l226"><code>src&#x2F;server&#x2F;services&#x2F;user.js:226</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Activate user account</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">code</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>activation code</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">token</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>activation token</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">callback</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>(err, success)</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-authenticate" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>authenticate</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>loginData</code>
+				</li>
+				<li class="arg">
+						<code>callback</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+		</span>
+	</div>
+
+
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_services_user.js.html#l68"><code>src&#x2F;server&#x2F;services&#x2F;user.js:68</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Authentication logic</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">loginData</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+					<div class="param-description"><p>login data</p>
+</div>
+
+						<ul class="params-list">
+							<li class="param">
+									<code class="param-name">name</code>
+									<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+								<div class="param-description"><p>username</p>
+</div>
+
+							</li>
+							<li class="param">
+									<code class="param-name">password</code>
+									<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+								<div class="param-description"><p>password</p>
+</div>
+
+							</li>
+						</ul>
+				</li>
+				<li class="param">
+						<code class="param-name">callback</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>(err, token)</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-generateAndSendActivationCode" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>generateAndSendActivationCode</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>email</code>
+				</li>
+				<li class="arg">
+						<code>callback</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+		</span>
+	</div>
+
+
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_services_user.js.html#l275"><code>src&#x2F;server&#x2F;services&#x2F;user.js:275</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Generate and send activation code. If user is not found, this won´t provide any error information.
+This method will always return "ok".</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">email</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>user email address</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">callback</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>(err, success)</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-getActiveUserByID" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getActiveUserByID</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>userID</code>
+				</li>
+				<li class="arg">
+						<code>callback</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+		</span>
+	</div>
+
+
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_services_user.js.html#l38"><code>src&#x2F;server&#x2F;services&#x2F;user.js:38</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Fetch an active user. This method should always used to fetch a user, except
+you need to activate a user.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">userID</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>user id</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">callback</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>(err, user)</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-getUser" class="method item inherited">
+	<div class="method-signature">
+	<span class="name"><code>getUser</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">UserSchema</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>Inherited from
+				<a href="../classes/server.helper.Service.html#method_getUser">server.helper.Service</a>:
+		<a href="../files/src_server_helper_services_service.js.html#l30"><code>src&#x2F;server&#x2F;helper&#x2F;services&#x2F;service.js:30</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Get the requestee user</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">UserSchema</span>
+			</div>
+		</div>
+
+</div>
+<div id="method-isUserAuth" class="method item inherited">
+	<div class="method-signature">
+	<span class="name"><code>isUserAuth</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>Inherited from
+				<a href="../classes/server.helper.Service.html#method_isUserAuth">server.helper.Service</a>:
+		<a href="../files/src_server_helper_services_service.js.html#l40"><code>src&#x2F;server&#x2F;helper&#x2F;services&#x2F;service.js:40</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Is the requestee user authenticated</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-modify" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>modify</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>userID</code>
+				</li>
+				<li class="arg">
+						<code>modificationData</code>
+				</li>
+				<li class="arg">
+						<code>callback</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+		</span>
+	</div>
+
+
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_services_user.js.html#l139"><code>src&#x2F;server&#x2F;services&#x2F;user.js:139</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>User modification logic</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">userID</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>user id of the user which should modified</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">modificationData</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+					<div class="param-description"><p>optional, modification data</p>
+</div>
+
+						<ul class="params-list">
+							<li class="param">
+									<code class="param-name">name</code>
+									<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+								<div class="param-description"><p>optional, username</p>
+</div>
+
+							</li>
+							<li class="param">
+									<code class="param-name">email</code>
+									<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+								<div class="param-description"><p>optional, email</p>
+</div>
+
+							</li>
+							<li class="param">
+									<code class="param-name">password</code>
+									<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+								<div class="param-description"><p>optional, password</p>
+</div>
+
+							</li>
+							<li class="param">
+									<code class="param-name">groupID</code>
+									<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+								<div class="param-description"><p>optional, groupID</p>
+</div>
+
+							</li>
+							<li class="param">
+									<code class="param-name">profile</code>
+									<span class="type"><a href="../classes/server.models.UserProfileSchema.html" class="crosslink">server.models.UserProfileSchema</a></span>
+
+								<div class="param-description"><p>optional, profile</p>
+</div>
+
+							</li>
+						</ul>
+				</li>
+				<li class="param">
+						<code class="param-name">callback</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>(err, success)</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-register" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>register</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>registrationData</code>
+				</li>
+				<li class="arg">
+						<code>callback</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+		</span>
+	</div>
+
+
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_services_user.js.html#l107"><code>src&#x2F;server&#x2F;services&#x2F;user.js:107</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Registration logic</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">registrationData</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+					<div class="param-description"><p>registration data</p>
+</div>
+
+						<ul class="params-list">
+							<li class="param">
+									<code class="param-name">name</code>
+									<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+								<div class="param-description"><p>username</p>
+</div>
+
+							</li>
+							<li class="param">
+									<code class="param-name">email</code>
+									<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+								<div class="param-description"><p>email</p>
+</div>
+
+							</li>
+							<li class="param">
+									<code class="param-name">password</code>
+									<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+								<div class="param-description"><p>password</p>
+</div>
+
+							</li>
+						</ul>
+				</li>
+				<li class="param">
+						<code class="param-name">callback</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>(err, success)</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+			</div>
+		</div>
+
+</div>
+        </div>
+    </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

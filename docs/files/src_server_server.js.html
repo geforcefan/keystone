@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/server/server.js - Keystone Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            Keystone Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/server.definitions.errorCodes", "classes/server.definitions.mailTypes", "classes/server.definitions.permissions", "classes/server.helper.AbstractSchedule", "classes/server.helper.auth", "classes/server.helper.errorResponse", "classes/server.helper.Mailer", "classes/server.helper.mongoose", "classes/server.helper.permissions", "classes/server.helper.Router", "classes/server.helper.RouterMethods", "classes/server.helper.Scheduler", "classes/server.helper.Service", "classes/server.helper.Services", "classes/server.helper.Setup", "classes/server.helper.successResponse", "classes/server.models.FailedMailSchema", "classes/server.models.SocialLinksSchema", "classes/server.models.SystemSchema", "classes/server.models.UserGroupSchema", "classes/server.models.UserProfileSchema", "classes/server.models.UserSchema", "classes/server.routes.User", "classes/server.schedules.FailedMails", "classes/server.ServerApplication", "classes/server.services.User", "classes/server.services.UserProfile", "classes/shared.definitions.languages", "classes/shared.helper.i18n"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/server.definitions.errorCodes.html">server.definitions.errorCodes</a></li>
+                <li><a href="../classes/server.definitions.mailTypes.html">server.definitions.mailTypes</a></li>
+                <li><a href="../classes/server.definitions.permissions.html">server.definitions.permissions</a></li>
+                <li><a href="../classes/server.helper.AbstractSchedule.html">server.helper.AbstractSchedule</a></li>
+                <li><a href="../classes/server.helper.auth.html">server.helper.auth</a></li>
+                <li><a href="../classes/server.helper.errorResponse.html">server.helper.errorResponse</a></li>
+                <li><a href="../classes/server.helper.Mailer.html">server.helper.Mailer</a></li>
+                <li><a href="../classes/server.helper.mongoose.html">server.helper.mongoose</a></li>
+                <li><a href="../classes/server.helper.permissions.html">server.helper.permissions</a></li>
+                <li><a href="../classes/server.helper.Router.html">server.helper.Router</a></li>
+                <li><a href="../classes/server.helper.RouterMethods.html">server.helper.RouterMethods</a></li>
+                <li><a href="../classes/server.helper.Scheduler.html">server.helper.Scheduler</a></li>
+                <li><a href="../classes/server.helper.Service.html">server.helper.Service</a></li>
+                <li><a href="../classes/server.helper.Services.html">server.helper.Services</a></li>
+                <li><a href="../classes/server.helper.Setup.html">server.helper.Setup</a></li>
+                <li><a href="../classes/server.helper.successResponse.html">server.helper.successResponse</a></li>
+                <li><a href="../classes/server.models.FailedMailSchema.html">server.models.FailedMailSchema</a></li>
+                <li><a href="../classes/server.models.SocialLinksSchema.html">server.models.SocialLinksSchema</a></li>
+                <li><a href="../classes/server.models.SystemSchema.html">server.models.SystemSchema</a></li>
+                <li><a href="../classes/server.models.UserGroupSchema.html">server.models.UserGroupSchema</a></li>
+                <li><a href="../classes/server.models.UserProfileSchema.html">server.models.UserProfileSchema</a></li>
+                <li><a href="../classes/server.models.UserSchema.html">server.models.UserSchema</a></li>
+                <li><a href="../classes/server.routes.User.html">server.routes.User</a></li>
+                <li><a href="../classes/server.schedules.FailedMails.html">server.schedules.FailedMails</a></li>
+                <li><a href="../classes/server.ServerApplication.html">server.ServerApplication</a></li>
+                <li><a href="../classes/server.services.User.html">server.services.User</a></li>
+                <li><a href="../classes/server.services.UserProfile.html">server.services.UserProfile</a></li>
+                <li><a href="../classes/shared.definitions.languages.html">shared.definitions.languages</a></li>
+                <li><a href="../classes/shared.helper.i18n.html">shared.helper.i18n</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>src/server/server.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * server.js
+ *
+ * Entry point of the server application.
+ *
+ *
+ * @namespace server
+ * @license GPL-3.0
+ * @version 1.0
+ * @author  Ercan &quot;geforcefan&quot; Akyürek, https://github.com/geforcefan/
+ * @updated 2017-03-09
+ * @link    https://github.com/geforcefan/keystone/
+ *
+ *
+ */
+
+import BlueBird from &#x27;bluebird&#x27;
+
+// unfortunately native Promises prevent using node domains, so we are using bluebird promise lib
+// https://github.com/nodejs/node-v0.x-archive/issues/8648
+global.Promise = BlueBird;
+
+import { Server } from &#x27;http&#x27;;
+import Express from &#x27;express&#x27;;
+import BodyParser from &#x27;body-parser&#x27;;
+import Morgan from &#x27;morgan&#x27;;
+import Mongoose from &#x27;./helper/misc/mongoose&#x27;;
+
+import React from &#x27;react&#x27;;
+
+import ConfigServer from &#x27;./../../config/server&#x27;;
+import ConfigClient from &#x27;./../../config/client&#x27;;
+
+import UserModel from &#x27;./models/user&#x27;;
+
+import ClientRoutes from &#x27;./../client/routes&#x27;;
+import ClientNotFoundPage from &#x27;./../client/pages/NotFoundPage&#x27;;
+
+import { match as RouterMatch } from &#x27;react-router&#x27;;
+import { renderToString as ReactRenderToString } from &#x27;react-dom/server&#x27;;
+import { RouterContext } from &#x27;react-router&#x27;;
+
+import MaterialTheme from &#x27;material-ui/styles/getMuiTheme&#x27;;
+import MaterialThemeProvider from &#x27;material-ui/styles/MuiThemeProvider&#x27;;
+
+import i18n from &#x27;../shared/helper/i18n&#x27;;
+
+import auth from &#x27;./helper/user/auth&#x27;;
+import Setup from &#x27;./helper/misc/setup&#x27;
+
+import { internalErrorResponse } from &#x27;./helper/response/errorResponse&#x27;;
+
+import paths from &#x27;./helper/paths&#x27;
+
+import Scheduler from &#x27;./helper/scheduler/scheduler&#x27;
+import { Router } from &#x27;./helper/misc/router&#x27;;
+
+/**
+ * Entry point of the server application.
+ *
+ * @class ServerApplication
+ */
+class ServerApplication {
+    constructor() {
+        this.app = null;
+        this.server = null;
+
+        this.port = ConfigServer.http.port || process.env.PORT || 3000;
+        this.env = process.env.NODE_ENV || &#x27;production&#x27;;
+
+        /**
+         * We need to establish first proper db connection, checking for updates (setup)
+         * and then we initialize our server.
+         */
+        new Promise(resolve =&gt; resolve())
+            .then(result =&gt; new Promise((resolve, reject) =&gt; this.initDatabase(resolve, reject)))
+            .then(result =&gt; new Promise((resolve, reject) =&gt; Setup.detectAndRunUpdates(resolve, reject)))
+            .then(() =&gt; {
+                this.startServer();
+
+                this.initAppConfig();
+                this.initRequests();
+                this.initApiRoutes();
+                this.initUniversalRoutes();
+                Scheduler.detectAndStartSchedules();
+            })
+            .catch(err =&gt; {
+                console.log(&#x60;Error occurred: ${err}, terminating application&#x60;);
+                process.exit(0);
+            });
+    }
+
+    /**
+     * Initialize database models and establish database connection
+     *
+     * @method initDatabase
+     * @async
+     *
+     * @param success {Function} success callback
+     * @param error {Function} error callback
+     */
+    initDatabase(success, error) {
+        console.log(&quot;Initializing database&quot;);
+
+        Mongoose.connect(ConfigServer.db.uri, {
+            promiseLibrary: Promise
+        });
+
+        Mongoose.connection.on(&#x27;error&#x27;, error);
+        Mongoose.connection.on(&#x27;open&#x27;, success);
+    }
+
+    /**
+     * Initialize and parse requests by catching all requests, setting proper
+     * i18n locales from the request header, checking and preparing the authentication
+     * and doing all other stuff when needed before any request is being handled by the other routes.
+     * Also useful for injecting middleware to the request
+     *
+     * @method initRequests
+     */
+    initRequests() {
+        this.app.use(&quot;*&quot;, (req, res, next) =&gt; {
+            console.log(&quot;-------------------------------&quot;);
+            console.log(&#x60;Request started&#x60;);
+            console.log(&quot;Request body: &quot;, req.body);
+
+            auth().authenticate((err, user) =&gt; {
+                // we will login, no matter there is an error or not
+                // when the auth is failed, we will login a dummy guest user
+                // so we can always access the user and use the &quot;isAllowed&quot; method.
+                // of course a dummy user (guest) will be in the guest group so we can define
+                // what a guest can see or not
+                if(!user) {
+                    user = new UserModel();
+                    user.setAuth(false);
+                    console.log(&quot;Request is with no authentication.&quot;)
+                } else {
+                    user.setAuth(true);
+                    console.log(&#x60;Request remote address: ${req.connection.remoteAddress}&#x60;);
+                    console.log(&#x60;Request is with authentication: ${user.name} (${user.id})&#x60;);
+
+                    // add the remote address to the requestee user and save it without waiting for it
+                    user.addLastKnownRemoteAddress(req.connection.remoteAddress);
+                    user.save();
+                }
+
+                user.setLocale(i18n.detectLocaleFromRequest(req));
+
+                (new Promise(resolve =&gt; resolve()))
+                    .then(result =&gt; new Promise((resolve, reject) =&gt; user.cacheGroupAndPermissions(resolve, reject)))
+                    .then(result =&gt; req.login(user, ConfigServer.auth.session, next))
+                    .catch(err =&gt; {
+                        console.log(err);
+                        res.send(internalErrorResponse());
+                    });
+            })(req, res, next);
+        });
+    }
+
+    /**
+     * The application it self is getting some configuration like
+     * which view engine is gonna be used, where the view files are located, etc.
+     *
+     * @method initAppConfig
+     */
+    initAppConfig() {
+        this.app.set(&#x27;view engine&#x27;, &#x27;ejs&#x27;);
+        this.app.set(&#x27;views&#x27;, paths.views);
+
+        this.app.use(Express.static(paths.static));
+        this.app.use(BodyParser.urlencoded({ extended: false }));
+        this.app.use(BodyParser.json());
+
+        this.app.use(auth().initialize());
+        this.app.use(Morgan(&#x27;dev&#x27;));
+    }
+
+    /**
+     * Initialize the API routes. You can define the API routes in
+     * the api/ directory. Best practise is to create an API route for each
+     * service. For example UserRoutes, CoasterRoutes, etc.
+     * The routes should NOT implement ANY business logic, just USE the business logic there.
+     * You can implement your business logic inside the services/ directory.
+     *
+     * @method initApiRoutes
+     */
+    initApiRoutes() {
+        this.app.use(&#x27;/api&#x27;, Router.detectRoutes());
+    }
+
+    /**
+     * Initializes the universal routes for server side rendering.
+     * When we use frontend frameworks (react) and refreshing the website,
+     * this router will match the request URL with the defined client routes and render it
+     * on the server side. This is perfect for SEO (and for other reasons).
+     *
+     * @method initUniversalRoutes
+     */
+    initUniversalRoutes() {
+        this.app.get(&#x27;*&#x27;, (req, res) =&gt; {
+            RouterMatch({ routes: ClientRoutes, location: req.url }, (err, redirectLocation, renderProps) =&gt; {
+                if (err) {
+                    return res.status(500).send(err.message);
+                }
+
+                if (redirectLocation) {
+                    return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+                }
+
+                // Fixing the material ui issue &quot;Server-side rendering warning with Express.js&quot; #5973
+                // https://github.com/callemall/material-ui/issues/5973
+                global.navigator = {
+                    userAgent: req.headers[&#x27;user-agent&#x27;] || &#x27;all&#x27;
+                };
+
+                let markup;
+                if (renderProps) {
+                    // Since we are using material ui, we need to wrap everything with MuiThemeProvider
+                    markup = ReactRenderToString(
+                        &lt;MaterialThemeProvider muiTheme={MaterialTheme(ConfigClient.material.theme)}&gt;
+                            &lt;RouterContext {...renderProps}/&gt;
+                        &lt;/MaterialThemeProvider&gt;
+                    );
+                } else {
+                    markup = ReactRenderToString(&lt;ClientNotFoundPage/&gt;);
+                    res.status(404);
+                }
+
+                // Important: pass locale to the view, because we need the locale set properly in the html
+                // attribute &quot;lang&quot; (&lt;html lang=&quot;{locale}&quot;&gt;). The client then can then determine the language
+                return res.render(&#x27;index&#x27;, {
+                    markup,
+                    locale: i18n.getActiveLocale()
+                });
+            });
+        });
+    }
+
+    /**
+     * Start server (start listening)
+     *
+     * @method startServer
+     */
+    startServer() {
+        this.app = new Express();
+        this.server = new Server(this.app);
+
+        this.server.listen(this.port, err =&gt; {
+            if (err) {
+                return console.error(err);
+            }
+
+            console.info(&#x60;Server running on http://localhost:${this.port} [${this.env}]&#x60;);
+        });
+    }
+}
+
+new ServerApplication();
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

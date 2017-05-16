@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/server/schedules/failedMails.js - Keystone Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            Keystone Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/server.definitions.errorCodes", "classes/server.definitions.mailTypes", "classes/server.definitions.permissions", "classes/server.helper.AbstractSchedule", "classes/server.helper.auth", "classes/server.helper.errorResponse", "classes/server.helper.Mailer", "classes/server.helper.mongoose", "classes/server.helper.permissions", "classes/server.helper.Router", "classes/server.helper.RouterMethods", "classes/server.helper.Scheduler", "classes/server.helper.Service", "classes/server.helper.Services", "classes/server.helper.Setup", "classes/server.helper.successResponse", "classes/server.models.FailedMailSchema", "classes/server.models.SocialLinksSchema", "classes/server.models.SystemSchema", "classes/server.models.UserGroupSchema", "classes/server.models.UserProfileSchema", "classes/server.models.UserSchema", "classes/server.routes.User", "classes/server.schedules.FailedMails", "classes/server.ServerApplication", "classes/server.services.User", "classes/server.services.UserProfile", "classes/shared.definitions.languages", "classes/shared.helper.i18n"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/server.definitions.errorCodes.html">server.definitions.errorCodes</a></li>
+                <li><a href="../classes/server.definitions.mailTypes.html">server.definitions.mailTypes</a></li>
+                <li><a href="../classes/server.definitions.permissions.html">server.definitions.permissions</a></li>
+                <li><a href="../classes/server.helper.AbstractSchedule.html">server.helper.AbstractSchedule</a></li>
+                <li><a href="../classes/server.helper.auth.html">server.helper.auth</a></li>
+                <li><a href="../classes/server.helper.errorResponse.html">server.helper.errorResponse</a></li>
+                <li><a href="../classes/server.helper.Mailer.html">server.helper.Mailer</a></li>
+                <li><a href="../classes/server.helper.mongoose.html">server.helper.mongoose</a></li>
+                <li><a href="../classes/server.helper.permissions.html">server.helper.permissions</a></li>
+                <li><a href="../classes/server.helper.Router.html">server.helper.Router</a></li>
+                <li><a href="../classes/server.helper.RouterMethods.html">server.helper.RouterMethods</a></li>
+                <li><a href="../classes/server.helper.Scheduler.html">server.helper.Scheduler</a></li>
+                <li><a href="../classes/server.helper.Service.html">server.helper.Service</a></li>
+                <li><a href="../classes/server.helper.Services.html">server.helper.Services</a></li>
+                <li><a href="../classes/server.helper.Setup.html">server.helper.Setup</a></li>
+                <li><a href="../classes/server.helper.successResponse.html">server.helper.successResponse</a></li>
+                <li><a href="../classes/server.models.FailedMailSchema.html">server.models.FailedMailSchema</a></li>
+                <li><a href="../classes/server.models.SocialLinksSchema.html">server.models.SocialLinksSchema</a></li>
+                <li><a href="../classes/server.models.SystemSchema.html">server.models.SystemSchema</a></li>
+                <li><a href="../classes/server.models.UserGroupSchema.html">server.models.UserGroupSchema</a></li>
+                <li><a href="../classes/server.models.UserProfileSchema.html">server.models.UserProfileSchema</a></li>
+                <li><a href="../classes/server.models.UserSchema.html">server.models.UserSchema</a></li>
+                <li><a href="../classes/server.routes.User.html">server.routes.User</a></li>
+                <li><a href="../classes/server.schedules.FailedMails.html">server.schedules.FailedMails</a></li>
+                <li><a href="../classes/server.ServerApplication.html">server.ServerApplication</a></li>
+                <li><a href="../classes/server.services.User.html">server.services.User</a></li>
+                <li><a href="../classes/server.services.UserProfile.html">server.services.UserProfile</a></li>
+                <li><a href="../classes/shared.definitions.languages.html">shared.definitions.languages</a></li>
+                <li><a href="../classes/shared.helper.i18n.html">shared.helper.i18n</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>src/server/schedules/failedMails.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * failedMails.js
+ *
+ * Failed mails scheduler which is checking and trying to send failed mails.
+ *
+ * @namespace server.schedules
+ * @license GPL-3.0
+ * @version 1.0
+ * @author  Ercan &quot;geforcefan&quot; Akyürek, https://github.com/geforcefan/
+ * @updated 2017-03-27
+ * @link    https://github.com/geforcefan/keystone/
+ *
+ *
+ */
+
+import AbstractSchedule from &#x27;../helper/scheduler/abstractSchedule&#x27;
+import ConfigServer from &#x27;../../../config/server&#x27;
+import FailedMailModel from &#x27;../models/failedMail&#x27;
+
+import _ from &#x27;lodash&#x27;
+
+import timers from &#x27;timers&#x27;
+import emailjs from &#x27;emailjs&#x27;
+
+/**
+ * Failed mails scheduler which is checking and trying to send failed mails.
+ *
+ * @class FailedMails
+ * @extends server.helper.AbstractSchedule
+ */
+export default class FailedMails extends AbstractSchedule {
+    constructor() {
+        super();
+
+        this.checkTimer = FailedMails.checkTimer;
+    }
+
+    /**
+     * Fetch all failed mails
+     *
+     * @method fetchFailedMails
+     * @param callback {Function}
+     */
+    fetchFailedMails(callback) {
+        FailedMailModel.find({
+            retried: { $lte: ConfigServer.email.maxRetries }
+        }, (err, failedMails) =&gt; {
+            if(err)
+                return callback(err, null);
+
+            console.log(&#x60;FailedMails: Found ${failedMails.length} failed mails&#x60;);
+            return callback(null, failedMails);
+        });
+    }
+
+    /**
+     * Send a failed mail
+     *
+     * @method sendMail
+     * @param failedMail {server.models.FailedMailModel} failed mail
+     */
+    sendMail(failedMail) {
+        let mailServer = emailjs.server.connect(ConfigServer.email.server);
+        let mailSendObject = Object.assign(_.omit(failedMail.toObject(), [&quot;_id&quot;, &quot;__v&quot;]), {
+            from: ConfigServer.email.from
+        });
+
+        mailServer.send(mailSendObject, err =&gt; {
+            if (err) {
+                let retriesLeft = ConfigServer.email.maxRetries - (failedMail.retried + 1);
+                console.log(&#x60;FailedMails: Couldn&#x27;t Send mail with subject [${failedMail.subject}] to [${failedMail.to}], ${retriesLeft} retires left: Error [${err.message}]&#x60;);
+
+                return failedMail.set({
+                    retried: failedMail.retried + 1
+                }).save();
+            } else {
+                console.log(&#x60;FailedMails: Send mail with subject [${failedMail.subject}] successfully to [${failedMail.to}]: &quot;${failedMail.text}&quot;&#x60;);
+
+                return failedMail.remove();
+            }
+        });
+    }
+
+    /**
+     * Check failed mails and try to send them
+     *
+     * @method checkFailedMails
+     */
+    checkFailedMails() {
+        new Promise(resolve =&gt; resolve())
+            .then(() =&gt; new Promise((resolve, reject) =&gt;
+                this.fetchFailedMails((err, failedMails) =&gt; (!failedMails || err) ? reject(err) : resolve(failedMails))))
+            .then(failedMails =&gt; new Promise((resolve, reject) =&gt; failedMails.length ? resolve(failedMails) : reject()))
+            .then(failedMails =&gt; new Promise((resolve, reject) =&gt; failedMails.forEach(failedMail =&gt;
+                this.sendMail(failedMail))))
+            .catch(err =&gt; {
+                if(!err) {
+                    console.log(&quot;FailedMails: No failed mails left, terminating schedule&quot;);
+                    this.terminate();
+                }
+                else
+                    console.log(&quot;FailedMails:&quot;, err.message);
+            });
+
+        console.log(&quot;FailedMails: Looking for failed mails&quot;);
+    }
+
+    /**
+     * Start failed mails schedule
+     *
+     * @method start
+     * @override
+     */
+    start() {
+        super.start();
+
+        console.log(&quot;FailedMails: Scheduler started&quot;);
+        this.checkTimer = timers.setInterval(this.checkFailedMails.bind(this), ConfigServer.email.retryInterval * 1000);
+    }
+
+    /**
+     * terminate failed mails schedule
+     *
+     * @method terminate
+     * @override
+     */
+    terminate() {
+        super.terminate();
+
+        timers.clearInterval(this.checkTimer);
+        console.log(&quot;FailedMails: Scheduler terminated&quot;);
+    }
+}
+
+/**
+ * Mail check timer
+ *
+ * @attribute checkTimer
+ * @type Node.Timers
+ * @default null
+ */
+FailedMails.checkTimer = null;
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

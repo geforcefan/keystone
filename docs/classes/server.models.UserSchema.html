@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>server.models.UserSchema - Keystone Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            Keystone Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/server.definitions.errorCodes", "classes/server.definitions.mailTypes", "classes/server.definitions.permissions", "classes/server.helper.AbstractSchedule", "classes/server.helper.auth", "classes/server.helper.errorResponse", "classes/server.helper.Mailer", "classes/server.helper.mongoose", "classes/server.helper.permissions", "classes/server.helper.Router", "classes/server.helper.RouterMethods", "classes/server.helper.Scheduler", "classes/server.helper.Service", "classes/server.helper.Services", "classes/server.helper.Setup", "classes/server.helper.successResponse", "classes/server.models.FailedMailSchema", "classes/server.models.SocialLinksSchema", "classes/server.models.SystemSchema", "classes/server.models.UserGroupSchema", "classes/server.models.UserProfileSchema", "classes/server.models.UserSchema", "classes/server.routes.User", "classes/server.schedules.FailedMails", "classes/server.ServerApplication", "classes/server.services.User", "classes/server.services.UserProfile", "classes/shared.definitions.languages", "classes/shared.helper.i18n"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/server.definitions.errorCodes.html">server.definitions.errorCodes</a></li>
+                <li><a href="../classes/server.definitions.mailTypes.html">server.definitions.mailTypes</a></li>
+                <li><a href="../classes/server.definitions.permissions.html">server.definitions.permissions</a></li>
+                <li><a href="../classes/server.helper.AbstractSchedule.html">server.helper.AbstractSchedule</a></li>
+                <li><a href="../classes/server.helper.auth.html">server.helper.auth</a></li>
+                <li><a href="../classes/server.helper.errorResponse.html">server.helper.errorResponse</a></li>
+                <li><a href="../classes/server.helper.Mailer.html">server.helper.Mailer</a></li>
+                <li><a href="../classes/server.helper.mongoose.html">server.helper.mongoose</a></li>
+                <li><a href="../classes/server.helper.permissions.html">server.helper.permissions</a></li>
+                <li><a href="../classes/server.helper.Router.html">server.helper.Router</a></li>
+                <li><a href="../classes/server.helper.RouterMethods.html">server.helper.RouterMethods</a></li>
+                <li><a href="../classes/server.helper.Scheduler.html">server.helper.Scheduler</a></li>
+                <li><a href="../classes/server.helper.Service.html">server.helper.Service</a></li>
+                <li><a href="../classes/server.helper.Services.html">server.helper.Services</a></li>
+                <li><a href="../classes/server.helper.Setup.html">server.helper.Setup</a></li>
+                <li><a href="../classes/server.helper.successResponse.html">server.helper.successResponse</a></li>
+                <li><a href="../classes/server.models.FailedMailSchema.html">server.models.FailedMailSchema</a></li>
+                <li><a href="../classes/server.models.SocialLinksSchema.html">server.models.SocialLinksSchema</a></li>
+                <li><a href="../classes/server.models.SystemSchema.html">server.models.SystemSchema</a></li>
+                <li><a href="../classes/server.models.UserGroupSchema.html">server.models.UserGroupSchema</a></li>
+                <li><a href="../classes/server.models.UserProfileSchema.html">server.models.UserProfileSchema</a></li>
+                <li><a href="../classes/server.models.UserSchema.html">server.models.UserSchema</a></li>
+                <li><a href="../classes/server.routes.User.html">server.routes.User</a></li>
+                <li><a href="../classes/server.schedules.FailedMails.html">server.schedules.FailedMails</a></li>
+                <li><a href="../classes/server.ServerApplication.html">server.ServerApplication</a></li>
+                <li><a href="../classes/server.services.User.html">server.services.User</a></li>
+                <li><a href="../classes/server.services.UserProfile.html">server.services.UserProfile</a></li>
+                <li><a href="../classes/shared.definitions.languages.html">shared.definitions.languages</a></li>
+                <li><a href="../classes/shared.helper.i18n.html">shared.helper.i18n</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>server.models.UserSchema</h1>
+</div>
+
+
+	<div class="well well-small">
+        <div class="extends">
+            Extends Mongoose.Schema
+        </div>
+    </div>
+
+
+
+
+<div class="yuidoc-class-description">
+<p>User model</p>
+<p>GitHub issue: <a href="https://github.com/geforcefan/keystone/issues/2">https://github.com/geforcefan/keystone/issues/2</a></p>
+
+</div>
+
+<!-- table of contents -->
+
+<div id="class-toc" class="page-section">
+	<h2>Table of Contents</h2>
+    <ul>
+		<li>
+			<strong>Methods</strong>
+			<ul>
+				<li><a href="#method-addLastKnownRemoteAddress"><span class="im">addLastKnownRemoteAddress</span>(<span class="ia">remoteAddress</span>)</a></li>
+				<li><a href="#method-cacheGroupAndPermissions"><span class="im">cacheGroupAndPermissions</span>(<span class="ia">next</span><span class="ia">abort</span>)</a></li>
+				<li><a href="#method-comparePassword"><span class="im">comparePassword</span>(<span class="ia">password</span><span class="ia">next</span>)</a></li>
+				<li><a href="#method-getGroup"><span class="im">getGroup</span>()</a></li>
+				<li><a href="#method-getPermissions"><span class="im">getPermissions</span>()</a></li>
+				<li><a href="#method-isAllowed"><span class="im">isAllowed</span>(<span class="ia">permission</span>)</a></li>
+				<li><a href="#method-isAuth"><span class="im">isAuth</span>()</a></li>
+				<li><a href="#method-isMe"><span class="im">isMe</span>(<span class="ia">userID</span>)</a></li>
+				<li><a href="#method-preSave"><span class="im">preSave</span>(<span class="ia">next</span>)</a></li>
+				<li><a href="#method-setAuth"><span class="im">setAuth</span>(<span class="ia">auth</span>)</a></li>
+			</ul>
+		</li>
+
+		<li>
+			<strong>Properties</strong>
+			<ul>
+				<li><a href="#prop-amountOfLastKnownRemoteAddresses"><span class="ip">amountOfLastKnownRemoteAddresses</span></a></li>
+				<li><a href="#prop-auth"><span class="ip">auth</span></a></li>
+				<li><a href="#prop-group"><span class="ip">group</span></a></li>
+				<li><a href="#prop-locale"><span class="ip">locale</span></a></li>
+				<li><a href="#prop-permissions"><span class="ip">permissions</span></a></li>
+			</ul>
+		</li>
+
+		<li>
+			<strong>Attributes</strong>
+			<ul>
+				<li><a href="#attr-active"><span class="iattr">active</span></a></li>
+				<li><a href="#attr-creationDate"><span class="iattr">creationDate</span></a></li>
+				<li><a href="#attr-email"><span class="iattr">email</span></a></li>
+				<li><a href="#attr-groupID"><span class="iattr">groupID</span></a></li>
+				<li><a href="#attr-lastKnownRemoteAddresses"><span class="iattr">lastKnownRemoteAddresses</span></a></li>
+				<li><a href="#attr-name"><span class="iattr">name</span></a></li>
+				<li><a href="#attr-password"><span class="iattr">password</span></a></li>
+				<li><a href="#attr-profile"><span class="iattr">profile</span></a></li>
+			</ul>
+		</li>
+
+		<li>
+			<strong>Static Methods</strong>
+			<ul>
+				<li><a href="#method-generatePasswordHash"><span class="im">server.models.UserSchema.generatePasswordHash</span>(<span class="ia">password</span><span class="ia">resolve</span><span class="ia">reject</span>)</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<!-- details -->
+
+
+    <div id="methods" class="page-section">
+        <h2 class="off-left">Methods</h2>
+        <div class="item-list">
+<div id="method-addLastKnownRemoteAddress" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>addLastKnownRemoteAddress</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>remoteAddress</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Void</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l186"><code>src&#x2F;server&#x2F;models&#x2F;user.js:186</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Adds a last known remote address. Always use this method,
+since it normalizes the entries</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">remoteAddress</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>remote address</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Void</span>
+			</div>
+		</div>
+
+</div>
+<div id="method-cacheGroupAndPermissions" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>cacheGroupAndPermissions</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>next</code>
+				</li>
+				<li class="arg">
+						<code>abort</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l259"><code>src&#x2F;server&#x2F;models&#x2F;user.js:259</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>To use <a href="../classes/server.models.UserSchema.html#method_isAllowed" class="crosslink">isAllowed</a> method properly,
+the user group and permissions needs to be cached</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">next</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>next callback</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">abort</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>abort callback</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+<div id="method-comparePassword" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>comparePassword</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>password</code>
+				</li>
+				<li class="arg">
+						<code>next</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l230"><code>src&#x2F;server&#x2F;models&#x2F;user.js:230</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Compare any password with the users password</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">password</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>password</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">next</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>success callback</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+<div id="method-getGroup" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getGroup</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">UserGroupSchema</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l354"><code>src&#x2F;server&#x2F;models&#x2F;user.js:354</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Get users group. Returns only the group when
+<a href="../classes/server.models.UserSchema.html#method_cacheGroupAndPermissions" class="crosslink">cacheGroupAndPermissions</a>
+is called before</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">UserGroupSchema</span>
+			</div>
+		</div>
+
+</div>
+<div id="method-getPermissions" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getPermissions</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l366"><code>src&#x2F;server&#x2F;models&#x2F;user.js:366</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Get user permissions. Returns only the permissions when
+<a href="../classes/server.models.UserSchema.html#method_cacheGroupAndPermissions" class="crosslink">cacheGroupAndPermissions</a>
+is called before</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+					<p>[...]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-isAllowed" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>isAllowed</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>permission</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l323"><code>src&#x2F;server&#x2F;models&#x2F;user.js:323</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Check the user permission</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">permission</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>permission to be checked</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-isAuth" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>isAuth</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l344"><code>src&#x2F;server&#x2F;models&#x2F;user.js:344</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Is user authenticated</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-isMe" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>isMe</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>userID</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l248"><code>src&#x2F;server&#x2F;models&#x2F;user.js:248</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>A simple check whether the userID matches with the self user</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">userID</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>user id to be compared</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-preSave" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>preSave</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>next</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"></span>
+		</span>
+	</div>
+
+
+		<span class="flag private">private</span>
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l202"><code>src&#x2F;server&#x2F;models&#x2F;user.js:202</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Pre save hook which bcrypts the password before its saved to the database</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">next</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>success callback</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"></span>
+			</div>
+		</div>
+
+</div>
+<div id="method-setAuth" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>setAuth</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>auth</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l334"><code>src&#x2F;server&#x2F;models&#x2F;user.js:334</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Set "is user authenticated"</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">auth</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+
+					<div class="param-description"><p>is user authenticated</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+        </div>
+    </div>
+
+    <div id="properties" class="page-section">
+        <h2 class="off-left">Properties</h2>
+
+        <div class="item-list">
+<div id="prop-amountOfLastKnownRemoteAddresses" class="property item private">
+    <h3 class="name"><code>amountOfLastKnownRemoteAddresses</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l419"><code>src&#x2F;server&#x2F;models&#x2F;user.js:419</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Amount of last known remote addresses to be stored</p>
+
+    </div>
+
+        <p><strong>Default:</strong> 5</p>
+
+
+</div>
+<div id="prop-auth" class="property item private">
+    <h3 class="name"><code>auth</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l398"><code>src&#x2F;server&#x2F;models&#x2F;user.js:398</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>User authentication state. This is mostly used for the injected user model
+in the request</p>
+
+    </div>
+
+        <p><strong>Default:</strong> false</p>
+
+
+</div>
+<div id="prop-group" class="property item private">
+    <h3 class="name"><code>group</code></h3>
+    <span class="type">UserGroupSchema</span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l409"><code>src&#x2F;server&#x2F;models&#x2F;user.js:409</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>User group</p>
+
+    </div>
+
+        <p><strong>Default:</strong> null</p>
+
+
+</div>
+<div id="prop-locale" class="property item private">
+    <h3 class="name"><code>locale</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l430"><code>src&#x2F;server&#x2F;models&#x2F;user.js:430</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Users current locale</p>
+
+    </div>
+
+        <p><strong>Default:</strong> en</p>
+
+
+</div>
+<div id="prop-permissions" class="property item private">
+    <h3 class="name"><code>permissions</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l387"><code>src&#x2F;server&#x2F;models&#x2F;user.js:387</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Cached user permissions.
+Will filled after calling UserSchema.cachePermissions</p>
+
+    </div>
+
+        <p><strong>Default:</strong> []</p>
+
+
+</div>
+        </div>
+    </div>
+
+    <div id="attrs" class="page-section">
+        <h2 class="off-left">Attributes</h2>
+
+<div id="attr-active" class="attr item">
+    <a name="config_active"></a> 
+    <h3 class="name"><code>active</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l101"><code>src&#x2F;server&#x2F;models&#x2F;user.js:101</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>User active. After registration, user has to be activated</p>
+
+    </div>
+
+        <p><strong>Default:</strong> false</p>
+
+
+</div>
+<div id="attr-creationDate" class="attr item">
+    <a name="config_creationDate"></a> 
+    <h3 class="name"><code>creationDate</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="crosslink external" target="_blank">Date</a></span>
+
+
+
+
+
+
+        <span class="flag required">required</span>
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l87"><code>src&#x2F;server&#x2F;models&#x2F;user.js:87</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Creation date of the user</p>
+
+    </div>
+
+        <p><strong>Default:</strong> Date.now</p>
+
+
+</div>
+<div id="attr-email" class="attr item">
+    <a name="config_email"></a> 
+    <h3 class="name"><code>email</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+
+        <span class="flag required">required</span>
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l62"><code>src&#x2F;server&#x2F;models&#x2F;user.js:62</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>eMail Address</p>
+
+    </div>
+
+
+
+</div>
+<div id="attr-groupID" class="attr item">
+    <a name="config_groupID"></a> 
+    <h3 class="name"><code>groupID</code></h3>
+    <span class="type">ObjectId</span>
+
+
+
+
+
+
+        <span class="flag required">required</span>
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l75"><code>src&#x2F;server&#x2F;models&#x2F;user.js:75</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p><a href="../classes/server.models.UserGroupSchema.html" class="crosslink">Group</a> id</p>
+
+    </div>
+
+
+
+</div>
+<div id="attr-lastKnownRemoteAddresses" class="attr item">
+    <a name="config_lastKnownRemoteAddresses"></a> 
+    <h3 class="name"><code>lastKnownRemoteAddresses</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">[String]</a></span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l113"><code>src&#x2F;server&#x2F;models&#x2F;user.js:113</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Users last known remote addresses</p>
+
+    </div>
+
+        <p><strong>Default:</strong> []</p>
+
+
+</div>
+<div id="attr-name" class="attr item">
+    <a name="config_name"></a> 
+    <h3 class="name"><code>name</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+
+        <span class="flag required">required</span>
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l37"><code>src&#x2F;server&#x2F;models&#x2F;user.js:37</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Username</p>
+
+    </div>
+
+
+
+</div>
+<div id="attr-password" class="attr item">
+    <a name="config_password"></a> 
+    <h3 class="name"><code>password</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+
+        <span class="flag required">required</span>
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l50"><code>src&#x2F;server&#x2F;models&#x2F;user.js:50</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Password</p>
+
+    </div>
+
+
+
+</div>
+<div id="attr-profile" class="attr item">
+    <a name="config_profile"></a> 
+    <h3 class="name"><code>profile</code></h3>
+    <span class="type"><a href="../classes/server.models.UserProfileSchema.html" class="crosslink">server.models.UserProfileSchema</a></span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_user.js.html#l125"><code>src&#x2F;server&#x2F;models&#x2F;user.js:125</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>User profile</p>
+
+    </div>
+
+        <p><strong>Default:</strong> UserProfileSchema</p>
+
+
+</div>
+    </div>
+
+
+    <div id="static-methods" class="page-section">
+        <h2 class="off-left">Static Methods</h2>
+        <div class="item-list">
+<div id="method-generatePasswordHash" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>server.models.UserSchema.generatePasswordHash</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>password</code>
+				</li>
+				<li class="arg">
+						<code>resolve</code>
+				</li>
+				<li class="arg">
+						<code>reject</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+
+
+
+		<span class="flag async">async</span>
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_server_models_user.js.html#l161"><code>src&#x2F;server&#x2F;models&#x2F;user.js:161</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Generate a password hash
+A little work around for the query hook middleware problem
+<a href="https://github.com/saintedlama/passport-local-mongoose/issues/135">https://github.com/saintedlama/passport-local-mongoose/issues/135</a></p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">password</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>password</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">resolve</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>resolve callback with the hash</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">reject</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+					<div class="param-description"><p>reject callback</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+        </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

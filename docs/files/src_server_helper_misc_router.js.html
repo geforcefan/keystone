@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/server/helper/misc/router.js - Keystone Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            Keystone Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/server.definitions.errorCodes", "classes/server.definitions.mailTypes", "classes/server.definitions.permissions", "classes/server.helper.AbstractSchedule", "classes/server.helper.auth", "classes/server.helper.errorResponse", "classes/server.helper.Mailer", "classes/server.helper.mongoose", "classes/server.helper.permissions", "classes/server.helper.Router", "classes/server.helper.RouterMethods", "classes/server.helper.Scheduler", "classes/server.helper.Service", "classes/server.helper.Services", "classes/server.helper.Setup", "classes/server.helper.successResponse", "classes/server.models.FailedMailSchema", "classes/server.models.SocialLinksSchema", "classes/server.models.SystemSchema", "classes/server.models.UserGroupSchema", "classes/server.models.UserProfileSchema", "classes/server.models.UserSchema", "classes/server.routes.User", "classes/server.schedules.FailedMails", "classes/server.ServerApplication", "classes/server.services.User", "classes/server.services.UserProfile", "classes/shared.definitions.languages", "classes/shared.helper.i18n"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/server.definitions.errorCodes.html">server.definitions.errorCodes</a></li>
+                <li><a href="../classes/server.definitions.mailTypes.html">server.definitions.mailTypes</a></li>
+                <li><a href="../classes/server.definitions.permissions.html">server.definitions.permissions</a></li>
+                <li><a href="../classes/server.helper.AbstractSchedule.html">server.helper.AbstractSchedule</a></li>
+                <li><a href="../classes/server.helper.auth.html">server.helper.auth</a></li>
+                <li><a href="../classes/server.helper.errorResponse.html">server.helper.errorResponse</a></li>
+                <li><a href="../classes/server.helper.Mailer.html">server.helper.Mailer</a></li>
+                <li><a href="../classes/server.helper.mongoose.html">server.helper.mongoose</a></li>
+                <li><a href="../classes/server.helper.permissions.html">server.helper.permissions</a></li>
+                <li><a href="../classes/server.helper.Router.html">server.helper.Router</a></li>
+                <li><a href="../classes/server.helper.RouterMethods.html">server.helper.RouterMethods</a></li>
+                <li><a href="../classes/server.helper.Scheduler.html">server.helper.Scheduler</a></li>
+                <li><a href="../classes/server.helper.Service.html">server.helper.Service</a></li>
+                <li><a href="../classes/server.helper.Services.html">server.helper.Services</a></li>
+                <li><a href="../classes/server.helper.Setup.html">server.helper.Setup</a></li>
+                <li><a href="../classes/server.helper.successResponse.html">server.helper.successResponse</a></li>
+                <li><a href="../classes/server.models.FailedMailSchema.html">server.models.FailedMailSchema</a></li>
+                <li><a href="../classes/server.models.SocialLinksSchema.html">server.models.SocialLinksSchema</a></li>
+                <li><a href="../classes/server.models.SystemSchema.html">server.models.SystemSchema</a></li>
+                <li><a href="../classes/server.models.UserGroupSchema.html">server.models.UserGroupSchema</a></li>
+                <li><a href="../classes/server.models.UserProfileSchema.html">server.models.UserProfileSchema</a></li>
+                <li><a href="../classes/server.models.UserSchema.html">server.models.UserSchema</a></li>
+                <li><a href="../classes/server.routes.User.html">server.routes.User</a></li>
+                <li><a href="../classes/server.schedules.FailedMails.html">server.schedules.FailedMails</a></li>
+                <li><a href="../classes/server.ServerApplication.html">server.ServerApplication</a></li>
+                <li><a href="../classes/server.services.User.html">server.services.User</a></li>
+                <li><a href="../classes/server.services.UserProfile.html">server.services.UserProfile</a></li>
+                <li><a href="../classes/shared.definitions.languages.html">shared.definitions.languages</a></li>
+                <li><a href="../classes/shared.helper.i18n.html">shared.helper.i18n</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>src/server/helper/misc/router.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * router.js
+ *
+ * Router helper. Inherit this class in any route.
+ *
+ * GitHub issue: https://github.com/geforcefan/keystone/issues/8
+ * GitHub issue: https://github.com/geforcefan/keystone/issues/9
+ *
+ * @namespace server.helper
+ * @license GPL-3.0
+ * @version 1.0
+ * @author  Ercan &quot;geforcefan&quot; Akyürek, https://github.com/geforcefan/
+ * @updated 2017-03-15
+ * @link    https://github.com/geforcefan/keystone/
+ *
+ *
+ */
+
+import Express from &#x27;express&#x27;;
+import Domain from &#x27;domain&#x27;;
+import { Enum } from &#x27;enumify&#x27;;
+
+import paths from &#x27;../paths&#x27;
+import path from &#x27;path&#x27;;
+import fs from &#x27;fs&#x27;;
+
+import Services from &#x27;../services/services&#x27;
+
+/**
+ * Available router methods.
+ *
+ * @class RouterMethods
+ * @extends Enum
+ */
+export class RouteMethods extends Enum {}
+
+/**
+ * get method
+ *
+ * @property get
+ */
+
+/**
+ * post method
+ *
+ * @property post
+ */
+
+/**
+ * delete method
+ *
+ * @property delete
+ */
+RouteMethods.initEnum([&#x27;post&#x27;, &#x27;get&#x27;, &#x27;delete&#x27;]);
+
+/**
+ * Place your routes inside routes/ to register them. Your route must inherit from this class.
+ * The file name is used as URL identifier (e.g. http://localhost:4000/api/{filenameWithoutExtension})
+ *
+ * Example directory structure
+ *
+ *      routes/user.js -&gt; user
+ *      routes/testyTest.js -&gt; testyTest
+ *
+ * Example URLs
+ *
+ *      http://localhost:4000/api/user/*
+ *      http://localhost:4000/api/testyTest/*
+ *
+ * @class Router
+ * @extends server.helper.Services
+ */
+export class Router extends Services {
+    constructor() {
+        super();
+
+        this.router = Express.Router();
+
+        // a little middleware which allows us to access request and response via process.domain.req or
+        // process.domain.res in the services
+        this.router.use(&quot;*&quot;, (req, res, next) =&gt; {
+            console.log(&quot;Created request domain&quot;);
+
+            let requestDomain = Domain.create();
+            requestDomain.add(req);
+            requestDomain.add(res);
+            requestDomain.req = req;
+            requestDomain.res = res;
+
+            console.log(&#x60;Requested route: ${req.baseUrl}&#x60;);
+            console.log(&#x60;Found route instance: ${this.constructor.name}&#x60;);
+            requestDomain.run(next);
+        });
+    }
+
+    /**
+     * Add a route
+     *
+     * @method addRoute
+     *
+     * @protected
+     * 
+     * @param route {String} route
+     * @param callback {Function} express callback
+     * @param method {RouteMethods} route method
+     *
+     * @example
+     *      this.addRoute(&quot;authenticate/&quot;, (res, req) =&gt; res.send(&quot;OK&quot;), RouteMethods.post);
+     *      this.addRoute(&quot;profile/&quot;, (res, req) =&gt; res.send(&quot;OK&quot;), RouteMethods.get);
+     */
+    addRoute(route, callback, method) {
+        if(!(method instanceof RouteMethods))
+            throw &quot;Argument method must be an instance of RouterMethods&quot;;
+
+        switch(method) {
+            case RouteMethods.get:
+                this.router.get(route, callback);
+                break;
+            case RouteMethods.post:
+                this.router.post(route, callback);
+                break;
+            case RouteMethods.delete:
+                this.router.delete(route, callback);
+                break;
+        }
+    }
+
+    /**
+     * Get express router, which is used by the routes autoloader in server.js
+     *
+     * @method getExpressRouter
+     *
+     * @returns {Express.Router}
+     */
+    getExpressRouter() {
+        return this.router;
+    }
+
+    /**
+     * Detect all routes from the routes/ directory.
+     * Each route must inherit from server.helper.Router
+     *
+     * @method detectRoutes
+     * @static
+     * @returns {Express.Router}
+     */
+    static detectRoutes() {
+        let srcPath = paths.server.routes;
+
+        // detect all .js files from the &quot;routes/&quot; directory.
+        // The file name is used as URL identifier (e.g. http://localhost:4000/api/{filenameWithoutExtension})
+        return fs.readdirSync(srcPath)
+            .filter(file =&gt; fs.statSync(path.join(srcPath, file)).isFile())
+            .map(file =&gt; {
+                let apiName = file.split(&#x27;.js&#x27;)[0];
+                console.log(&#x60;Found route: ${file}, route: /api/${apiName}/*&#x60;);
+
+                return apiName;
+            })
+            .reduce((acc, apiName) =&gt;  {
+                try {
+                    let route = require(path.join(paths.server.routes, apiName)).default;
+
+                    if (!(route.prototype instanceof Router))
+                        throw Error(&#x60;Router ${apiName} must inherit from Router&#x60;);
+
+                    acc.use(&quot;/&quot; + apiName, (new (route)).getExpressRouter())
+                } catch(e) {
+                    console.log(&#x60;Couldn&#x27;t register router &#x27;${apiName}&#x27;: ${e.message}&#x60;);
+                }
+
+                return acc;
+            }, Express.Router());
+    }
+}
+
+/**
+ * Express router, which is used by the routes autoloader in server.js
+ *
+ * @attribute router
+ * @default null
+ * @private
+ * @type {null}
+ */
+Router.router = null;
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

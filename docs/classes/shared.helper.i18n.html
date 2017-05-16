@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>shared.helper.i18n - Keystone Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            Keystone Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/server.definitions.errorCodes", "classes/server.definitions.mailTypes", "classes/server.definitions.permissions", "classes/server.helper.AbstractSchedule", "classes/server.helper.auth", "classes/server.helper.errorResponse", "classes/server.helper.Mailer", "classes/server.helper.mongoose", "classes/server.helper.permissions", "classes/server.helper.Router", "classes/server.helper.RouterMethods", "classes/server.helper.Scheduler", "classes/server.helper.Service", "classes/server.helper.Services", "classes/server.helper.Setup", "classes/server.helper.successResponse", "classes/server.models.FailedMailSchema", "classes/server.models.SocialLinksSchema", "classes/server.models.SystemSchema", "classes/server.models.UserGroupSchema", "classes/server.models.UserProfileSchema", "classes/server.models.UserSchema", "classes/server.routes.User", "classes/server.schedules.FailedMails", "classes/server.ServerApplication", "classes/server.services.User", "classes/server.services.UserProfile", "classes/shared.definitions.languages", "classes/shared.helper.i18n"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/server.definitions.errorCodes.html">server.definitions.errorCodes</a></li>
+                <li><a href="../classes/server.definitions.mailTypes.html">server.definitions.mailTypes</a></li>
+                <li><a href="../classes/server.definitions.permissions.html">server.definitions.permissions</a></li>
+                <li><a href="../classes/server.helper.AbstractSchedule.html">server.helper.AbstractSchedule</a></li>
+                <li><a href="../classes/server.helper.auth.html">server.helper.auth</a></li>
+                <li><a href="../classes/server.helper.errorResponse.html">server.helper.errorResponse</a></li>
+                <li><a href="../classes/server.helper.Mailer.html">server.helper.Mailer</a></li>
+                <li><a href="../classes/server.helper.mongoose.html">server.helper.mongoose</a></li>
+                <li><a href="../classes/server.helper.permissions.html">server.helper.permissions</a></li>
+                <li><a href="../classes/server.helper.Router.html">server.helper.Router</a></li>
+                <li><a href="../classes/server.helper.RouterMethods.html">server.helper.RouterMethods</a></li>
+                <li><a href="../classes/server.helper.Scheduler.html">server.helper.Scheduler</a></li>
+                <li><a href="../classes/server.helper.Service.html">server.helper.Service</a></li>
+                <li><a href="../classes/server.helper.Services.html">server.helper.Services</a></li>
+                <li><a href="../classes/server.helper.Setup.html">server.helper.Setup</a></li>
+                <li><a href="../classes/server.helper.successResponse.html">server.helper.successResponse</a></li>
+                <li><a href="../classes/server.models.FailedMailSchema.html">server.models.FailedMailSchema</a></li>
+                <li><a href="../classes/server.models.SocialLinksSchema.html">server.models.SocialLinksSchema</a></li>
+                <li><a href="../classes/server.models.SystemSchema.html">server.models.SystemSchema</a></li>
+                <li><a href="../classes/server.models.UserGroupSchema.html">server.models.UserGroupSchema</a></li>
+                <li><a href="../classes/server.models.UserProfileSchema.html">server.models.UserProfileSchema</a></li>
+                <li><a href="../classes/server.models.UserSchema.html">server.models.UserSchema</a></li>
+                <li><a href="../classes/server.routes.User.html">server.routes.User</a></li>
+                <li><a href="../classes/server.schedules.FailedMails.html">server.schedules.FailedMails</a></li>
+                <li><a href="../classes/server.ServerApplication.html">server.ServerApplication</a></li>
+                <li><a href="../classes/server.services.User.html">server.services.User</a></li>
+                <li><a href="../classes/server.services.UserProfile.html">server.services.UserProfile</a></li>
+                <li><a href="../classes/shared.definitions.languages.html">shared.definitions.languages</a></li>
+                <li><a href="../classes/shared.helper.i18n.html">shared.helper.i18n</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>shared.helper.i18n</h1>
+</div>
+
+
+
+
+
+
+<div class="yuidoc-class-description">
+<p>i18n helper for translations and locale detection</p>
+
+</div>
+
+<!-- table of contents -->
+
+<div id="class-toc" class="page-section">
+	<h2>Table of Contents</h2>
+    <ul>
+		<li>
+			<strong>Methods</strong>
+			<ul>
+				<li><a href="#method-export tr"><span class="im">export tr</span>(<span class="ia">key</span><span class="ia">arguments</span>)</a></li>
+			</ul>
+		</li>
+
+
+		<li>
+			<strong>Attributes</strong>
+			<ul>
+				<li><a href="#attr-cachedLocaleStrings"><span class="iattr">cachedLocaleStrings</span></a></li>
+				<li><a href="#attr-clientLocale"><span class="iattr">clientLocale</span></a></li>
+				<li><a href="#attr-defaultLocale"><span class="iattr">defaultLocale</span></a></li>
+			</ul>
+		</li>
+
+		<li>
+			<strong>Static Methods</strong>
+			<ul>
+				<li><a href="#method-detectAndSetClientLocaleFromDocument"><span class="im">shared.helper.i18n.detectAndSetClientLocaleFromDocument</span>()</a></li>
+				<li><a href="#method-detectLocaleFromRequest"><span class="im">shared.helper.i18n.detectLocaleFromRequest</span>(<span class="ia">req</span>)</a></li>
+				<li><a href="#method-flattenMessages"><span class="im">shared.helper.i18n.flattenMessages</span>(<span class="ia">nestedMessages</span><span class="ia">prefix</span>)</a></li>
+				<li><a href="#method-getActiveLocale"><span class="im">shared.helper.i18n.getActiveLocale</span>()</a></li>
+				<li><a href="#method-readAndCacheLocaleStrings"><span class="im">shared.helper.i18n.readAndCacheLocaleStrings</span>()</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<!-- details -->
+
+
+    <div id="methods" class="page-section">
+        <h2 class="off-left">Methods</h2>
+        <div class="item-list">
+<div id="method-export tr" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>export tr</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>key</code>
+				</li>
+				<li class="arg">
+						<code>arguments</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_shared_helper_i18n.js.html#l167"><code>src&#x2F;shared&#x2F;helper&#x2F;i18n.js:167</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Translate function. You can use this method to internationalize the application.
+Wherever a translation is needed, just import
+<a href="../classes/shared.helper.i18n.html#method_export tr" class="crosslink">this function</a> and use it.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">key</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>defined in the locales strings file</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">arguments</code>
+						<span class="type"></span>
+
+
+					<div class="param-description"><p>arguments of strings which can accessed in the translated string via {0}..{1}..{n}</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>:
+					<p>Translated string</p>
+
+			</div>
+		</div>
+
+</div>
+        </div>
+    </div>
+
+
+    <div id="attrs" class="page-section">
+        <h2 class="off-left">Attributes</h2>
+
+<div id="attr-cachedLocaleStrings" class="attr item">
+    <a name="config_cachedLocaleStrings"></a> 
+    <h3 class="name"><code>cachedLocaleStrings</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_shared_helper_i18n.js.html#l154"><code>src&#x2F;shared&#x2F;helper&#x2F;i18n.js:154</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Cached locale strings</p>
+
+    </div>
+
+        <p><strong>Default:</strong> en</p>
+
+
+</div>
+<div id="attr-clientLocale" class="attr item">
+    <a name="config_clientLocale"></a> 
+    <h3 class="name"><code>clientLocale</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_shared_helper_i18n.js.html#l145"><code>src&#x2F;shared&#x2F;helper&#x2F;i18n.js:145</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Client locale</p>
+
+    </div>
+
+        <p><strong>Default:</strong> en</p>
+
+
+</div>
+<div id="attr-defaultLocale" class="attr item">
+    <a name="config_defaultLocale"></a> 
+    <h3 class="name"><code>defaultLocale</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_shared_helper_i18n.js.html#l136"><code>src&#x2F;shared&#x2F;helper&#x2F;i18n.js:136</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Default locale</p>
+
+    </div>
+
+        <p><strong>Default:</strong> en</p>
+
+
+</div>
+    </div>
+
+
+    <div id="static-methods" class="page-section">
+        <h2 class="off-left">Static Methods</h2>
+        <div class="item-list">
+<div id="method-detectAndSetClientLocaleFromDocument" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>shared.helper.i18n.detectAndSetClientLocaleFromDocument</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_shared_helper_i18n.js.html#l101"><code>src&#x2F;shared&#x2F;helper&#x2F;i18n.js:101</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Basically just picking the lang attribute from the HTML element and make
+this global accessible via languageDetector.currentLocale.
+The business logic of which language should picked SHOULD exclusively
+detected server side (check server.js). The server then renders the HTML Layout
+with the right lang attribute, so the client just have to pick the locale which is
+passed from the server</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>:
+					<p>detected locale</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-detectLocaleFromRequest" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>shared.helper.i18n.detectLocaleFromRequest</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>req</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_shared_helper_i18n.js.html#l84"><code>src&#x2F;shared&#x2F;helper&#x2F;i18n.js:84</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Detect locale from server request</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">req</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+					<div class="param-description"><p>Express request</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>:
+					<p>locale</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-flattenMessages" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>shared.helper.i18n.flattenMessages</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>nestedMessages</code>
+				</li>
+				<li class="arg">
+						<code>prefix</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_shared_helper_i18n.js.html#l26"><code>src&#x2F;shared&#x2F;helper&#x2F;i18n.js:26</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Flattens messages.</p>
+<p>We want to use nested objects when we provide strings in locales/
+because of the maintainability. So we need this method to flatten such a structure:</p>
+<pre class="code prettyprint"><code> {
+     "client": {
+         "string1": "Hello",
+         "string2": "World"
+     }
+ }
+</code></pre>
+<p>to:</p>
+<pre class="code prettyprint"><code> {
+     "client.string1": "Hello",
+     "client.string2": "World"
+ }
+</code></pre>
+<p>When there is an impact of performance because of this, we should pre process the strings.js
+in the building stage</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">nestedMessages</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+					<div class="param-description"><p>nested messages</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">prefix</code>
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+					<div class="param-description"><p>prefix</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+					<p>flatten messages object</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-getActiveLocale" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>shared.helper.i18n.getActiveLocale</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_shared_helper_i18n.js.html#l124"><code>src&#x2F;shared&#x2F;helper&#x2F;i18n.js:124</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Get active locale depending on client or server request</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>:
+					<p>locale</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-readAndCacheLocaleStrings" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>shared.helper.i18n.readAndCacheLocaleStrings</code></span>
+
+		<span class="paren">()</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/src_shared_helper_i18n.js.html#l71"><code>src&#x2F;shared&#x2F;helper&#x2F;i18n.js:71</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Import all locale strings and cache them after flatting the strings</p>
+</div>
+
+
+
+</div>
+        </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

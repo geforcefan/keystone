@@ -1,0 +1,3936 @@
+{
+    "project": {
+        "name": "Keystone Documentation",
+        "description": "Project Keystone is an open source portal for roller coaster enthusiasts with focus on the simulation software NoLimits 2 - Roller Coaster Simulation created by Olé Lange.",
+        "version": "1.0.0",
+        "url": "https://github.com/geforcefan/keystone"
+    },
+    "files": {
+        "src/client/layout/DefaultLayout.js": {
+            "name": "src/client/layout/DefaultLayout.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/client/pages/IndexPage.js": {
+            "name": "src/client/pages/IndexPage.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/client/pages/NotFoundPage.js": {
+            "name": "src/client/pages/NotFoundPage.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/client/client.js": {
+            "name": "src/client/client.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/client/routes.js": {
+            "name": "src/client/routes.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/server/definitions/errorCodes.js": {
+            "name": "src/server/definitions/errorCodes.js",
+            "modules": {},
+            "classes": {
+                "server.definitions.errorCodes": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.definitions": 1
+            }
+        },
+        "src/server/definitions/mailsTypes.js": {
+            "name": "src/server/definitions/mailsTypes.js",
+            "modules": {},
+            "classes": {
+                "server.definitions.mailTypes": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.definitions": 1
+            }
+        },
+        "src/server/definitions/permissions.js": {
+            "name": "src/server/definitions/permissions.js",
+            "modules": {},
+            "classes": {
+                "server.definitions.permissions": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.definitions": 1
+            }
+        },
+        "src/server/helper/misc/mailer.js": {
+            "name": "src/server/helper/misc/mailer.js",
+            "modules": {},
+            "classes": {
+                "server.helper.Mailer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/misc/mongoose.js": {
+            "name": "src/server/helper/misc/mongoose.js",
+            "modules": {},
+            "classes": {
+                "server.helper.mongoose": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/misc/randomValueBase64.js": {
+            "name": "src/server/helper/misc/randomValueBase64.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/misc/router.js": {
+            "name": "src/server/helper/misc/router.js",
+            "modules": {},
+            "classes": {
+                "server.helper.RouterMethods": 1,
+                "server.helper.Router": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/misc/setup.js": {
+            "name": "src/server/helper/misc/setup.js",
+            "modules": {},
+            "classes": {
+                "server.helper.Setup": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/response/errorResponse.js": {
+            "name": "src/server/helper/response/errorResponse.js",
+            "modules": {},
+            "classes": {
+                "server.helper.errorResponse": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/response/successResponse.js": {
+            "name": "src/server/helper/response/successResponse.js",
+            "modules": {},
+            "classes": {
+                "server.helper.successResponse": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/scheduler/abstractSchedule.js": {
+            "name": "src/server/helper/scheduler/abstractSchedule.js",
+            "modules": {},
+            "classes": {
+                "server.helper.AbstractSchedule": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/scheduler/scheduler.js": {
+            "name": "src/server/helper/scheduler/scheduler.js",
+            "modules": {},
+            "classes": {
+                "server.helper.Scheduler": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/services/service.js": {
+            "name": "src/server/helper/services/service.js",
+            "modules": {},
+            "classes": {
+                "server.helper.Service": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/services/services.js": {
+            "name": "src/server/helper/services/services.js",
+            "modules": {},
+            "classes": {
+                "server.helper.Services": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/user/auth.js": {
+            "name": "src/server/helper/user/auth.js",
+            "modules": {},
+            "classes": {
+                "server.helper.auth": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/helper/user/permissions.js": {
+            "name": "src/server/helper/user/permissions.js",
+            "modules": {},
+            "classes": {
+                "server.helper.permissions": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.helper": 1
+            }
+        },
+        "src/server/models/failedMail.js": {
+            "name": "src/server/models/failedMail.js",
+            "modules": {},
+            "classes": {
+                "server.models.FailedMailSchema": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.models": 1
+            }
+        },
+        "src/server/models/socialLinks.js": {
+            "name": "src/server/models/socialLinks.js",
+            "modules": {},
+            "classes": {
+                "server.models.SocialLinksSchema": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.models": 1
+            }
+        },
+        "src/server/models/system.js": {
+            "name": "src/server/models/system.js",
+            "modules": {},
+            "classes": {
+                "server.models.SystemSchema": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.models": 1
+            }
+        },
+        "src/server/models/user.js": {
+            "name": "src/server/models/user.js",
+            "modules": {},
+            "classes": {
+                "server.models.UserSchema": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.models": 1
+            }
+        },
+        "src/server/models/userGroup.js": {
+            "name": "src/server/models/userGroup.js",
+            "modules": {},
+            "classes": {
+                "server.models.UserGroupSchema": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.models": 1
+            }
+        },
+        "src/server/models/userProfile.js": {
+            "name": "src/server/models/userProfile.js",
+            "modules": {},
+            "classes": {
+                "server.models.UserProfileSchema": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.models": 1
+            }
+        },
+        "src/server/routes/test.js": {
+            "name": "src/server/routes/test.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/server/routes/user.js": {
+            "name": "src/server/routes/user.js",
+            "modules": {},
+            "classes": {
+                "server.routes.User": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.routes": 1
+            }
+        },
+        "src/server/schedules/failedMails.js": {
+            "name": "src/server/schedules/failedMails.js",
+            "modules": {},
+            "classes": {
+                "server.schedules.FailedMails": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.schedules": 1
+            }
+        },
+        "src/server/services/user.js": {
+            "name": "src/server/services/user.js",
+            "modules": {},
+            "classes": {
+                "server.services.User": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.services": 1
+            }
+        },
+        "src/server/services/userProfile.js": {
+            "name": "src/server/services/userProfile.js",
+            "modules": {},
+            "classes": {
+                "server.services.UserProfile": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server.services": 1
+            }
+        },
+        "src/server/setup/20170310/userGroups.js": {
+            "name": "src/server/setup/20170310/userGroups.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/server/server.js": {
+            "name": "src/server/server.js",
+            "modules": {},
+            "classes": {
+                "server.ServerApplication": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "server": 1
+            }
+        },
+        "src/shared/definitions/languages.js": {
+            "name": "src/shared/definitions/languages.js",
+            "modules": {},
+            "classes": {
+                "shared.definitions.languages": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "shared.definitions": 1
+            }
+        },
+        "src/shared/helper/i18n.js": {
+            "name": "src/shared/helper/i18n.js",
+            "modules": {},
+            "classes": {
+                "shared.helper.i18n": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "shared.helper": 1
+            }
+        }
+    },
+    "modules": {},
+    "classes": {
+        "server.definitions.errorCodes": {
+            "name": "server.definitions.errorCodes",
+            "shortname": "server.definitions.errorCodes",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.definitions",
+            "file": "src/server/definitions/errorCodes.js",
+            "line": 1,
+            "description": "errorCodes.js\n\nAll error codes are defined here. Add new error codes when needed.\nThe messages should be provided in the locales strings (locales/strings.js)\n\n     {\n         ...\n         \"errorCodes\": {\n             ...\n             \"authenticationUserNotFound\": \"User not found\"\n             ...\n         }\n         ...\n     }",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-09",
+            "link": "https://github.com/geforcefan/keystone/"
+        },
+        "server.definitions.mailTypes": {
+            "name": "server.definitions.mailTypes",
+            "shortname": "server.definitions.mailTypes",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.definitions",
+            "file": "src/server/definitions/mailsTypes.js",
+            "line": 1,
+            "description": "mailTypes.js\n\nDefinition of available mail types. Subjects will be translated automatically by\ngrabbing the translation from the locales file:\n\n     \"email.{mailType}.subject\n\nAs well as the templates will be grabbed from\n\n     locales/mails/{locale}/{mailType}.ejs",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-11",
+            "link": "https://github.com/geforcefan/keystone/"
+        },
+        "server.definitions.permissions": {
+            "name": "server.definitions.permissions",
+            "shortname": "server.definitions.permissions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.definitions",
+            "file": "src/server/definitions/permissions.js",
+            "line": 1,
+            "description": "permissions.js\n\nDefinition of API permissions. You can check for a user permission by using\n{{#crossLink \"server.models.UserSchema/isAllowed:method\"}}isAllowed{{/crossLink}} method of the user model\nwhich is provided in each request.\n\nImportant: the group of a user needs assigned permissions.\nYou can assign the permissions to a group directly in the database\nor in the administration interface of the website\n\n     req.user.isAllowed(\"user.set\")\n     req.user.isAllowed(\"coaster.park.set\")",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-11",
+            "link": "https://github.com/geforcefan/keystone/"
+        },
+        "server.helper.Mailer": {
+            "name": "server.helper.Mailer",
+            "shortname": "Mailer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/misc/mailer.js",
+            "line": 39,
+            "description": "Mailer helper class which provides a method to send a mail without concerning\nabout the sender addresses, subject, template and mail layout"
+        },
+        "server.helper.mongoose": {
+            "name": "server.helper.mongoose",
+            "shortname": "server.helper.mongoose",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/misc/mongoose.js",
+            "line": 1,
+            "description": "mongoose.js\n\nMongoose helper. This is a mongoose wrapper which is needed because of this\nPromise deprecation stuff (https://github.com/Automattic/mongoose/issues/4291).\nMongooses default Promise lib \"mpromise\" is deprecated, so we have to plugin\nthe ES6 Promises (mongoose.Promise = global.Promise). But: we need to do this every time\nwe import 'mongoose'. I don´t want to write this every single time when I am a using mongoose.\nSo when you want to use mongoose, import THIS module.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-12",
+            "link": "https://github.com/geforcefan/keystone/"
+        },
+        "server.helper.RouterMethods": {
+            "name": "server.helper.RouterMethods",
+            "shortname": "RouterMethods",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/misc/router.js",
+            "line": 29,
+            "description": "Available router methods.",
+            "extends": "Enum"
+        },
+        "server.helper.Router": {
+            "name": "server.helper.Router",
+            "shortname": "Router",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/misc/router.js",
+            "line": 56,
+            "description": "Place your routes inside routes/ to register them. Your route must inherit from this class.\nThe file name is used as URL identifier (e.g. http://localhost:4000/api/{filenameWithoutExtension})\n\nExample directory structure\n\n     routes/user.js -> user\n     routes/testyTest.js -> testyTest\n\nExample URLs\n\n     http://localhost:4000/api/user/*\n     http://localhost:4000/api/testyTest/*",
+            "extends": "server.helper.Services"
+        },
+        "server.helper.Setup": {
+            "name": "server.helper.Setup",
+            "shortname": "Setup",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/misc/setup.js",
+            "line": 25,
+            "description": "Setup helper. This helper will check for updates and invokes them"
+        },
+        "server.helper.errorResponse": {
+            "name": "server.helper.errorResponse",
+            "shortname": "server.helper.errorResponse",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/response/errorResponse.js",
+            "line": 1,
+            "description": "errorResponse.js\n\nA little helper which SHOULD be used when errors occurs which should responded to the requestee.\nWith this helper we guaruentee on errors a response format which is predictable for the client.\nThis is an effective way to avoid mixed responses. It´s called conventions ladies and gentlemen.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-10",
+            "link": "https://github.com/geforcefan/keystone/"
+        },
+        "server.helper.successResponse": {
+            "name": "server.helper.successResponse",
+            "shortname": "server.helper.successResponse",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/response/successResponse.js",
+            "line": 1,
+            "description": "successResponse.js\n\nWith this helper we guaruentee a response format which is predictable for the client.\nThis is an effective way to avoid mixed responses. It´s called conventions ladies and gentlemen.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-10",
+            "link": "https://github.com/geforcefan/keystone/"
+        },
+        "server.helper.AbstractSchedule": {
+            "name": "server.helper.AbstractSchedule",
+            "shortname": "AbstractSchedule",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/scheduler/abstractSchedule.js",
+            "line": 17,
+            "description": "An abstract class which must be inherited in all schedules.\nMore information: {{#crossLink \"server.helper.Scheduler\"}}Scheduler{{/crossLink}}",
+            "abstract": ""
+        },
+        "server.helper.Scheduler": {
+            "name": "server.helper.Scheduler",
+            "shortname": "Scheduler",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/scheduler/scheduler.js",
+            "line": 41,
+            "description": "Detects, registers and starts schedules which are located in schedules/.\nThe filename of the schedule is used for the global registration. All schedules must inherit\nfrom {{#crossLink \"server.helper.AbstractSchedule\"}}AbstractSchedule{{/crossLink}}.\n\n     schedules/failedMails.js -> failedMails\n\nYou can start or terminate any schedule by importing this class an calling the static methods\n\n     import Scheduler from './helper/misc/scheduler'\n     \n     Scheduler.start(scheduleName);\n     Scheduler.terminate(scheduleName);\n     \nExample usage to start a schedule\n\n     Scheduler.start(\"failedMails\");\n\nExample usage to terminate a schedule\n\n     Scheduler.terminate(\"failedMails\");"
+        },
+        "server.helper.Service": {
+            "name": "server.helper.Service",
+            "shortname": "Service",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/services/service.js",
+            "line": 20,
+            "description": "Service helper class. Inherit this class in any service.\n\nPlace your services inside service/ to getting detected by the\n{{#crossLink \"server.helper.Services\"}}services autoloader class{{/crossLink}}.",
+            "extends": "server.helper.Services"
+        },
+        "server.helper.Services": {
+            "name": "server.helper.Services",
+            "shortname": "Services",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/services/services.js",
+            "line": 25,
+            "description": "Services autoloader class.\nInheriting from this class will make all services available in your class.\n\nPlace your services inside services/ to register them. Your service must inherit from\n{{#crossLink \"server.helper.Service\"}}Service{{/crossLink}}.\nThe file name is used for the getter method names.\n\nExample directory structure\n\n     service/user.js -> getUserService\n     service/testyTest.js -> getTestyTestService\n\nExample Usage\n\n     this.getUserService().fetchUser();\n     this.getTestyTestService().doNothing();"
+        },
+        "server.helper.auth": {
+            "name": "server.helper.auth",
+            "shortname": "server.helper.auth",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/user/auth.js",
+            "line": 1,
+            "description": "auth.js\n\nAuthentication helper. Includes a little auth strategy for passport,\nprovides two helper methods for initialization and authentication\nwhich is called during the bootstrap of the server. Nothing special here.\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/10",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-09",
+            "link": "https://github.com/geforcefan/keystone/"
+        },
+        "server.helper.permissions": {
+            "name": "server.helper.permissions",
+            "shortname": "server.helper.permissions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.helper",
+            "file": "src/server/helper/user/permissions.js",
+            "line": 1,
+            "description": "permissions.js\n\nPermission helper. This will flatten the defined permissions (definitions/permissions.js).\n\n     {\n         user: ['add', 'delete', 'update'],\n         foo: {\n             bar: ['test1', 'test2']\n         }\n     }\n\nwill turn to:\n\n     ['user.add', 'user.delete', 'user.update', 'foo.bar.test1', 'foo.bar.test2']\n\nThose flat permissions are now accessible via:\n\n     req.user.allowedTo('foo.bar.test1')\n\nWe convert the nested permissions to a flat one, because its way easier to handle in the code\nand in the database, but nested format is better readable for pure definition",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-12",
+            "link": "https://github.com/geforcefan/keystone/"
+        },
+        "server.models.FailedMailSchema": {
+            "name": "server.models.FailedMailSchema",
+            "shortname": "FailedMailSchema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.models",
+            "file": "src/server/models/failedMail.js",
+            "line": 19,
+            "description": "Failed mail model",
+            "extends": "Mongoose.Schema"
+        },
+        "server.models.SocialLinksSchema": {
+            "name": "server.models.SocialLinksSchema",
+            "shortname": "SocialLinksSchema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.models",
+            "file": "src/server/models/socialLinks.js",
+            "line": 19,
+            "description": "Social links model\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/2",
+            "extends": "Mongoose.Schema"
+        },
+        "server.models.SystemSchema": {
+            "name": "server.models.SystemSchema",
+            "shortname": "SystemSchema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.models",
+            "file": "src/server/models/system.js",
+            "line": 19,
+            "description": "System storage model",
+            "extends": "Mongoose.Schema"
+        },
+        "server.models.UserSchema": {
+            "name": "server.models.UserSchema",
+            "shortname": "UserSchema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.models",
+            "file": "src/server/models/user.js",
+            "line": 26,
+            "description": "User model\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/2",
+            "extends": "Mongoose.Schema"
+        },
+        "server.models.UserGroupSchema": {
+            "name": "server.models.UserGroupSchema",
+            "shortname": "UserGroupSchema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.models",
+            "file": "src/server/models/userGroup.js",
+            "line": 19,
+            "description": "User group model",
+            "extends": "Mongoose.Schema"
+        },
+        "server.models.UserProfileSchema": {
+            "name": "server.models.UserProfileSchema",
+            "shortname": "UserProfileSchema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.models",
+            "file": "src/server/models/userProfile.js",
+            "line": 24,
+            "description": "User profile model\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/2",
+            "extends": "Mongoose.Schema"
+        },
+        "server.routes.User": {
+            "name": "server.routes.User",
+            "shortname": "User",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.routes",
+            "file": "src/server/routes/user.js",
+            "line": 24,
+            "description": "API Routes for users\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/3",
+            "extends": "server.helper.Router"
+        },
+        "server.schedules.FailedMails": {
+            "name": "server.schedules.FailedMails",
+            "shortname": "FailedMails",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.schedules",
+            "file": "src/server/schedules/failedMails.js",
+            "line": 25,
+            "description": "Failed mails scheduler which is checking and trying to send failed mails.",
+            "extends": "server.helper.AbstractSchedule"
+        },
+        "server.services.User": {
+            "name": "server.services.User",
+            "shortname": "User",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.services",
+            "file": "src/server/services/user.js",
+            "line": 31,
+            "description": "User business logic",
+            "extends": "server.helper.Service"
+        },
+        "server.services.UserProfile": {
+            "name": "server.services.UserProfile",
+            "shortname": "UserProfile",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server.services",
+            "file": "src/server/services/userProfile.js",
+            "line": 26,
+            "description": "User profile business logic",
+            "extends": "server.helper.Service"
+        },
+        "server.ServerApplication": {
+            "name": "server.ServerApplication",
+            "shortname": "ServerApplication",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "server",
+            "file": "src/server/server.js",
+            "line": 58,
+            "description": "Entry point of the server application."
+        },
+        "shared.definitions.languages": {
+            "name": "shared.definitions.languages",
+            "shortname": "shared.definitions.languages",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "shared.definitions",
+            "file": "src/shared/definitions/languages.js",
+            "line": 1,
+            "description": "languages.js\n\nAll available languages are defined here. Each defined language needs some files.\nJust look inside locales/. Its pretty clear how this works.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-23",
+            "link": "https://github.com/geforcefan/keystone/"
+        },
+        "shared.helper.i18n": {
+            "name": "shared.helper.i18n",
+            "shortname": "i18n",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "shared.helper",
+            "file": "src/shared/helper/i18n.js",
+            "line": 20,
+            "description": "i18n helper for translations and locale detection"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/client/layout/DefaultLayout.js",
+            "line": 1,
+            "description": "DefaultLayout.js\nThis is the default layout for the whole application.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-09",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.definitions.errorCodes"
+        },
+        {
+            "file": "src/client/pages/IndexPage.js",
+            "line": 1,
+            "description": "IndexPage.js\nThis is the index page, the portal, whatever you want to call it",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-09",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.definitions.errorCodes"
+        },
+        {
+            "file": "src/client/pages/NotFoundPage.js",
+            "line": 1,
+            "description": "NotFoundPage.js\n404 Page",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-10",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.definitions.errorCodes"
+        },
+        {
+            "file": "src/client/client.js",
+            "line": 1,
+            "description": "client.js\nEntry point for the client application.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-09",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.definitions.errorCodes"
+        },
+        {
+            "file": "src/client/routes.js",
+            "line": 1,
+            "description": "routes.js\nDefinition of all routes. Don´t worry about server side rendering,\nreacts route matcher will do the magic. For more explanation\nlook in server/server.js",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-09",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.definitions.errorCodes"
+        },
+        {
+            "file": "src/server/definitions/errorCodes.js",
+            "line": 29,
+            "description": "error codes",
+            "itemtype": "attribute",
+            "name": "export default",
+            "type": "Array",
+            "class": "server.definitions.errorCodes",
+            "namespace": "server.definitions"
+        },
+        {
+            "file": "src/server/definitions/mailsTypes.js",
+            "line": 24,
+            "description": "mail type definitions",
+            "itemtype": "attribute",
+            "name": "export default",
+            "type": "Object",
+            "class": "server.definitions.mailTypes",
+            "namespace": "server.definitions"
+        },
+        {
+            "file": "src/server/definitions/permissions.js",
+            "line": 27,
+            "description": "permission definitions",
+            "itemtype": "attribute",
+            "name": "export default",
+            "type": "Object",
+            "class": "server.definitions.permissions",
+            "namespace": "server.definitions"
+        },
+        {
+            "file": "src/server/helper/misc/mailer.js",
+            "line": 1,
+            "description": "mailer.js\n\nMailer helper class which provides a method to send a mail without concerning\nabout the sender addresses, subject, template and mail layout",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-22",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.helper.Mailer",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/mailer.js",
+            "line": 46,
+            "description": "Sends a mail without concerning\nabout the sender addresses, subject, template and mail layout",
+            "itemtype": "method",
+            "name": "sendMail",
+            "static": 1,
+            "params": [
+                {
+                    "name": "mailType",
+                    "description": "mail type defined in server/definitions/mails.js",
+                    "type": "MailType"
+                },
+                {
+                    "name": "variables",
+                    "description": "template variables",
+                    "type": "Object"
+                },
+                {
+                    "name": "recipients",
+                    "description": "array of recipients (email addresses)",
+                    "type": "Array<String>"
+                }
+            ],
+            "class": "server.helper.Mailer",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/randomValueBase64.js",
+            "line": 1,
+            "description": "randomValuesBase64.js\n\nGenerates random base64 values\n\nSpecial thanks to: Tom Pawlak\nhttps://blog.tompawlak.org/generate-random-values-nodejs-javascript",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-15",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.helper.RouterMethods",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/randomValueBase64.js",
+            "line": 21,
+            "description": "Generates random base64 values",
+            "itemtype": "method",
+            "name": "randomValueBase64",
+            "params": [
+                {
+                    "name": "len",
+                    "description": "number of characters",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "random",
+                "type": "String"
+            },
+            "class": "server.helper.RouterMethods",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/router.js",
+            "line": 1,
+            "description": "router.js\n\nRouter helper. Inherit this class in any route.\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/8\nGitHub issue: https://github.com/geforcefan/keystone/issues/9",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-15",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.helper.RouterMethods",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/router.js",
+            "line": 37,
+            "description": "get method",
+            "itemtype": "property",
+            "name": "get",
+            "class": "server.helper.RouterMethods",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/router.js",
+            "line": 43,
+            "description": "post method",
+            "itemtype": "property",
+            "name": "post",
+            "class": "server.helper.RouterMethods",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/router.js",
+            "line": 49,
+            "description": "delete method",
+            "itemtype": "property",
+            "name": "delete",
+            "class": "server.helper.RouterMethods",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/router.js",
+            "line": 96,
+            "description": "Add a route",
+            "itemtype": "method",
+            "name": "addRoute",
+            "access": "protected",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "route",
+                    "description": "route",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "express callback",
+                    "type": "Function"
+                },
+                {
+                    "name": "method",
+                    "description": "route method",
+                    "type": "RouteMethods"
+                }
+            ],
+            "example": [
+                "\n     this.addRoute(\"authenticate/\", (res, req) => res.send(\"OK\"), RouteMethods.post);\n     this.addRoute(\"profile/\", (res, req) => res.send(\"OK\"), RouteMethods.get);"
+            ],
+            "class": "server.helper.Router",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/router.js",
+            "line": 128,
+            "description": "Get express router, which is used by the routes autoloader in server.js",
+            "itemtype": "method",
+            "name": "getExpressRouter",
+            "return": {
+                "description": "",
+                "type": "Express.Router"
+            },
+            "class": "server.helper.Router",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/router.js",
+            "line": 139,
+            "description": "Detect all routes from the routes/ directory.\nEach route must inherit from server.helper.Router",
+            "itemtype": "method",
+            "name": "detectRoutes",
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Express.Router"
+            },
+            "class": "server.helper.Router",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/router.js",
+            "line": 177,
+            "description": "Express router, which is used by the routes autoloader in server.js",
+            "itemtype": "attribute",
+            "name": "router",
+            "default": "null",
+            "access": "private",
+            "tagname": "",
+            "type": "{null}",
+            "class": "server.helper.Router",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/setup.js",
+            "line": 1,
+            "description": "setup.js\n\nSetup helper. This helper will check for updates and invokes them",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-11",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.helper.Setup",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/setup.js",
+            "line": 32,
+            "description": "Converts a date to the YYYYMMDD format for directory comparision (e.g. /setup/20170301)",
+            "itemtype": "method",
+            "name": "convertDateToDirectoryFormat",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "params": [
+                {
+                    "name": "date",
+                    "description": "date which should be converted",
+                    "type": "Date"
+                }
+            ],
+            "return": {
+                "description": "date in YYYYMMDD format",
+                "type": "String"
+            },
+            "class": "server.helper.Setup",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/setup.js",
+            "line": 47,
+            "description": "Executing the setup and update files",
+            "itemtype": "method",
+            "name": "execSetup",
+            "async": 1,
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "params": [
+                {
+                    "name": "system",
+                    "description": "Needed for the lastUpdateDate information",
+                    "type": "server.models.SystemSchema"
+                },
+                {
+                    "name": "success",
+                    "description": "success callback",
+                    "type": "Function"
+                },
+                {
+                    "name": "error",
+                    "description": "error callback",
+                    "type": "Function"
+                }
+            ],
+            "class": "server.helper.Setup",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/misc/setup.js",
+            "line": 116,
+            "description": "This setup helper will check for updates and invokes them",
+            "itemtype": "method",
+            "name": "detectAndRunUpdates",
+            "static": 1,
+            "async": 1,
+            "params": [
+                {
+                    "name": "success",
+                    "description": "success callback",
+                    "type": "Function"
+                },
+                {
+                    "name": "error",
+                    "description": "error callback",
+                    "type": "Function"
+                }
+            ],
+            "class": "server.helper.Setup",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/response/errorResponse.js",
+            "line": 27,
+            "description": "Returns an error object which can be passed to the response",
+            "example": [
+                "\n     res.send(errorResponse(ErrorCodes.authenticationUserNotFound))"
+            ],
+            "itemtype": "method",
+            "name": "export errorResponse",
+            "params": [
+                {
+                    "name": "error",
+                    "description": "error",
+                    "type": "*"
+                },
+                {
+                    "name": "arguments",
+                    "description": "which is passed to the translator (see i18n::tr)",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "formatted response {{success: boolean, errorCode: string, message: string}}",
+                "type": "Object"
+            },
+            "class": "server.helper.errorResponse",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/response/errorResponse.js",
+            "line": 90,
+            "description": "Just a wrapper for internal errors, this basically calls errorResponse()",
+            "itemtype": "method",
+            "name": "export internalErrorResponse",
+            "return": {
+                "description": "formatted response {{success: boolean, errorCode: string, message: string}}",
+                "type": "Object"
+            },
+            "class": "server.helper.errorResponse",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/response/successResponse.js",
+            "line": 19,
+            "description": "Returns an success object which can be passed to the response.\n\n     res.send(successResponse({\n         user: {\n             firstname: \"Hello\",\n             lastname: \"World\"\n         }\n     }))",
+            "itemtype": "method",
+            "name": "export successResponse",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "any data",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "{{success: boolean, data: *}}",
+                "type": "Object"
+            },
+            "class": "server.helper.successResponse",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/abstractSchedule.js",
+            "line": 1,
+            "description": "abstractSchedule.js\n\nAn abstract class which must be inherited in all schedules.\nMore information: {{#crossLink \"server.helper.Scheduler\"}}Scheduler{{/crossLink}}",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-27",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.helper.AbstractSchedule",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/abstractSchedule.js",
+            "line": 41,
+            "description": "Start schedule",
+            "itemtype": "method",
+            "name": "start",
+            "abstract": "",
+            "class": "server.helper.AbstractSchedule",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/abstractSchedule.js",
+            "line": 51,
+            "description": "Terminate schedule",
+            "itemtype": "method",
+            "name": "terminate",
+            "abstract": "",
+            "class": "server.helper.AbstractSchedule",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/abstractSchedule.js",
+            "line": 62,
+            "description": "Is schedule running",
+            "itemtype": "attribute",
+            "name": "isRunning",
+            "type": "Boolean",
+            "default": "false",
+            "class": "server.helper.AbstractSchedule",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/scheduler.js",
+            "line": 1,
+            "description": "scheduler.js\n\nDetects, registers and starts schedules which are located in schedules/.\nThe filename of the schedule is used for the global registration. All schedules must inherit\nfrom {{#crossLink \"server.helper.AbstractSchedule\"}}AbstractSchedule{{/crossLink}}.\n\n     schedules/failedMails.js -> failedMails\n\nYou can start or terminate any schedule by importing this class an calling the static methods\n\n     import Scheduler from './helper/misc/scheduler'\n\n     Scheduler.start(scheduleName);\n     Scheduler.terminate(scheduleName);\n\nExample usage to start a schedule\n\n     Scheduler.start(\"failedMails\");\n\nExample usage to terminate a schedule\n\n     Scheduler.terminate(\"failedMails\");",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-27",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.helper.Scheduler",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/scheduler.js",
+            "line": 66,
+            "description": "Starts a global registered schedule",
+            "itemtype": "method",
+            "name": "start",
+            "params": [
+                {
+                    "name": "scheduleName",
+                    "description": "schedule name",
+                    "type": "String"
+                }
+            ],
+            "static": 1,
+            "class": "server.helper.Scheduler",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/scheduler.js",
+            "line": 83,
+            "description": "Terminates a global registered schedule",
+            "itemtype": "method",
+            "name": "terminate",
+            "params": [
+                {
+                    "name": "scheduleName",
+                    "description": "schedule name",
+                    "type": "String"
+                }
+            ],
+            "static": 1,
+            "class": "server.helper.Scheduler",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/scheduler.js",
+            "line": 99,
+            "description": "Registers a global schedule",
+            "itemtype": "method",
+            "name": "addSchedule",
+            "static": 1,
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "scheduleName",
+                    "description": "schedule name",
+                    "type": "String"
+                },
+                {
+                    "name": "schedule",
+                    "description": "schedule object",
+                    "type": "server.helper.AbstractSchedule"
+                }
+            ],
+            "class": "server.helper.Scheduler",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/scheduler.js",
+            "line": 112,
+            "description": "Detects and starts global schedules by fetching and validating all schedules/*.js files",
+            "class": "server.helper.Scheduler",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/scheduler/scheduler.js",
+            "line": 140,
+            "description": "All global registered schedules",
+            "itemtype": "attribute",
+            "name": "schedules",
+            "static": 1,
+            "type": "{Object}",
+            "default": "{}",
+            "class": "server.helper.Scheduler",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/services/service.js",
+            "line": 1,
+            "description": "service.js\n\nService helper. Inherit this class in any service.\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/7",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-15",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.helper.Service",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/services/service.js",
+            "line": 30,
+            "description": "Get the requestee user",
+            "itemtype": "method",
+            "name": "getUser",
+            "return": {
+                "description": "",
+                "type": "UserSchema"
+            },
+            "class": "server.helper.Service",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/services/service.js",
+            "line": 40,
+            "description": "Is the requestee user authenticated",
+            "itemtype": "method",
+            "name": "isUserAuth",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "server.helper.Service",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/services/services.js",
+            "line": 1,
+            "description": "services.js\n\nServices autoloader class.\nInheriting from this class will make all services available in your class.\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/7",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-15",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.helper.Services",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/services/services.js",
+            "line": 77,
+            "description": "Cached services",
+            "static": 1,
+            "itemtype": "attribute",
+            "name": "servicesCache",
+            "default": "null",
+            "type": "{Object}",
+            "class": "server.helper.Services",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/services/services.js",
+            "line": 87,
+            "description": "Cached service instances",
+            "static": 1,
+            "itemtype": "attribute",
+            "name": "serviceInstances",
+            "default": "null",
+            "type": "{Object}",
+            "class": "server.helper.Services",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/user/auth.js",
+            "line": 27,
+            "description": "initializes the auth strategy and provides helper functions",
+            "itemtype": "method",
+            "name": "export default",
+            "return": {
+                "description": "initialize and authentication functions",
+                "type": "Object"
+            },
+            "class": "server.helper.auth",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/user/permissions.js",
+            "line": 38,
+            "description": "Flattens nested permissions",
+            "itemtype": "method",
+            "name": "flattenPermissions",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "nestedPermissions",
+                    "description": "nested permissions",
+                    "type": "Object"
+                },
+                {
+                    "name": "prefix",
+                    "description": "prefix",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "flat list",
+                "type": "Array"
+            },
+            "class": "server.helper.permissions",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/helper/user/permissions.js",
+            "line": 62,
+            "description": "Get a flat permission list",
+            "itemtype": "method",
+            "name": "export default",
+            "return": {
+                "description": "flat permission list",
+                "type": "Object"
+            },
+            "class": "server.helper.permissions",
+            "namespace": "server.helper"
+        },
+        {
+            "file": "src/server/models/failedMail.js",
+            "line": 1,
+            "description": "failedMail.js\n\nFailed mail model",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-22",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.models.FailedMailSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/failedMail.js",
+            "line": 28,
+            "description": "Mail sender",
+            "itemtype": "attribute",
+            "name": "from",
+            "required": 1,
+            "type": "String",
+            "class": "server.models.FailedMailSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/failedMail.js",
+            "line": 40,
+            "description": "Mail text",
+            "itemtype": "attribute",
+            "name": "text",
+            "required": 1,
+            "type": "String",
+            "class": "server.models.FailedMailSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/failedMail.js",
+            "line": 52,
+            "description": "Mail attachment",
+            "itemtype": "attribute",
+            "name": "attachment",
+            "type": "Array",
+            "default": "[]",
+            "optional": 1,
+            "class": "server.models.FailedMailSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/failedMail.js",
+            "line": 65,
+            "description": "Mail recipient",
+            "itemtype": "attribute",
+            "name": "to",
+            "required": 1,
+            "type": "String",
+            "class": "server.models.FailedMailSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/failedMail.js",
+            "line": 77,
+            "description": "Mail subject",
+            "itemtype": "attribute",
+            "name": "subject",
+            "required": 1,
+            "type": "String",
+            "class": "server.models.FailedMailSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/failedMail.js",
+            "line": 89,
+            "description": "Amount of retries",
+            "itemtype": "attribute",
+            "name": "retried",
+            "default": "0",
+            "type": "Number",
+            "optional": 1,
+            "class": "server.models.FailedMailSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/socialLinks.js",
+            "line": 1,
+            "description": "socialLinks.js\n\nSocial links model",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-17",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.models.SocialLinksSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/socialLinks.js",
+            "line": 30,
+            "description": "Social link type\n\n     ['Steam', 'YouTube', \"Twitch\"]",
+            "itemtype": "attribute",
+            "name": "socialType",
+            "type": "String",
+            "required": 1,
+            "class": "server.models.SocialLinksSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/socialLinks.js",
+            "line": 45,
+            "description": "Social link",
+            "itemtype": "attribute",
+            "name": "link",
+            "type": "String",
+            "required": 1,
+            "class": "server.models.SocialLinksSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/system.js",
+            "line": 1,
+            "description": "system.js\n\nSystem information model",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-12",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.models.SystemSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/system.js",
+            "line": 28,
+            "description": "Last update job date. {{#crossLink \"server.helper.setup\"}}Used when updates are checked{{/crossLink}}",
+            "itemtype": "attribute",
+            "name": "lastUpdateDate",
+            "type": "Date",
+            "optional": 1,
+            "default": "null",
+            "class": "server.models.SystemSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 1,
+            "description": "user.js\n\nUser model",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-10",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 37,
+            "description": "Username",
+            "itemtype": "attribute",
+            "name": "name",
+            "required": 1,
+            "type": "String",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 50,
+            "description": "Password",
+            "itemtype": "attribute",
+            "name": "password",
+            "required": 1,
+            "type": "String",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 62,
+            "description": "eMail Address",
+            "itemtype": "attribute",
+            "name": "email",
+            "required": 1,
+            "type": "String",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 75,
+            "description": "{{#crossLink \"server.models.UserGroupSchema\"}}Group{{/crossLink}} id",
+            "itemtype": "attribute",
+            "name": "groupID",
+            "required": 1,
+            "type": "ObjectId",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 87,
+            "description": "Creation date of the user",
+            "itemtype": "attribute",
+            "name": "creationDate",
+            "type": "Date",
+            "required": 1,
+            "default": "Date.now",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 101,
+            "description": "User active. After registration, user has to be activated",
+            "itemtype": "attribute",
+            "name": "active",
+            "type": "Boolean",
+            "default": "false",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 113,
+            "description": "Users last known remote addresses",
+            "itemtype": "attribute",
+            "name": "lastKnownRemoteAddresses",
+            "type": "[String]",
+            "default": "[]",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 125,
+            "description": "User profile",
+            "itemtype": "attribute",
+            "name": "profile",
+            "type": "server.models.UserProfileSchema",
+            "default": "UserProfileSchema",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 161,
+            "description": "Generate a password hash\nA little work around for the query hook middleware problem\nhttps://github.com/saintedlama/passport-local-mongoose/issues/135",
+            "itemtype": "method",
+            "name": "generatePasswordHash",
+            "static": 1,
+            "async": 1,
+            "params": [
+                {
+                    "name": "password",
+                    "description": "password",
+                    "type": "String"
+                },
+                {
+                    "name": "resolve",
+                    "description": "resolve callback with the hash",
+                    "type": "Function"
+                },
+                {
+                    "name": "reject",
+                    "description": "reject callback",
+                    "type": "Function"
+                }
+            ],
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 186,
+            "description": "Adds a last known remote address. Always use this method,\nsince it normalizes the entries",
+            "itemtype": "method",
+            "name": "addLastKnownRemoteAddress",
+            "params": [
+                {
+                    "name": "remoteAddress",
+                    "description": "remote address",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 202,
+            "description": "Pre save hook which bcrypts the password before its saved to the database",
+            "itemtype": "method",
+            "name": "preSave",
+            "access": "private",
+            "tagname": "",
+            "async": 1,
+            "params": [
+                {
+                    "name": "next",
+                    "description": "success callback",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 230,
+            "description": "Compare any password with the users password",
+            "itemtype": "method",
+            "name": "comparePassword",
+            "async": 1,
+            "params": [
+                {
+                    "name": "password",
+                    "description": "password",
+                    "type": "String"
+                },
+                {
+                    "name": "next",
+                    "description": "success callback",
+                    "type": "Function"
+                }
+            ],
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 248,
+            "description": "A simple check whether the userID matches with the self user",
+            "params": [
+                {
+                    "name": "userID",
+                    "description": "user id to be compared",
+                    "type": "String"
+                }
+            ],
+            "itemtype": "method",
+            "name": "isMe",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 259,
+            "description": "To use {{#crossLink \"server.models.UserSchema/isAllowed:method\"}} isAllowed {{/crossLink}} method properly,\nthe user group and permissions needs to be cached",
+            "itemtype": "method",
+            "name": "cacheGroupAndPermissions",
+            "async": 1,
+            "params": [
+                {
+                    "name": "next",
+                    "description": "next callback",
+                    "type": "Function"
+                },
+                {
+                    "name": "abort",
+                    "description": "abort callback",
+                    "type": "Function"
+                }
+            ],
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 323,
+            "description": "Check the user permission",
+            "itemtype": "method",
+            "name": "isAllowed",
+            "params": [
+                {
+                    "name": "permission",
+                    "description": "permission to be checked",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 334,
+            "description": "Set \"is user authenticated\"",
+            "itemtype": "method",
+            "name": "setAuth",
+            "params": [
+                {
+                    "name": "auth",
+                    "description": "is user authenticated",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 344,
+            "description": "Is user authenticated",
+            "itemtype": "method",
+            "name": "isAuth",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 354,
+            "description": "Get users group. Returns only the group when\n{{#crossLink \"server.models.UserSchema/cacheGroupAndPermissions:method\"}}cacheGroupAndPermissions{{/crossLink}}\nis called before",
+            "itemtype": "method",
+            "name": "getGroup",
+            "return": {
+                "description": "",
+                "type": "UserGroupSchema"
+            },
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 366,
+            "description": "Get user permissions. Returns only the permissions when\n{{#crossLink \"server.models.UserSchema/cacheGroupAndPermissions:method\"}}cacheGroupAndPermissions{{/crossLink}}\nis called before",
+            "itemtype": "method",
+            "name": "getPermissions",
+            "return": {
+                "description": "[...]"
+            },
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 387,
+            "description": "Cached user permissions.\nWill filled after calling UserSchema.cachePermissions",
+            "itemtype": "property",
+            "name": "permissions",
+            "default": "[]",
+            "access": "private",
+            "tagname": "",
+            "type": "{Array}",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 398,
+            "description": "User authentication state. This is mostly used for the injected user model\nin the request",
+            "itemtype": "property",
+            "name": "auth",
+            "default": "false",
+            "access": "private",
+            "tagname": "",
+            "type": "{boolean}",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 409,
+            "description": "User group",
+            "itemtype": "property",
+            "name": "group",
+            "default": "null",
+            "access": "private",
+            "tagname": "",
+            "type": "{UserGroupSchema}",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 419,
+            "description": "Amount of last known remote addresses to be stored",
+            "itemtype": "property",
+            "name": "amountOfLastKnownRemoteAddresses",
+            "default": "5",
+            "access": "private",
+            "tagname": "",
+            "type": "{Number}",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/user.js",
+            "line": 430,
+            "description": "Users current locale",
+            "itemtype": "property",
+            "name": "locale",
+            "default": "en",
+            "access": "private",
+            "tagname": "",
+            "type": "{String}",
+            "class": "server.models.UserSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userGroup.js",
+            "line": 1,
+            "description": "userGroup.js\n\nUser group model",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-10",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.models.UserGroupSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userGroup.js",
+            "line": 28,
+            "description": "Group identifier.",
+            "itemtype": "attribute",
+            "name": "name",
+            "type": "String",
+            "required": 1,
+            "class": "server.models.UserGroupSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userGroup.js",
+            "line": 42,
+            "description": "When this options is turned on, this group will include all available\n{{#crossLink \"server.definitions.permissions\"}}permissions from the definitions{{/crossLink}}.\nNo need to fill the\n{{#crossLink \"server.models.UserGroupSchema/permissions.allowedTo:attribute\"}}allowedTo{{/crossLink}}\nattribute.",
+            "itemtype": "attribute",
+            "name": "permissions.hasAllPermissions",
+            "optional": 1,
+            "type": "Boolean",
+            "default": "false",
+            "class": "server.models.UserGroupSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userGroup.js",
+            "line": 59,
+            "description": "All permissions of the group. Can be defined in the\n{{#crossLink \"server.definitions.permissions\"}}permission{{/crossLink}} definitions.",
+            "itemtype": "attribute",
+            "name": "permissions.allowedTo",
+            "optional": 1,
+            "type": "[String]",
+            "default": "[]",
+            "class": "server.models.UserGroupSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userGroup.js",
+            "line": 71,
+            "description": "Group level. Less level, more \"root\"ness.\nA {{#crossLink \"server.models.UserSchema\"}}user{{/crossLink}} will inherit\nall group permissions above it´s level value",
+            "itemtype": "attribute",
+            "name": "permissions.level",
+            "required": 1,
+            "type": "Number",
+            "default": "3000",
+            "class": "server.models.UserGroupSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userProfile.js",
+            "line": 1,
+            "description": "userProfile.js\n\nUser profile model",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-17",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.models.UserProfileSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userProfile.js",
+            "line": 35,
+            "description": "Display name (alias name, etc.)",
+            "itemtype": "attribute",
+            "name": "displayName",
+            "optional": 1,
+            "type": "String",
+            "default": "\"\"",
+            "class": "server.models.UserProfileSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userProfile.js",
+            "line": 48,
+            "description": "User birthday",
+            "itemtype": "attribute",
+            "name": "birthday",
+            "optional": 1,
+            "type": "Date",
+            "default": "null",
+            "class": "server.models.UserProfileSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userProfile.js",
+            "line": 61,
+            "description": "User description, biography",
+            "itemtype": "attribute",
+            "name": "description",
+            "optional": 1,
+            "type": "String",
+            "default": "\"\"",
+            "class": "server.models.UserProfileSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userProfile.js",
+            "line": 74,
+            "description": "User location",
+            "itemtype": "attribute",
+            "name": "location",
+            "optional": 1,
+            "type": "String",
+            "default": "\"\"",
+            "class": "server.models.UserProfileSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userProfile.js",
+            "line": 87,
+            "description": "Users social links (youtube, twitch, steam, etc.)",
+            "itemtype": "attribute",
+            "name": "socialLinks",
+            "optional": 1,
+            "type": "[server.models.SocialLinksSchema]",
+            "default": "[]",
+            "class": "server.models.UserProfileSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userProfile.js",
+            "line": 100,
+            "description": "Users played games.\n\n     ['NoLimitsCoaster', 'NoLimitsCoaster2', \"RollerCoasterTycoon1\", \"RollerCoasterTycoon2\", \"RollerCoasterTycoon3\", \"PlanetCoaster\"]",
+            "itemtype": "attribute",
+            "name": "playedGames",
+            "optional": 1,
+            "type": "[String]",
+            "default": "[]",
+            "class": "server.models.UserProfileSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/models/userProfile.js",
+            "line": 116,
+            "description": "User subscriptions.",
+            "itemtype": "attribute",
+            "name": "subscribedUsers",
+            "optional": 1,
+            "type": "[ObjectId]",
+            "default": "[]",
+            "class": "server.models.UserProfileSchema",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/routes/test.js",
+            "line": 1,
+            "description": "test.js\n\nJust for testing",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-10",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.routes.User",
+            "namespace": "server.models"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 1,
+            "description": "user.js\n\nAll user API routes are defined here.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-10",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 50,
+            "description": "Get user profile\n\n     /profile/:userID",
+            "itemtype": "method",
+            "name": "getProfile",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Request provided by express",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "params.userID",
+                            "description": "user id",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "res",
+                    "description": "Response provided by express",
+                    "type": "Object"
+                }
+            ],
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 72,
+            "description": "Subscribe a user\n\n     /subscribe/:userID",
+            "itemtype": "method",
+            "name": "subscribe",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Request provided by express",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "params.userID",
+                            "description": "user id to subscribe",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "res",
+                    "description": "Response provided by express",
+                    "type": "Object"
+                }
+            ],
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 92,
+            "description": "Unsubscribe a user\n\n     /unsubscribe/:userID",
+            "itemtype": "method",
+            "name": "unsubscribe",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Request provided by express",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "params.userID",
+                            "description": "user id to unsubscribe",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "res",
+                    "description": "Response provided by express",
+                    "type": "Object"
+                }
+            ],
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 114,
+            "description": "Get subscriptions of a user",
+            "itemtype": "method",
+            "name": "getSubscriptions",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Request provided by express",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "params.userID",
+                            "description": "user id",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "res",
+                    "description": "Response provided by express",
+                    "type": "Object"
+                }
+            ],
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 132,
+            "description": "Modify user route\n\n     /modify/:userID",
+            "itemtype": "method",
+            "name": "update",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Request provided by express",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "params.userID",
+                            "description": "id of the user which should be modified",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "res",
+                    "description": "Response provided by express",
+                    "type": "Object"
+                }
+            ],
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 152,
+            "description": "Request activation route\n\n     /requestActivation",
+            "itemtype": "method",
+            "name": "requestActivation",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Request provided by express",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "body.email",
+                            "description": "email address",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "res",
+                    "description": "Response provided by express",
+                    "type": "Object"
+                }
+            ],
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 168,
+            "description": "Activate account route\n\n     /activate",
+            "itemtype": "method",
+            "name": "activate",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Request provided by express",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "body.code",
+                            "description": "code provided via email",
+                            "type": "String"
+                        },
+                        {
+                            "name": "body.token",
+                            "description": "activation token provided via email",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "res",
+                    "description": "Response provided by express",
+                    "type": "Object"
+                }
+            ],
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 185,
+            "description": "Registration route\n\n     /register",
+            "itemtype": "method",
+            "name": "register",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Request provided by express",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "body.name",
+                            "description": "user name",
+                            "type": "String"
+                        },
+                        {
+                            "name": "body.password",
+                            "description": "user password",
+                            "type": "String"
+                        },
+                        {
+                            "name": "body.email",
+                            "description": "email address",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "res",
+                    "description": "Response provided by express",
+                    "type": "Object"
+                }
+            ],
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/routes/user.js",
+            "line": 203,
+            "description": "Authentication route (in other words, login attempt)\n\n     /authenticate",
+            "itemtype": "method",
+            "name": "authenticate",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Request provided by express",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "body.name",
+                            "description": "user name",
+                            "type": "String"
+                        },
+                        {
+                            "name": "body.password",
+                            "description": "user password",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "res",
+                    "description": "Response provided by express",
+                    "type": "Object"
+                }
+            ],
+            "class": "server.routes.User",
+            "namespace": "server.routes"
+        },
+        {
+            "file": "src/server/schedules/failedMails.js",
+            "line": 1,
+            "description": "failedMails.js\n\nFailed mails scheduler which is checking and trying to send failed mails.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-27",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.schedules.FailedMails",
+            "namespace": "server.schedules"
+        },
+        {
+            "file": "src/server/schedules/failedMails.js",
+            "line": 38,
+            "description": "Fetch all failed mails",
+            "itemtype": "method",
+            "name": "fetchFailedMails",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "server.schedules.FailedMails",
+            "namespace": "server.schedules"
+        },
+        {
+            "file": "src/server/schedules/failedMails.js",
+            "line": 56,
+            "description": "Send a failed mail",
+            "itemtype": "method",
+            "name": "sendMail",
+            "params": [
+                {
+                    "name": "failedMail",
+                    "description": "failed mail",
+                    "type": "server.models.FailedMailModel"
+                }
+            ],
+            "class": "server.schedules.FailedMails",
+            "namespace": "server.schedules"
+        },
+        {
+            "file": "src/server/schedules/failedMails.js",
+            "line": 84,
+            "description": "Check failed mails and try to send them",
+            "itemtype": "method",
+            "name": "checkFailedMails",
+            "class": "server.schedules.FailedMails",
+            "namespace": "server.schedules"
+        },
+        {
+            "file": "src/server/schedules/failedMails.js",
+            "line": 108,
+            "description": "Start failed mails schedule",
+            "itemtype": "method",
+            "name": "start",
+            "override": "",
+            "class": "server.schedules.FailedMails",
+            "namespace": "server.schedules"
+        },
+        {
+            "file": "src/server/schedules/failedMails.js",
+            "line": 121,
+            "description": "terminate failed mails schedule",
+            "itemtype": "method",
+            "name": "terminate",
+            "override": "",
+            "class": "server.schedules.FailedMails",
+            "namespace": "server.schedules"
+        },
+        {
+            "file": "src/server/schedules/failedMails.js",
+            "line": 135,
+            "description": "Mail check timer",
+            "itemtype": "attribute",
+            "name": "checkTimer",
+            "type": "Node.Timers",
+            "default": "null",
+            "class": "server.schedules.FailedMails",
+            "namespace": "server.schedules"
+        },
+        {
+            "file": "src/server/services/user.js",
+            "line": 1,
+            "description": "user.js\n\nUser business logic",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-15",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.services.User",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/user.js",
+            "line": 38,
+            "description": "Fetch an active user. This method should always used to fetch a user, except\nyou need to activate a user.",
+            "itemtype": "method",
+            "name": "getActiveUserByID",
+            "async": 1,
+            "params": [
+                {
+                    "name": "userID",
+                    "description": "user id",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "(err, user)",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "server.services.User",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/user.js",
+            "line": 68,
+            "description": "Authentication logic",
+            "itemtype": "method",
+            "name": "authenticate",
+            "async": 1,
+            "params": [
+                {
+                    "name": "loginData",
+                    "description": "login data",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "username",
+                            "type": "String"
+                        },
+                        {
+                            "name": "password",
+                            "description": "password",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "callback",
+                    "description": "(err, token)",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "server.services.User",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/user.js",
+            "line": 107,
+            "description": "Registration logic",
+            "itemtype": "method",
+            "name": "register",
+            "async": 1,
+            "params": [
+                {
+                    "name": "registrationData",
+                    "description": "registration data",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "username",
+                            "type": "String"
+                        },
+                        {
+                            "name": "email",
+                            "description": "email",
+                            "type": "String"
+                        },
+                        {
+                            "name": "password",
+                            "description": "password",
+                            "type": "String"
+                        }
+                    ]
+                },
+                {
+                    "name": "callback",
+                    "description": "(err, success)",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "server.services.User",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/user.js",
+            "line": 139,
+            "description": "User modification logic",
+            "itemtype": "method",
+            "name": "modify",
+            "async": 1,
+            "params": [
+                {
+                    "name": "userID",
+                    "description": "user id of the user which should modified",
+                    "type": "String"
+                },
+                {
+                    "name": "modificationData",
+                    "description": "optional, modification data",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "optional, username",
+                            "type": "String"
+                        },
+                        {
+                            "name": "email",
+                            "description": "optional, email",
+                            "type": "String"
+                        },
+                        {
+                            "name": "password",
+                            "description": "optional, password",
+                            "type": "String"
+                        },
+                        {
+                            "name": "groupID",
+                            "description": "optional, groupID",
+                            "type": "String"
+                        },
+                        {
+                            "name": "profile",
+                            "description": "optional, profile",
+                            "type": "server.models.UserProfileSchema"
+                        }
+                    ]
+                },
+                {
+                    "name": "callback",
+                    "description": "(err, success)",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "server.services.User",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/user.js",
+            "line": 226,
+            "description": "Activate user account",
+            "itemtype": "method",
+            "name": "activateAccount",
+            "async": 1,
+            "params": [
+                {
+                    "name": "code",
+                    "description": "activation code",
+                    "type": "String"
+                },
+                {
+                    "name": "token",
+                    "description": "activation token",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "(err, success)",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "server.services.User",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/user.js",
+            "line": 275,
+            "description": "Generate and send activation code. If user is not found, this won´t provide any error information.\nThis method will always return \"ok\".",
+            "itemtype": "method",
+            "name": "generateAndSendActivationCode",
+            "async": 1,
+            "params": [
+                {
+                    "name": "email",
+                    "description": "user email address",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "(err, success)",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "server.services.User",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/userProfile.js",
+            "line": 1,
+            "description": "user.js\n\nUser profie business logic",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-21",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.services.UserProfile",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/userProfile.js",
+            "line": 33,
+            "description": "Get all subscriptions of a user",
+            "itemtype": "method",
+            "name": "getSubscriptions",
+            "async": 1,
+            "params": [
+                {
+                    "name": "userID",
+                    "description": "user id",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "(err, result)",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "server.services.UserProfile",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/userProfile.js",
+            "line": 76,
+            "description": "Get public profile of any user",
+            "itemtype": "method",
+            "name": "getProfile",
+            "async": 1,
+            "params": [
+                {
+                    "name": "userIDs",
+                    "description": "user profile ids (multiple fetching of profiles possible)",
+                    "type": "String|Array"
+                },
+                {
+                    "name": "callback",
+                    "description": "(err, result)",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "server.services.UserProfile",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/services/userProfile.js",
+            "line": 144,
+            "description": "User subscribe or unsubscribe logic",
+            "itemtype": "method",
+            "name": "subscribeOrUnsubscribe",
+            "async": 1,
+            "params": [
+                {
+                    "name": "userID",
+                    "description": "user id to subscribe / unsubscribe",
+                    "type": "String"
+                },
+                {
+                    "name": "unsubscribe",
+                    "description": "subscribe or unsubscribe user",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "callback",
+                    "description": "(err, success)",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "server.services.UserProfile",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/setup/20170310/userGroups.js",
+            "line": 1,
+            "description": "userGroups.js\nInstallation file for user groups.\nSetting up initial groups.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-10",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.ServerApplication",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/setup/20170310/userGroups.js",
+            "line": 19,
+            "description": "Setting up initial groups",
+            "params": [
+                {
+                    "name": "success",
+                    "description": "Function"
+                },
+                {
+                    "name": "error",
+                    "description": "Function"
+                }
+            ],
+            "class": "server.ServerApplication",
+            "namespace": "server.services"
+        },
+        {
+            "file": "src/server/server.js",
+            "line": 1,
+            "description": "server.js\n\nEntry point of the server application.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-09",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "server.ServerApplication",
+            "namespace": "server"
+        },
+        {
+            "file": "src/server/server.js",
+            "line": 71,
+            "description": "We need to establish first proper db connection, checking for updates (setup)\nand then we initialize our server.",
+            "class": "server.ServerApplication",
+            "namespace": "server"
+        },
+        {
+            "file": "src/server/server.js",
+            "line": 93,
+            "description": "Initialize database models and establish database connection",
+            "itemtype": "method",
+            "name": "initDatabase",
+            "async": 1,
+            "params": [
+                {
+                    "name": "success",
+                    "description": "success callback",
+                    "type": "Function"
+                },
+                {
+                    "name": "error",
+                    "description": "error callback",
+                    "type": "Function"
+                }
+            ],
+            "class": "server.ServerApplication",
+            "namespace": "server"
+        },
+        {
+            "file": "src/server/server.js",
+            "line": 113,
+            "description": "Initialize and parse requests by catching all requests, setting proper\ni18n locales from the request header, checking and preparing the authentication\nand doing all other stuff when needed before any request is being handled by the other routes.\nAlso useful for injecting middleware to the request",
+            "itemtype": "method",
+            "name": "initRequests",
+            "class": "server.ServerApplication",
+            "namespace": "server"
+        },
+        {
+            "file": "src/server/server.js",
+            "line": 160,
+            "description": "The application it self is getting some configuration like\nwhich view engine is gonna be used, where the view files are located, etc.",
+            "itemtype": "method",
+            "name": "initAppConfig",
+            "class": "server.ServerApplication",
+            "namespace": "server"
+        },
+        {
+            "file": "src/server/server.js",
+            "line": 178,
+            "description": "Initialize the API routes. You can define the API routes in\nthe api/ directory. Best practise is to create an API route for each\nservice. For example UserRoutes, CoasterRoutes, etc.\nThe routes should NOT implement ANY business logic, just USE the business logic there.\nYou can implement your business logic inside the services/ directory.",
+            "itemtype": "method",
+            "name": "initApiRoutes",
+            "class": "server.ServerApplication",
+            "namespace": "server"
+        },
+        {
+            "file": "src/server/server.js",
+            "line": 191,
+            "description": "Initializes the universal routes for server side rendering.\nWhen we use frontend frameworks (react) and refreshing the website,\nthis router will match the request URL with the defined client routes and render it\non the server side. This is perfect for SEO (and for other reasons).",
+            "itemtype": "method",
+            "name": "initUniversalRoutes",
+            "class": "server.ServerApplication",
+            "namespace": "server"
+        },
+        {
+            "file": "src/server/server.js",
+            "line": 239,
+            "description": "Start server (start listening)",
+            "itemtype": "method",
+            "name": "startServer",
+            "class": "server.ServerApplication",
+            "namespace": "server"
+        },
+        {
+            "file": "src/shared/definitions/languages.js",
+            "line": 19,
+            "description": "languages",
+            "itemtype": "attribute",
+            "name": "export default",
+            "type": "Array",
+            "class": "shared.definitions.languages",
+            "namespace": "shared.definitions"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 1,
+            "description": "i18n.js\n\nHelper class for i18n detection and translation.",
+            "license": "GPL-3.0",
+            "version": "1.0",
+            "author": "Ercan \"geforcefan\" Akyürek, https://github.com/geforcefan/",
+            "updated": "2017-03-09",
+            "link": "https://github.com/geforcefan/keystone/",
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 26,
+            "description": "Flattens messages.\n\nWe want to use nested objects when we provide strings in locales/\nbecause of the maintainability. So we need this method to flatten such a structure:\n\n     {\n         \"client\": {\n             \"string1\": \"Hello\",\n             \"string2\": \"World\"\n         }\n     }\n\nto:\n\n     {\n         \"client.string1\": \"Hello\",\n         \"client.string2\": \"World\"\n     }\n\nWhen there is an impact of performance because of this, we should pre process the strings.js\nin the building stage",
+            "itemtype": "method",
+            "name": "flattenMessages",
+            "static": 1,
+            "params": [
+                {
+                    "name": "nestedMessages",
+                    "description": "nested messages",
+                    "type": "Object"
+                },
+                {
+                    "name": "prefix",
+                    "description": "prefix",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "flatten messages object",
+                "type": "Object"
+            },
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 71,
+            "description": "Import all locale strings and cache them after flatting the strings",
+            "itemtype": "method",
+            "name": "readAndCacheLocaleStrings",
+            "static": 1,
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 84,
+            "description": "Detect locale from server request",
+            "itemtype": "method",
+            "name": "detectLocaleFromRequest",
+            "static": 1,
+            "params": [
+                {
+                    "name": "req",
+                    "description": "Express request",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "locale",
+                "type": "String"
+            },
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 101,
+            "description": "Basically just picking the lang attribute from the HTML element and make\nthis global accessible via languageDetector.currentLocale.\nThe business logic of which language should picked SHOULD exclusively\ndetected server side (check server.js). The server then renders the HTML Layout\nwith the right lang attribute, so the client just have to pick the locale which is\npassed from the server",
+            "itemtype": "method",
+            "name": "detectAndSetClientLocaleFromDocument",
+            "static": 1,
+            "return": {
+                "description": "detected locale",
+                "type": "String"
+            },
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 124,
+            "description": "Get active locale depending on client or server request",
+            "itemtype": "method",
+            "name": "getActiveLocale",
+            "static": 1,
+            "return": {
+                "description": "locale",
+                "type": "String"
+            },
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 136,
+            "description": "Default locale",
+            "itemtype": "attribute",
+            "name": "defaultLocale",
+            "type": "String",
+            "default": "en",
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 145,
+            "description": "Client locale",
+            "itemtype": "attribute",
+            "name": "clientLocale",
+            "type": "String",
+            "default": "en",
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 154,
+            "description": "Cached locale strings",
+            "itemtype": "attribute",
+            "name": "cachedLocaleStrings",
+            "type": "Object",
+            "default": "en",
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        },
+        {
+            "file": "src/shared/helper/i18n.js",
+            "line": 167,
+            "description": "Translate function. You can use this method to internationalize the application.\nWherever a translation is needed, just import\n{{#crossLink \"shared.helper.i18n/export tr:method\"}}this function{{/crossLink}} and use it.",
+            "itemtype": "method",
+            "name": "export tr",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "defined in the locales strings file",
+                    "type": "String"
+                },
+                {
+                    "name": "arguments",
+                    "description": "arguments of strings which can accessed in the translated string via {0}..{1}..{n}",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "Translated string",
+                "type": "String"
+            },
+            "class": "shared.helper.i18n",
+            "namespace": "shared.helper"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: license",
+            "line": " src/client/layout/DefaultLayout.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/client/layout/DefaultLayout.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/client/layout/DefaultLayout.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/client/layout/DefaultLayout.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/client/pages/IndexPage.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/client/pages/IndexPage.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/client/pages/IndexPage.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/client/pages/IndexPage.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/client/pages/NotFoundPage.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/client/pages/NotFoundPage.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/client/pages/NotFoundPage.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/client/pages/NotFoundPage.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/client/client.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/client/client.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/client/client.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/client/client.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/client/routes.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/client/routes.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/client/routes.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/client/routes.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/definitions/errorCodes.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/definitions/errorCodes.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/definitions/errorCodes.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/definitions/errorCodes.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/definitions/mailsTypes.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/definitions/mailsTypes.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/definitions/mailsTypes.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/definitions/mailsTypes.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/definitions/permissions.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/definitions/permissions.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/definitions/permissions.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/definitions/permissions.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/misc/mailer.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/misc/mailer.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/misc/mailer.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/misc/mailer.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/misc/mongoose.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/misc/mongoose.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/misc/mongoose.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/misc/mongoose.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/misc/randomValueBase64.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/misc/randomValueBase64.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/misc/randomValueBase64.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/misc/randomValueBase64.js:1"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/helper/misc/randomValueBase64.js:21"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/misc/router.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/misc/router.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/misc/router.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/misc/router.js:1"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/helper/misc/router.js:128"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/helper/misc/router.js:139"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/misc/setup.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/misc/setup.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/misc/setup.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/misc/setup.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/response/errorResponse.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/response/errorResponse.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/response/errorResponse.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/response/errorResponse.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/response/successResponse.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/response/successResponse.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/response/successResponse.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/response/successResponse.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/scheduler/abstractSchedule.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/scheduler/abstractSchedule.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/scheduler/abstractSchedule.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/scheduler/abstractSchedule.js:1"
+        },
+        {
+            "message": "unknown tag: abstract",
+            "line": " src/server/helper/scheduler/abstractSchedule.js:17"
+        },
+        {
+            "message": "unknown tag: abstract",
+            "line": " src/server/helper/scheduler/abstractSchedule.js:41"
+        },
+        {
+            "message": "unknown tag: abstract",
+            "line": " src/server/helper/scheduler/abstractSchedule.js:51"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/scheduler/scheduler.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/scheduler/scheduler.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/scheduler/scheduler.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/scheduler/scheduler.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/services/service.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/services/service.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/services/service.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/services/service.js:1"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/helper/services/service.js:30"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/helper/services/service.js:40"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/services/services.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/services/services.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/services/services.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/services/services.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/user/auth.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/user/auth.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/user/auth.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/user/auth.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/helper/user/permissions.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/helper/user/permissions.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/helper/user/permissions.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/helper/user/permissions.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/models/failedMail.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/models/failedMail.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/models/failedMail.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/models/failedMail.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/models/socialLinks.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/models/socialLinks.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/models/socialLinks.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/models/socialLinks.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/models/system.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/models/system.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/models/system.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/models/system.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/models/user.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/models/user.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/models/user.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/models/user.js:1"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/models/user.js:354"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/models/user.js:366"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/models/userGroup.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/models/userGroup.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/models/userGroup.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/models/userGroup.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/models/userProfile.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/models/userProfile.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/models/userProfile.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/models/userProfile.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/routes/test.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/routes/test.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/routes/test.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/routes/test.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/routes/user.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/routes/user.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/routes/user.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/routes/user.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/schedules/failedMails.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/schedules/failedMails.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/schedules/failedMails.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/schedules/failedMails.js:1"
+        },
+        {
+            "message": "unknown tag: override",
+            "line": " src/server/schedules/failedMails.js:108"
+        },
+        {
+            "message": "unknown tag: override",
+            "line": " src/server/schedules/failedMails.js:121"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/services/user.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/services/user.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/services/user.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/services/user.js:1"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/services/user.js:38"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/services/user.js:68"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/services/user.js:107"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/services/user.js:139"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/services/user.js:226"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/services/user.js:275"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/services/userProfile.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/services/userProfile.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/services/userProfile.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/services/userProfile.js:1"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/services/userProfile.js:33"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/services/userProfile.js:76"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/server/services/userProfile.js:144"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/setup/20170310/userGroups.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/setup/20170310/userGroups.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/setup/20170310/userGroups.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/setup/20170310/userGroups.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/server/server.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/server/server.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/server/server.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/server/server.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/shared/definitions/languages.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/shared/definitions/languages.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/shared/definitions/languages.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/shared/definitions/languages.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " src/shared/helper/i18n.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " src/shared/helper/i18n.js:1"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " src/shared/helper/i18n.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " src/shared/helper/i18n.js:1"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/shared/helper/i18n.js:124"
+        },
+        {
+            "message": "Missing item type\nDefaultLayout.js\nThis is the default layout for the whole application.",
+            "line": " src/client/layout/DefaultLayout.js:1"
+        },
+        {
+            "message": "Missing item type\nIndexPage.js\nThis is the index page, the portal, whatever you want to call it",
+            "line": " src/client/pages/IndexPage.js:1"
+        },
+        {
+            "message": "Missing item type\nNotFoundPage.js\n404 Page",
+            "line": " src/client/pages/NotFoundPage.js:1"
+        },
+        {
+            "message": "Missing item type\nclient.js\nEntry point for the client application.",
+            "line": " src/client/client.js:1"
+        },
+        {
+            "message": "Missing item type\nroutes.js\nDefinition of all routes. Don´t worry about server side rendering,\nreacts route matcher will do the magic. For more explanation\nlook in server/server.js",
+            "line": " src/client/routes.js:1"
+        },
+        {
+            "message": "Missing item type\nmailer.js\n\nMailer helper class which provides a method to send a mail without concerning\nabout the sender addresses, subject, template and mail layout",
+            "line": " src/server/helper/misc/mailer.js:1"
+        },
+        {
+            "message": "Missing item type\nrandomValuesBase64.js\n\nGenerates random base64 values\n\nSpecial thanks to: Tom Pawlak\nhttps://blog.tompawlak.org/generate-random-values-nodejs-javascript",
+            "line": " src/server/helper/misc/randomValueBase64.js:1"
+        },
+        {
+            "message": "Missing item type\nrouter.js\n\nRouter helper. Inherit this class in any route.\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/8\nGitHub issue: https://github.com/geforcefan/keystone/issues/9",
+            "line": " src/server/helper/misc/router.js:1"
+        },
+        {
+            "message": "Missing item type\nsetup.js\n\nSetup helper. This helper will check for updates and invokes them",
+            "line": " src/server/helper/misc/setup.js:1"
+        },
+        {
+            "message": "Missing item type\nabstractSchedule.js\n\nAn abstract class which must be inherited in all schedules.\nMore information: {{#crossLink \"server.helper.Scheduler\"}}Scheduler{{/crossLink}}",
+            "line": " src/server/helper/scheduler/abstractSchedule.js:1"
+        },
+        {
+            "message": "Missing item type\nscheduler.js\n\nDetects, registers and starts schedules which are located in schedules/.\nThe filename of the schedule is used for the global registration. All schedules must inherit\nfrom {{#crossLink \"server.helper.AbstractSchedule\"}}AbstractSchedule{{/crossLink}}.\n\n     schedules/failedMails.js -> failedMails\n\nYou can start or terminate any schedule by importing this class an calling the static methods\n\n     import Scheduler from './helper/misc/scheduler'\n\n     Scheduler.start(scheduleName);\n     Scheduler.terminate(scheduleName);\n\nExample usage to start a schedule\n\n     Scheduler.start(\"failedMails\");\n\nExample usage to terminate a schedule\n\n     Scheduler.terminate(\"failedMails\");",
+            "line": " src/server/helper/scheduler/scheduler.js:1"
+        },
+        {
+            "message": "Missing item type\nDetects and starts global schedules by fetching and validating all schedules/*.js files",
+            "line": " src/server/helper/scheduler/scheduler.js:112"
+        },
+        {
+            "message": "Missing item type\nservice.js\n\nService helper. Inherit this class in any service.\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/7",
+            "line": " src/server/helper/services/service.js:1"
+        },
+        {
+            "message": "Missing item type\nservices.js\n\nServices autoloader class.\nInheriting from this class will make all services available in your class.\n\nGitHub issue: https://github.com/geforcefan/keystone/issues/7",
+            "line": " src/server/helper/services/services.js:1"
+        },
+        {
+            "message": "Missing item type\nfailedMail.js\n\nFailed mail model",
+            "line": " src/server/models/failedMail.js:1"
+        },
+        {
+            "message": "Missing item type\nsocialLinks.js\n\nSocial links model",
+            "line": " src/server/models/socialLinks.js:1"
+        },
+        {
+            "message": "Missing item type\nsystem.js\n\nSystem information model",
+            "line": " src/server/models/system.js:1"
+        },
+        {
+            "message": "Missing item type\nuser.js\n\nUser model",
+            "line": " src/server/models/user.js:1"
+        },
+        {
+            "message": "Missing item type\nuserGroup.js\n\nUser group model",
+            "line": " src/server/models/userGroup.js:1"
+        },
+        {
+            "message": "Missing item type\nuserProfile.js\n\nUser profile model",
+            "line": " src/server/models/userProfile.js:1"
+        },
+        {
+            "message": "Missing item type\ntest.js\n\nJust for testing",
+            "line": " src/server/routes/test.js:1"
+        },
+        {
+            "message": "Missing item type\nuser.js\n\nAll user API routes are defined here.",
+            "line": " src/server/routes/user.js:1"
+        },
+        {
+            "message": "Missing item type\nfailedMails.js\n\nFailed mails scheduler which is checking and trying to send failed mails.",
+            "line": " src/server/schedules/failedMails.js:1"
+        },
+        {
+            "message": "Missing item type\nuser.js\n\nUser business logic",
+            "line": " src/server/services/user.js:1"
+        },
+        {
+            "message": "Missing item type\nuser.js\n\nUser profie business logic",
+            "line": " src/server/services/userProfile.js:1"
+        },
+        {
+            "message": "Missing item type\nuserGroups.js\nInstallation file for user groups.\nSetting up initial groups.",
+            "line": " src/server/setup/20170310/userGroups.js:1"
+        },
+        {
+            "message": "Missing item type\nSetting up initial groups",
+            "line": " src/server/setup/20170310/userGroups.js:19"
+        },
+        {
+            "message": "Missing item type\nserver.js\n\nEntry point of the server application.",
+            "line": " src/server/server.js:1"
+        },
+        {
+            "message": "Missing item type\nWe need to establish first proper db connection, checking for updates (setup)\nand then we initialize our server.",
+            "line": " src/server/server.js:71"
+        },
+        {
+            "message": "Missing item type\ni18n.js\n\nHelper class for i18n detection and translation.",
+            "line": " src/shared/helper/i18n.js:1"
+        }
+    ]
+}

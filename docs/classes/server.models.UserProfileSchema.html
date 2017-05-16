@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>server.models.UserProfileSchema - Keystone Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            Keystone Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/server.definitions.errorCodes", "classes/server.definitions.mailTypes", "classes/server.definitions.permissions", "classes/server.helper.AbstractSchedule", "classes/server.helper.auth", "classes/server.helper.errorResponse", "classes/server.helper.Mailer", "classes/server.helper.mongoose", "classes/server.helper.permissions", "classes/server.helper.Router", "classes/server.helper.RouterMethods", "classes/server.helper.Scheduler", "classes/server.helper.Service", "classes/server.helper.Services", "classes/server.helper.Setup", "classes/server.helper.successResponse", "classes/server.models.FailedMailSchema", "classes/server.models.SocialLinksSchema", "classes/server.models.SystemSchema", "classes/server.models.UserGroupSchema", "classes/server.models.UserProfileSchema", "classes/server.models.UserSchema", "classes/server.routes.User", "classes/server.schedules.FailedMails", "classes/server.ServerApplication", "classes/server.services.User", "classes/server.services.UserProfile", "classes/shared.definitions.languages", "classes/shared.helper.i18n"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/server.definitions.errorCodes.html">server.definitions.errorCodes</a></li>
+                <li><a href="../classes/server.definitions.mailTypes.html">server.definitions.mailTypes</a></li>
+                <li><a href="../classes/server.definitions.permissions.html">server.definitions.permissions</a></li>
+                <li><a href="../classes/server.helper.AbstractSchedule.html">server.helper.AbstractSchedule</a></li>
+                <li><a href="../classes/server.helper.auth.html">server.helper.auth</a></li>
+                <li><a href="../classes/server.helper.errorResponse.html">server.helper.errorResponse</a></li>
+                <li><a href="../classes/server.helper.Mailer.html">server.helper.Mailer</a></li>
+                <li><a href="../classes/server.helper.mongoose.html">server.helper.mongoose</a></li>
+                <li><a href="../classes/server.helper.permissions.html">server.helper.permissions</a></li>
+                <li><a href="../classes/server.helper.Router.html">server.helper.Router</a></li>
+                <li><a href="../classes/server.helper.RouterMethods.html">server.helper.RouterMethods</a></li>
+                <li><a href="../classes/server.helper.Scheduler.html">server.helper.Scheduler</a></li>
+                <li><a href="../classes/server.helper.Service.html">server.helper.Service</a></li>
+                <li><a href="../classes/server.helper.Services.html">server.helper.Services</a></li>
+                <li><a href="../classes/server.helper.Setup.html">server.helper.Setup</a></li>
+                <li><a href="../classes/server.helper.successResponse.html">server.helper.successResponse</a></li>
+                <li><a href="../classes/server.models.FailedMailSchema.html">server.models.FailedMailSchema</a></li>
+                <li><a href="../classes/server.models.SocialLinksSchema.html">server.models.SocialLinksSchema</a></li>
+                <li><a href="../classes/server.models.SystemSchema.html">server.models.SystemSchema</a></li>
+                <li><a href="../classes/server.models.UserGroupSchema.html">server.models.UserGroupSchema</a></li>
+                <li><a href="../classes/server.models.UserProfileSchema.html">server.models.UserProfileSchema</a></li>
+                <li><a href="../classes/server.models.UserSchema.html">server.models.UserSchema</a></li>
+                <li><a href="../classes/server.routes.User.html">server.routes.User</a></li>
+                <li><a href="../classes/server.schedules.FailedMails.html">server.schedules.FailedMails</a></li>
+                <li><a href="../classes/server.ServerApplication.html">server.ServerApplication</a></li>
+                <li><a href="../classes/server.services.User.html">server.services.User</a></li>
+                <li><a href="../classes/server.services.UserProfile.html">server.services.UserProfile</a></li>
+                <li><a href="../classes/shared.definitions.languages.html">shared.definitions.languages</a></li>
+                <li><a href="../classes/shared.helper.i18n.html">shared.helper.i18n</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>server.models.UserProfileSchema</h1>
+</div>
+
+
+	<div class="well well-small">
+        <div class="extends">
+            Extends Mongoose.Schema
+        </div>
+    </div>
+
+
+
+
+<div class="yuidoc-class-description">
+<p>User profile model</p>
+<p>GitHub issue: <a href="https://github.com/geforcefan/keystone/issues/2">https://github.com/geforcefan/keystone/issues/2</a></p>
+
+</div>
+
+<!-- table of contents -->
+
+<div id="class-toc" class="page-section">
+	<h2>Table of Contents</h2>
+    <ul>
+
+
+		<li>
+			<strong>Attributes</strong>
+			<ul>
+				<li><a href="#attr-birthday"><span class="iattr">birthday</span></a></li>
+				<li><a href="#attr-description"><span class="iattr">description</span></a></li>
+				<li><a href="#attr-displayName"><span class="iattr">displayName</span></a></li>
+				<li><a href="#attr-location"><span class="iattr">location</span></a></li>
+				<li><a href="#attr-playedGames"><span class="iattr">playedGames</span></a></li>
+				<li><a href="#attr-socialLinks"><span class="iattr">socialLinks</span></a></li>
+				<li><a href="#attr-subscribedUsers"><span class="iattr">subscribedUsers</span></a></li>
+			</ul>
+		</li>
+
+	</ul>
+</div>
+
+<!-- details -->
+
+
+
+
+    <div id="attrs" class="page-section">
+        <h2 class="off-left">Attributes</h2>
+
+<div id="attr-birthday" class="attr item">
+    <a name="config_birthday"></a> 
+    <h3 class="name"><code>birthday</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="crosslink external" target="_blank">Date</a></span>
+
+
+
+
+
+        <span class="flag optional">optional</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_userProfile.js.html#l48"><code>src&#x2F;server&#x2F;models&#x2F;userProfile.js:48</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>User birthday</p>
+
+    </div>
+
+        <p><strong>Default:</strong> null</p>
+
+
+</div>
+<div id="attr-description" class="attr item">
+    <a name="config_description"></a> 
+    <h3 class="name"><code>description</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+        <span class="flag optional">optional</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_userProfile.js.html#l61"><code>src&#x2F;server&#x2F;models&#x2F;userProfile.js:61</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>User description, biography</p>
+
+    </div>
+
+        <p><strong>Default:</strong> &quot;&quot;</p>
+
+
+</div>
+<div id="attr-displayName" class="attr item">
+    <a name="config_displayName"></a> 
+    <h3 class="name"><code>displayName</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+        <span class="flag optional">optional</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_userProfile.js.html#l35"><code>src&#x2F;server&#x2F;models&#x2F;userProfile.js:35</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Display name (alias name, etc.)</p>
+
+    </div>
+
+        <p><strong>Default:</strong> &quot;&quot;</p>
+
+
+</div>
+<div id="attr-location" class="attr item">
+    <a name="config_location"></a> 
+    <h3 class="name"><code>location</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+        <span class="flag optional">optional</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_userProfile.js.html#l74"><code>src&#x2F;server&#x2F;models&#x2F;userProfile.js:74</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>User location</p>
+
+    </div>
+
+        <p><strong>Default:</strong> &quot;&quot;</p>
+
+
+</div>
+<div id="attr-playedGames" class="attr item">
+    <a name="config_playedGames"></a> 
+    <h3 class="name"><code>playedGames</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">[String]</a></span>
+
+
+
+
+
+        <span class="flag optional">optional</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_userProfile.js.html#l100"><code>src&#x2F;server&#x2F;models&#x2F;userProfile.js:100</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Users played games.</p>
+<pre class="code prettyprint"><code> ['NoLimitsCoaster', 'NoLimitsCoaster2', "RollerCoasterTycoon1", "RollerCoasterTycoon2", "RollerCoasterTycoon3", "PlanetCoaster"]</code></pre>
+
+    </div>
+
+        <p><strong>Default:</strong> []</p>
+
+
+</div>
+<div id="attr-socialLinks" class="attr item">
+    <a name="config_socialLinks"></a> 
+    <h3 class="name"><code>socialLinks</code></h3>
+    <span class="type"><a href="../classes/server.models.SocialLinksSchema.html" class="crosslink">[server.models.SocialLinksSchema]</a></span>
+
+
+
+
+
+        <span class="flag optional">optional</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_userProfile.js.html#l87"><code>src&#x2F;server&#x2F;models&#x2F;userProfile.js:87</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Users social links (youtube, twitch, steam, etc.)</p>
+
+    </div>
+
+        <p><strong>Default:</strong> []</p>
+
+
+</div>
+<div id="attr-subscribedUsers" class="attr item">
+    <a name="config_subscribedUsers"></a> 
+    <h3 class="name"><code>subscribedUsers</code></h3>
+    <span class="type">ObjectId</span>
+
+
+
+
+
+        <span class="flag optional">optional</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_server_models_userProfile.js.html#l116"><code>src&#x2F;server&#x2F;models&#x2F;userProfile.js:116</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>User subscriptions.</p>
+
+    </div>
+
+        <p><strong>Default:</strong> []</p>
+
+
+</div>
+    </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

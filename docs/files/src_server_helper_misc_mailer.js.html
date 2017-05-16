@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/server/helper/misc/mailer.js - Keystone Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            Keystone Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/server.definitions.errorCodes", "classes/server.definitions.mailTypes", "classes/server.definitions.permissions", "classes/server.helper.AbstractSchedule", "classes/server.helper.auth", "classes/server.helper.errorResponse", "classes/server.helper.Mailer", "classes/server.helper.mongoose", "classes/server.helper.permissions", "classes/server.helper.Router", "classes/server.helper.RouterMethods", "classes/server.helper.Scheduler", "classes/server.helper.Service", "classes/server.helper.Services", "classes/server.helper.Setup", "classes/server.helper.successResponse", "classes/server.models.FailedMailSchema", "classes/server.models.SocialLinksSchema", "classes/server.models.SystemSchema", "classes/server.models.UserGroupSchema", "classes/server.models.UserProfileSchema", "classes/server.models.UserSchema", "classes/server.routes.User", "classes/server.schedules.FailedMails", "classes/server.ServerApplication", "classes/server.services.User", "classes/server.services.UserProfile", "classes/shared.definitions.languages", "classes/shared.helper.i18n"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/server.definitions.errorCodes.html">server.definitions.errorCodes</a></li>
+                <li><a href="../classes/server.definitions.mailTypes.html">server.definitions.mailTypes</a></li>
+                <li><a href="../classes/server.definitions.permissions.html">server.definitions.permissions</a></li>
+                <li><a href="../classes/server.helper.AbstractSchedule.html">server.helper.AbstractSchedule</a></li>
+                <li><a href="../classes/server.helper.auth.html">server.helper.auth</a></li>
+                <li><a href="../classes/server.helper.errorResponse.html">server.helper.errorResponse</a></li>
+                <li><a href="../classes/server.helper.Mailer.html">server.helper.Mailer</a></li>
+                <li><a href="../classes/server.helper.mongoose.html">server.helper.mongoose</a></li>
+                <li><a href="../classes/server.helper.permissions.html">server.helper.permissions</a></li>
+                <li><a href="../classes/server.helper.Router.html">server.helper.Router</a></li>
+                <li><a href="../classes/server.helper.RouterMethods.html">server.helper.RouterMethods</a></li>
+                <li><a href="../classes/server.helper.Scheduler.html">server.helper.Scheduler</a></li>
+                <li><a href="../classes/server.helper.Service.html">server.helper.Service</a></li>
+                <li><a href="../classes/server.helper.Services.html">server.helper.Services</a></li>
+                <li><a href="../classes/server.helper.Setup.html">server.helper.Setup</a></li>
+                <li><a href="../classes/server.helper.successResponse.html">server.helper.successResponse</a></li>
+                <li><a href="../classes/server.models.FailedMailSchema.html">server.models.FailedMailSchema</a></li>
+                <li><a href="../classes/server.models.SocialLinksSchema.html">server.models.SocialLinksSchema</a></li>
+                <li><a href="../classes/server.models.SystemSchema.html">server.models.SystemSchema</a></li>
+                <li><a href="../classes/server.models.UserGroupSchema.html">server.models.UserGroupSchema</a></li>
+                <li><a href="../classes/server.models.UserProfileSchema.html">server.models.UserProfileSchema</a></li>
+                <li><a href="../classes/server.models.UserSchema.html">server.models.UserSchema</a></li>
+                <li><a href="../classes/server.routes.User.html">server.routes.User</a></li>
+                <li><a href="../classes/server.schedules.FailedMails.html">server.schedules.FailedMails</a></li>
+                <li><a href="../classes/server.ServerApplication.html">server.ServerApplication</a></li>
+                <li><a href="../classes/server.services.User.html">server.services.User</a></li>
+                <li><a href="../classes/server.services.UserProfile.html">server.services.UserProfile</a></li>
+                <li><a href="../classes/shared.definitions.languages.html">shared.definitions.languages</a></li>
+                <li><a href="../classes/shared.helper.i18n.html">shared.helper.i18n</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>src/server/helper/misc/mailer.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * mailer.js
+ *
+ * Mailer helper class which provides a method to send a mail without concerning
+ * about the sender addresses, subject, template and mail layout
+ *
+ * @namespace server.helper
+ * @license GPL-3.0
+ * @version 1.0
+ * @author  Ercan &quot;geforcefan&quot; Akyürek, https://github.com/geforcefan/
+ * @updated 2017-03-22
+ * @link    https://github.com/geforcefan/keystone/
+ *
+ *
+ */
+
+import ConfigServer from &#x27;../../../../config/server&#x27;
+
+import emailjs from &#x27;emailjs&#x27;
+import ejs from &#x27;ejs&#x27;
+import fs from &#x27;fs&#x27;
+import path from &#x27;path&#x27;
+import paths from &#x27;../paths&#x27;
+
+import htmlToText from &#x27;html-to-text&#x27;
+
+import i18n from &#x27;../../../shared/helper/i18n&#x27;
+import { tr } from &#x27;../../../shared/helper/i18n&#x27;
+
+import { Enum } from &#x27;enumify&#x27;;
+
+import Scheduler from &#x27;../scheduler/scheduler&#x27;
+
+import FailedMailModel from &#x27;../../models/failedMail&#x27;
+
+export class MailType extends Enum {}
+MailType.initEnum(require(&#x27;./../../definitions/mailsTypes&#x27;).default);
+
+/**
+ * Mailer helper class which provides a method to send a mail without concerning
+ * about the sender addresses, subject, template and mail layout
+ *
+ * @class Mailer
+ */
+export class Mailer {
+    /**
+     * Sends a mail without concerning
+     * about the sender addresses, subject, template and mail layout
+     *
+     * @method sendMail
+     * @static
+     * @param mailType {MailType} mail type defined in server/definitions/mails.js
+     * @param variables {Object} template variables
+     * @param recipients {Array&lt;String&gt;} array of recipients (email addresses)
+     */
+    static sendMail(mailType, variables, recipients) {
+        if(!(mailType instanceof MailType))
+            throw Error(&quot;Argument &#x27;mailType&#x27; must be an instance of MailType&quot;);
+
+        let mailsPath = path.join(paths.locales, i18n.getActiveLocale(), &quot;mails&quot;);
+
+        let layoutTemplate = fs.readFileSync(path.join(mailsPath, &quot;layout.ejs&quot;), &quot;utf8&quot;);
+        let contentTemplate = fs.readFileSync(path.join(mailsPath, &#x60;${mailType.name}.ejs&#x60;), &quot;utf8&quot;);
+
+        let content = ejs.render(contentTemplate, variables);
+        let emailHTML = ejs.render(layoutTemplate, { content });
+
+        let mailServer = emailjs.server.connect(ConfigServer.email.server);
+        let mailSendObject = {
+            from: ConfigServer.email.from,
+            text: htmlToText.fromString(emailHTML),
+            to: recipients.join(&quot;,&quot;),
+            subject: tr(&#x60;email.${mailType.name}.subject&#x60;),
+            attachment: [{
+                data: emailHTML,
+                alternative: true
+            }]
+        };
+
+        mailServer.send(mailSendObject, err =&gt; {
+            if(err) {
+                console.log(&#x60;Couldn&#x27;t Send mail with subject [${mailSendObject.subject}] to [${mailSendObject.to}]: Error [${err.message}]&#x60;);
+
+                // store failed mails in the database
+                new FailedMailModel(mailSendObject).save((err, mail) =&gt; {
+                    // start failed mail scheduler
+                    Scheduler.start(&quot;failedMails&quot;);
+                });
+            } else
+                console.log(&#x60;Send mail with subject [${mailSendObject.subject}] successfully to [${mailSendObject.to}]: &quot;${mailSendObject.text}&quot;&#x60;);
+        })
+    }
+}
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

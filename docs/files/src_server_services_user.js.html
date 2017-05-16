@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/server/services/user.js - Keystone Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            Keystone Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>1.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/server.definitions.errorCodes", "classes/server.definitions.mailTypes", "classes/server.definitions.permissions", "classes/server.helper.AbstractSchedule", "classes/server.helper.auth", "classes/server.helper.errorResponse", "classes/server.helper.Mailer", "classes/server.helper.mongoose", "classes/server.helper.permissions", "classes/server.helper.Router", "classes/server.helper.RouterMethods", "classes/server.helper.Scheduler", "classes/server.helper.Service", "classes/server.helper.Services", "classes/server.helper.Setup", "classes/server.helper.successResponse", "classes/server.models.FailedMailSchema", "classes/server.models.SocialLinksSchema", "classes/server.models.SystemSchema", "classes/server.models.UserGroupSchema", "classes/server.models.UserProfileSchema", "classes/server.models.UserSchema", "classes/server.routes.User", "classes/server.schedules.FailedMails", "classes/server.ServerApplication", "classes/server.services.User", "classes/server.services.UserProfile", "classes/shared.definitions.languages", "classes/shared.helper.i18n"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/server.definitions.errorCodes.html">server.definitions.errorCodes</a></li>
+                <li><a href="../classes/server.definitions.mailTypes.html">server.definitions.mailTypes</a></li>
+                <li><a href="../classes/server.definitions.permissions.html">server.definitions.permissions</a></li>
+                <li><a href="../classes/server.helper.AbstractSchedule.html">server.helper.AbstractSchedule</a></li>
+                <li><a href="../classes/server.helper.auth.html">server.helper.auth</a></li>
+                <li><a href="../classes/server.helper.errorResponse.html">server.helper.errorResponse</a></li>
+                <li><a href="../classes/server.helper.Mailer.html">server.helper.Mailer</a></li>
+                <li><a href="../classes/server.helper.mongoose.html">server.helper.mongoose</a></li>
+                <li><a href="../classes/server.helper.permissions.html">server.helper.permissions</a></li>
+                <li><a href="../classes/server.helper.Router.html">server.helper.Router</a></li>
+                <li><a href="../classes/server.helper.RouterMethods.html">server.helper.RouterMethods</a></li>
+                <li><a href="../classes/server.helper.Scheduler.html">server.helper.Scheduler</a></li>
+                <li><a href="../classes/server.helper.Service.html">server.helper.Service</a></li>
+                <li><a href="../classes/server.helper.Services.html">server.helper.Services</a></li>
+                <li><a href="../classes/server.helper.Setup.html">server.helper.Setup</a></li>
+                <li><a href="../classes/server.helper.successResponse.html">server.helper.successResponse</a></li>
+                <li><a href="../classes/server.models.FailedMailSchema.html">server.models.FailedMailSchema</a></li>
+                <li><a href="../classes/server.models.SocialLinksSchema.html">server.models.SocialLinksSchema</a></li>
+                <li><a href="../classes/server.models.SystemSchema.html">server.models.SystemSchema</a></li>
+                <li><a href="../classes/server.models.UserGroupSchema.html">server.models.UserGroupSchema</a></li>
+                <li><a href="../classes/server.models.UserProfileSchema.html">server.models.UserProfileSchema</a></li>
+                <li><a href="../classes/server.models.UserSchema.html">server.models.UserSchema</a></li>
+                <li><a href="../classes/server.routes.User.html">server.routes.User</a></li>
+                <li><a href="../classes/server.schedules.FailedMails.html">server.schedules.FailedMails</a></li>
+                <li><a href="../classes/server.ServerApplication.html">server.ServerApplication</a></li>
+                <li><a href="../classes/server.services.User.html">server.services.User</a></li>
+                <li><a href="../classes/server.services.UserProfile.html">server.services.UserProfile</a></li>
+                <li><a href="../classes/shared.definitions.languages.html">shared.definitions.languages</a></li>
+                <li><a href="../classes/shared.helper.i18n.html">shared.helper.i18n</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>src/server/services/user.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * user.js
+ *
+ * User business logic
+ *
+ *
+ * @namespace server.services
+ * @license GPL-3.0
+ * @version 1.0
+ * @author  Ercan &quot;geforcefan&quot; Akyürek, https://github.com/geforcefan/
+ * @updated 2017-03-15
+ * @link    https://github.com/geforcefan/keystone/
+ *
+ *
+ */
+
+import Service from &#x27;../helper/services/service&#x27;
+import { ErrorCodes } from &#x27;../helper/response/errorResponse&#x27;
+
+import jwt from &#x27;jwt-simple&#x27;;
+import ConfigServer from &#x27;./../../../config/server&#x27;;
+
+import UserModel from &#x27;../models/user&#x27;
+import UserGroupModel from &#x27;../models/userGroup&#x27;
+
+import Mongoose from &#x27;../helper/misc/mongoose&#x27;
+
+import randomValueBase64 from &#x27;../helper/misc/randomValueBase64&#x27;
+import { MailType, Mailer } from  &#x27;../helper/misc/mailer&#x27;
+
+/**
+ * User business logic
+ *
+ * @class User
+ * @extends server.helper.Service
+ */
+export default class User extends Service {
+    /**
+     * Fetch an active user. This method should always used to fetch a user, except
+     * you need to activate a user.
+     *
+     * @method getActiveUserByID
+     * @async
+     *
+     * @param userID {String} user id
+     * @param callback {Function} (err, user)
+     *
+     * @returns {Function}
+     */
+    getActiveUserByID(userID, callback) {
+        // validate user id
+        if(!Mongoose.Types.ObjectId.isValid(userID))
+            return callback([ErrorCodes.invalidObjectID, userID], null);
+
+        UserModel.findOne({
+            _id: userID,
+            active: true
+        }, (err, user) =&gt; {
+            if (err)
+                return callback([err], null);
+            if (!user)
+                return callback([ErrorCodes.userNotFound, userID], null);
+
+            return callback(null, user);
+        });
+    };
+
+    /**
+     * Authentication logic
+     *
+     * @method authenticate
+     * @async
+     *
+     * @param loginData {Object} login data
+     * @param loginData.name {String} username
+     * @param loginData.password {String} password
+     * @param callback {Function} (err, token)
+     *
+     * @returns {Promise}
+     */
+    authenticate(loginData, callback) {
+        return new Promise(resolve =&gt; resolve())
+            .then(result =&gt; new Promise((resolve, reject) =&gt; UserModel.findOne({
+                name: loginData.name,
+                active: true
+
+            }, (err, user) =&gt; (err || !user ? reject([ErrorCodes.authenticationUserNotFound]) : resolve(user)))))
+            .then(user =&gt; new Promise((resolve, reject) =&gt; user.comparePassword(loginData.password, (err, isMatch) =&gt; {
+                if(isMatch &amp;&amp; !err)
+                    return resolve(user);
+
+                return reject([ErrorCodes.authenticationWrongPassword]);
+            })))
+            .then(user =&gt; new Promise((resolve, reject) =&gt; {
+                if(!user.active)
+                    return reject([ErrorCodes.authenticationUserInactive]);
+
+                return resolve(user);
+            }))
+            .then(user =&gt; new Promise(resolve =&gt; resolve(jwt.encode(user, ConfigServer.auth.secret))))
+
+            // success or failure
+            .then(token =&gt; callback(null, { token: &#x60;JWT ${token}&#x60; }))
+            .catch(err =&gt; callback(err, null));
+    }
+
+    /**
+     * Registration logic
+     *
+     * @method register
+     * @async
+     *
+     * @param registrationData {Object} registration data
+     * @param registrationData.name {String} username
+     * @param registrationData.email {String} email
+     * @param registrationData.password {String} password
+     * @param callback {Function} (err, success)
+     *
+     * @returns {Promise}
+     */
+    register(registrationData, callback) {
+        return new Promise(resolve =&gt; resolve())
+            .then(result =&gt; new Promise((resolve, reject) =&gt;
+                (!registrationData.name || !registrationData.email || !registrationData.password) ?
+                    reject([ErrorCodes.registrationFillAllFields]) :
+                    resolve()
+            ))
+            .then(result =&gt; new Promise(resolve =&gt; UserGroupModel.findOne({ name: &quot;user&quot; }, (err, group) =&gt; resolve(group))))
+            .then(group =&gt; new Promise((resolve, reject) =&gt; new UserModel({
+                name: registrationData.name,
+                password: registrationData.password,
+                email: registrationData.email,
+                groupID: group.id
+            }).save((err, user) =&gt; err ? reject([ErrorCodes.registrationUsernameOrEmailExists]) : resolve(user))))
+            .then(user =&gt; callback(null, { registered: true }))
+            .catch(args =&gt; callback(args, null));
+    }
+
+    /**
+     * User modification logic
+     *
+     * @method modify
+     * @async
+     * 
+     * @param userID {String} user id of the user which should modified
+     * @param modificationData {Object} optional, modification data
+     * @param modificationData.name {String} optional, username
+     * @param modificationData.email {String} optional, email
+     * @param modificationData.password {String} optional, password
+     * @param modificationData.groupID {String} optional, groupID
+     * @param modificationData.profile {server.models.UserProfileSchema} optional, profile
+     * @param callback {Function} (err, success)
+     *
+     * @returns {Promise}
+     */
+    modify(userID, modificationData, callback) {
+        // check permissions first
+        return ([&#x27;name&#x27;, &#x27;email&#x27;, &#x27;password&#x27;, &#x27;groupID&#x27;, &#x27;profile&#x27;]).reduce((promise, field) =&gt;
+            promise.then((userChanges) =&gt; new Promise((resolve, reject) =&gt; {
+                if(modificationData[field]) {
+                    if(this.getUser().isMe(userID) &amp;&amp; !this.getUser().isAllowed(&#x60;user.set.own.${field}&#x60;))
+                        return reject([ErrorCodes.operationNotAllowed, &#x60;user.set.own.${field}&#x60;]);
+
+                    if(!this.getUser().isMe(userID) &amp;&amp; !this.getUser().isAllowed(&#x60;user.set.other.${field}&#x60;))
+                        return reject([ErrorCodes.operationNotAllowed, &#x60;user.set.other.${field}&#x60;]);
+
+                    if(field === &quot;password&quot;) {
+                        return UserModel.generatePasswordHash(modificationData.password, (hash) =&gt; {
+                            userChanges.password = hash;
+                            return resolve(userChanges);
+                        }, (err) =&gt; resolve(userChanges))
+                    } else {
+                        userChanges[field] = modificationData[field];
+                        return resolve(userChanges);
+                    }
+                }
+                return resolve(userChanges);
+            })), new Promise(resolve =&gt; resolve({})))
+
+            // find the target group when groupID is provided
+            .then(userChanges =&gt; new Promise((resolve, reject) =&gt; UserGroupModel.findById(userChanges.groupID, (err, targetGroup) =&gt;
+                resolve({ targetGroup, userChanges }))))
+
+            // find target user
+            .then(result =&gt; new Promise((resolve, reject) =&gt; this.getActiveUserByID(userID, (err, targetUser) =&gt;
+                (err) ? reject(err) : resolve(Object.assign(result, { targetUser })))))
+
+            // find target users group
+            .then(result =&gt; new Promise((resolve, reject) =&gt; UserGroupModel.findById(result.targetUser.groupID, (err, sourceGroup) =&gt;
+                (!sourceGroup || err) ? reject([ErrorCodes.userGroupNotFound, sourceGroup.groupID]) : resolve(Object.assign(result, { sourceGroup })))))
+
+            .then(result =&gt; new Promise((resolve, reject) =&gt; {
+                // target users group should be changed, but target group is not found. Wrong groupID is provided for change
+                if(result.userChanges.groupID &amp;&amp; !result.targetGroup)
+                    reject([ErrorCodes.userGroupNotFound, result.userChanges.groupID]);
+
+                // we can´t modify a user with an equal less level than our level, except we gonna modify us
+                else if(result.sourceGroup.level &lt;= this.getUser().getGroup().level &amp;&amp; !this.getUser().isMe(userID))
+                    reject([ErrorCodes.userModifyCantModifyUserWithLessEqualLevelThanMe]);
+
+                // we also can´t assign a group with less or equal level than our level
+                else if(result.userChanges.groupID &amp;&amp; result.targetGroup.level &lt;= this.getUser().getGroup().level)
+                    reject([ErrorCodes.userModifyCantAssignGroupWithLessEqualLevelThanMe]);
+
+                else resolve(result);
+            }))
+
+            // update the user record
+            .then(result =&gt; new Promise((resolve, reject) =&gt; {
+                result.targetUser.set(result.userChanges);
+                result.targetUser.save((err, user) =&gt; {
+                    if (err)
+                        return reject([err, ErrorCodes.registrationUsernameOrEmailExists]);
+                    if (!user)
+                        return reject([ErrorCodes.userNotFound, userID]);
+                    else
+                        return resolve(user);
+                });
+            }))
+
+            // success or failure
+            .then(user =&gt; callback(null, { modified: true }))
+            .catch(args =&gt; callback(args, null));
+    }
+
+    /**
+     * Activate user account
+     *
+     * @method activateAccount
+     * @async
+     *
+     * @param code {String} activation code
+     * @param token {String} activation token
+     * @param callback {Function} (err, success)
+     *
+     * @returns {*}
+     */
+    activateAccount(code, token, callback) {
+        try {
+            // decode token
+            token = new Buffer(token, &quot;base64&quot;).toString(&quot;ascii&quot;);
+            let payload = jwt.decode(token, (ConfigServer.user.activation.secret + code));
+
+            let currentDate = new Date();
+            let expireDate = new Date(payload.expires);
+
+            // is the token expired?
+            if(currentDate &gt; expireDate)
+                callback([ErrorCodes.userActivateTokenExpired], null);
+
+            UserModel.findById(payload.id, (err, user) =&gt; {
+                if(err || !user)
+                    return callback([ErrorCodes.userActivateFailed], null);
+                if(user.active)
+                    return callback([ErrorCodes.userActivateUserAlreadyActive], null);
+
+                user.set({
+                    active: true
+                });
+                user.save((err, user) =&gt; {
+                    if(err || !user)
+                        return callback([ErrorCodes.userActivateFailed], null);
+
+                    resolve({
+                        userActivated: true
+                    });
+                });
+            });
+        } catch(e) {
+            console.log(e);
+            return callback([ErrorCodes.userActivateFailed], null);
+        }
+    }
+
+    /**
+     * Generate and send activation code. If user is not found, this won´t provide any error information.
+     * This method will always return &quot;ok&quot;.
+     *
+     * @method generateAndSendActivationCode
+     * @async
+     *
+     * @param email {String} user email address
+     * @param callback {Function} (err, success)
+     *
+     * @returns {Promise}
+     */
+    generateAndSendActivationCode(email, callback) {
+        return new Promise(resolve =&gt; resolve())
+            // get user, but don´t return any errors, when the user is not found for security reasons
+            .then(() =&gt; new Promise((resolve, reject) =&gt;
+                UserModel.findOne({ email }, (err, user) =&gt; resolve(user))))
+
+            // generate activation code and token
+            .then(user =&gt; new Promise(resolve =&gt; {
+                if(!user)
+                    return resolve();
+
+                let payload = {
+                    id: user.id,
+                    expires: new Date((new Date().getTime()) + ConfigServer.user.activation.expireTime * 1000),
+                    code: randomValueBase64(8)
+                };
+
+                let activationToken = jwt.encode(payload, ConfigServer.user.activation.secret + payload.code);
+                activationToken = new Buffer(activationToken).toString(&#x27;base64&#x27;);
+
+                console.log(&#x60;Requested activation code for account ${email}: ${payload.code}&#x60;);
+                console.log(&#x60;Activation token: [${activationToken}]&#x60;);
+                console.log(&#x60;Token will be expired on ${payload.expires}&#x60;);
+
+                Mailer.sendMail(MailType.userActivation, {
+                    code: payload.code,
+                    token: activationToken,
+                    url: null
+                }, [email]);
+
+                return resolve(activationToken);
+            }))
+
+            .then(user =&gt; callback(null, {
+                emailSent: true
+            }))
+    }
+}
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
